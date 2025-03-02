@@ -1,0 +1,103 @@
+.header-section {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.header-section.setdark {
+  background-color: black;
+  color: white;
+}
+.header-section .container .row {
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 0px 50px;
+}
+.header-section .container .row .logo {
+  width: -moz-max-content;
+  width: max-content;
+  height: 30px;
+}
+.header-section .container .row .logo a {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.header-section .container .row .logo a h1 {
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 40px;
+  padding-left: 15px;
+  color: blue;
+}
+.header-section .container .row .logo a .image-box {
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border-radius: 15%;
+}
+.header-section .container .row .user {
+  width: -moz-max-content;
+  width: max-content;
+}
+.header-section .container .row .user .content {
+  padding: 15px 0px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-section .container .row .user .content .dark-mode {
+  padding: 0px 50px;
+  align-items: center;
+}
+.header-section .container .row .user .content .dark-mode p {
+  padding-right: 10px;
+}
+.header-section .container .row .user .content .dark-mode .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.header-section .container .row .user .content .dark-mode .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.header-section .container .row .user .content .dark-mode .switch input:checked + .slider {
+  background-color: #2196f3;
+}
+.header-section .container .row .user .content .dark-mode .switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+.header-section .container .row .user .content .dark-mode .switch input:checked + .slider::before {
+  transform: translateX(26px);
+}
+.header-section .container .row .user .content .dark-mode .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+.header-section .container .row .user .content .dark-mode .switch .slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+.header-section .container .row .user .content .image-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+}/*# sourceMappingURL=header.css.map */

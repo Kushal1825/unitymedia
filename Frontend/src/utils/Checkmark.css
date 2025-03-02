@@ -1,0 +1,22 @@
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.checkmark .check {
+  transition: color 0.3s ease-in-out;
+}
+.checkmark.sent .check {
+  color: gray;
+}
+.checkmark.sent .check.two {
+  display: none;
+}
+.checkmark.delivered .check {
+  color: gray;
+}
+.checkmark.seen .check {
+  color: #4fc3f7;
+}/*# sourceMappingURL=Checkmark.css.map */

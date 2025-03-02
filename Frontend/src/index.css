@@ -1,0 +1,77 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; 
+  list-style: none;
+  font-family: "Familjen Grotesk", sans-serif;
+}
+body{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: #f8f9fa;
+  /* scroll-behavior: smooth; */
+}
+.container{
+  max-width: 1400px;
+  margin: 0px auto;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-col{
+  flex-direction: column;
+}
+a{
+  text-decoration: none;
+  font-weight: normal;
+  color:black;
+}
+h1{
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+}
+h2{
+  font-size: 35px;
+  color: blue;
+  font-weight: 600;
+}
+p{
+  font-size: 18px;
+  font-weight: 400;
+}
+h3{
+  font-size: 23px;
+  font-weight: 600;
+}
+h4{
+  font-size: 20px;
+  font-weight: 600;
+}
+img{
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+button{
+  border: none;
+  background: transparent;
+}
+button:hover{
+  cursor:pointer;
+}
+i:hover{
+  cursor:pointer;
+}
+h5{
+  font-size: 17px;
+  font-weight: 600;
+}
+textarea{
+  resize: vertical;
+}
+input{
+  text-transform:initial;
+  font-size: 17px;
+}

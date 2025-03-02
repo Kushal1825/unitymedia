@@ -1,0 +1,84 @@
+
+
+  
+.postupload-section{
+    width: 80%;
+    display: flex;
+    // margin: auto;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+ 
+    &.setdark{
+        background-color: rgba(0,0,0,0.8);
+    }
+    &.compromise{
+        width: 95%;
+        }
+
+        .post-upload-container {
+            width: 400px;
+            // height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            text-align: center;
+            
+            background-color: #e6e6e6;
+          
+            .upload-box {
+              cursor: pointer;
+              padding: 20px;
+              // background-color: blue;
+              font-size: 16px;
+              width: 100%;
+              color: #888;
+            }
+          
+            .image-preview {
+              img {
+                height: 400px;
+                border-radius: 10px;
+              }
+            }
+          
+            .caption-input {
+              width: 350px;
+              padding: 10px;
+              margin-top: 10px;
+              // margin-right: 20px;
+              // margin: auto;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              resize: none;
+            }
+            .upload-button {
+                margin-top: 20px;
+                padding: 10px 25px;
+                background-color: #0095f6;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: background-color 0.2s ease;
+            }
+            
+            .upload-button:hover {
+                background-color: #0077c0;
+            }
+            
+            .dark-button {
+                background-color: #3797f0;
+            }
+            
+            .dark-button:hover {
+                background-color: #0066a1;
+            }
+          }
+    
+}

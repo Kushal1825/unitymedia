@@ -1,0 +1,111 @@
+.header-section {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  &.setdark {
+    background-color: black;
+    color: white;
+  }
+  .container {
+    .row {
+      justify-content: space-between;
+      border-radius: 5px;
+      padding: 0px 50px;
+      .logo {
+        width: max-content;
+        height: 30px;
+
+        a {
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          h1 {
+            width: max-content;
+            font-size: 40px;
+            padding-left: 15px;
+            color: blue;
+          }
+          .image-box {
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+            border-radius: 15%;
+          }
+        }
+      }
+
+      .user {
+        width: max-content;
+
+        .content {
+          padding: 15px 0px;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          .dark-mode {
+            padding: 0px 50px;
+            align-items: center;
+            p {
+              padding-right: 10px;
+            }
+            .switch {
+              position: relative;
+              display: inline-block;
+              width: 60px;
+              height: 34px;
+
+              input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+              }
+
+              input:checked + .slider {
+                background-color: #2196f3;
+              }
+
+              input:focus + .slider {
+                box-shadow: 0 0 1px #2196f3;
+              }
+
+              input:checked + .slider::before {
+                transform: translateX(26px);
+              }
+
+              .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                border-radius: 34px; // Ensures the slider is rounded
+                transition: 0.4s;
+
+                &::before {
+                  position: absolute;
+                  content: "";
+                  height: 26px;
+                  width: 26px;
+                  left: 4px;
+                  bottom: 4px;
+                  background-color: white;
+                  border-radius: 50%; // Makes the toggle circular
+                  transition: 0.4s;
+                }
+              }
+            }
+          }
+          .image-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}

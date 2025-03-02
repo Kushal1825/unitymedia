@@ -1,0 +1,241 @@
+.story-seen {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  color: white;
+
+  .company-logo {
+    // background-color: red;
+    width: max-content;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        font-size: 40px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+      }
+      img {
+        width: max-content;
+        height: 50px;
+      }
+    }
+  }
+  .cls-btn {
+    // background-color: red;
+    svg {
+      color: white;
+    }
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .container {
+    // background-color: red;
+    width: 100vw;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    // gap: 50px;
+    align-items: center;
+    .prev-div,
+    .next-div {
+      // background-color: white;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 200px;
+      height: 350px;
+      position: relative;
+      .user-profile {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.42);
+        backdrop-filter: blur(5px);
+        top: 0px;
+        left: 0px;
+        z-index: 999;
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        img {
+          width: 65px;
+          height: 65px;
+          border-radius: 50%;
+        }
+        .time {
+          font-size: 14px;
+        }
+      }
+      img {
+        // filter: blur(2px);
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .current-div {
+      // background-color: yellow;
+      width: 500px;
+      height: 700px;
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+      border-radius: 5px;
+      align-items: center;
+      gap: 10px;
+      .main-div {
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        height: 100%;
+        border-radius: 5px;
+        background-color: black;
+        position: relative;
+        .play-pause-handler{
+          position: absolute;
+          top: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          right: 20px;
+          width: 30px;
+          height: 30px;
+          // background-color: green;
+          button{
+            font-size: 14px;
+            color:white
+          }
+        }
+        .progress-container {
+          position: absolute;
+          top: 10px;
+          // left: 10px;
+          gap: 2px;
+          width: 100%;
+          height: 3px;
+          display: flex;
+          justify-content: center;
+          padding: 0px 10px;
+
+          .progress-bar {
+            border-radius: 5px;
+            width: 100%;
+
+            height: 4px;
+            background-color: gray;
+            overflow: hidden;
+            // &.active{
+            //   .progress{
+            //     // transition: all linear 100ms;
+            //   }
+            // }
+            .progress {
+              height: 100%;
+              background-color: white;
+            }
+          }
+        }
+        .user-info {
+          display: flex;
+          position: absolute;
+          gap: 5px;
+          top: 40px;
+          left: 20px;
+          align-items: center;
+          img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+          }
+        }
+        .story-container {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .story-container {
+          .story-skeleton {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          }
+
+          .story-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+          }
+
+          .visible {
+            opacity: 1;
+          }
+        }
+
+        @keyframes skeleton-loading {
+          0% {
+            background-position: 200% 0;
+          }
+          100% {
+            background-position: -200% 0;
+          }
+        }
+
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        .handler {
+          li {
+            i {
+              // backdrop-filter: blur(5px);
+
+              font-size: 30px;
+            }
+            // background-color: green;
+          }
+          position: absolute;
+          bottom: 20px;
+          right: 30px;
+        }
+      }
+    }
+  }
+}

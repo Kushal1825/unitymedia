@@ -1,0 +1,438 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+.loader-container .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid transparent;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.private-account-container {
+  text-align: center;
+  max-width: 350px;
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+.private-account-container .lock-icon {
+  font-size: 52px;
+  margin-bottom: 20px;
+  color: #262626;
+}
+.private-account-container .private-account-text {
+  color: #262626;
+  margin-bottom: 24px;
+}
+.private-account-container .private-account-text h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 15px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.private-account-container .private-account-text .private-account-subtext {
+  color: #8e8e8e;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 30px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.private-account-container .follow-button {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.private-account-container .follow-button:hover {
+  background-color: #0086dd;
+}
+.private-account-container .follow-button:active {
+  background-color: #0076c3;
+}
+
+.no-posts-container {
+  text-align: center;
+  max-width: 350px;
+  padding: 40px 20px;
+}
+.no-posts-container .camera-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #262626;
+}
+.no-posts-container .no-posts-text {
+  color: #262626;
+}
+.no-posts-container .no-posts-text h2 {
+  font-size: 22px;
+  font-weight: 300;
+  margin: 10px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.no-posts-container .no-posts-text .no-posts-subtext {
+  color: #8e8e8e;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 30px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.viewprofile-section {
+  width: 80%;
+  padding-top: 15px;
+}
+.viewprofile-section.setdark {
+  background-color: black;
+}
+.viewprofile-section.compromise {
+  width: 95%;
+}
+.viewprofile-section .popup-box {
+  padding: 50px 0px;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.viewprofile-section .popup-box.active {
+  display: flex;
+}
+.viewprofile-section .popup-box.setdark {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.viewprofile-section .popup-box .content {
+  width: 450px;
+  background-color: white;
+  border-radius: 15px;
+  z-index: 2;
+  position: relative;
+  justify-content: center;
+}
+.viewprofile-section .popup-box .content.setdark {
+  background-color: black;
+}
+.viewprofile-section .popup-box .content .heading {
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 1px solid #6b6767;
+  text-align: center;
+  justify-content: space-between;
+}
+.viewprofile-section .popup-box .content .heading.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #c4c7c9;
+}
+.viewprofile-section .popup-box .content .heading h4 {
+  width: 90%;
+}
+.viewprofile-section .popup-box .content .heading .btn {
+  width: 10%;
+}
+.viewprofile-section .popup-box .content .heading .btn button {
+  width: 100%;
+}
+.viewprofile-section .popup-box .content .heading .btn button i {
+  font-size: 25px;
+  color: #6b6767;
+}
+.viewprofile-section .popup-box .content form {
+  padding: 15px 0px;
+  width: 95%;
+}
+.viewprofile-section .popup-box .content form .search-box {
+  position: relative;
+}
+.viewprofile-section .popup-box .content form .search-box input {
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.viewprofile-section .popup-box .content form .search-box input.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.viewprofile-section .popup-box .content form .search-box i {
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  color: #6b6767;
+}
+.viewprofile-section .popup-box .content .data {
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  background-color: white;
+  height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding: 0px 10px;
+}
+.viewprofile-section .popup-box .content .data.setdark {
+  background-color: black;
+  color: white;
+}
+.viewprofile-section .popup-box .content .data ul li {
+  margin: 5px 0px;
+  transition: all 0.3s;
+  padding: 5px;
+  border-radius: 5px;
+}
+.viewprofile-section .popup-box .content .data ul li.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.viewprofile-section .popup-box .content .data ul li .person {
+  align-items: center;
+  width: 100%;
+}
+.viewprofile-section .popup-box .content .data ul li .person .image-box {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.viewprofile-section .popup-box .content .data ul li .person .detail {
+  padding-left: 10px;
+  width: 55%;
+}
+.viewprofile-section .popup-box .content .data ul li .person .detail h4 {
+  overflow: hidden;
+}
+.viewprofile-section .popup-box .content .data ul li .person .btn {
+  width: 25%;
+}
+.viewprofile-section .popup-box .content .data ul li .person .btn button {
+  color: white;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  font-size: 19px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.viewprofile-section .popup-box .content .data ul li .person .btn button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.viewprofile-section .container {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.viewprofile-section .container .row .content {
+  height: 100%;
+  justify-content: center;
+}
+.viewprofile-section .container .row .content.setdark {
+  background-color: black;
+}
+.viewprofile-section .container .row .content .intro {
+  width: 90%;
+  background-color: white;
+  border-radius: 5px;
+  padding-bottom: 15px;
+}
+.viewprofile-section .container .row .content .intro.setdark {
+  background-color: black;
+  color: white;
+}
+.viewprofile-section .container .row .content .intro .content {
+  background-color: transparent;
+  width: 100%;
+  position: relative;
+}
+.viewprofile-section .container .row .content .intro .content .box {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 15px;
+}
+.viewprofile-section .container .row .content .intro .content .box .content {
+  padding: 30px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .image-box {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .image-box form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .image-box form label i {
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .name {
+  width: 30%;
+  padding: 15px;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .name h3 i {
+  padding-left: 5px;
+  border-radius: 5px;
+  font-size: 19px;
+  color: #50b5ff;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .name h4 {
+  padding: 10px 0px;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .name button {
+  background-color: #dcf0ff;
+  padding: 7px 0px;
+  width: 100px;
+  border-radius: 5px;
+  color: #50b5ff;
+  font-size: 18px;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .account-status p {
+  padding: 5px 0px;
+  font-size: 22px;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .account-status p i {
+  text-align: center;
+  font-size: 22px;
+  padding: 10px;
+}
+.viewprofile-section .container .row .content .intro .content .box .content p {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+}
+.viewprofile-section .container .row .content .intro .content .box ul {
+  width: 100%;
+  padding-bottom: 15px;
+}
+.viewprofile-section .container .row .content .intro .content .box ul li {
+  text-align: center;
+  border-right: 2px solid #c4c7c9;
+  font-size: 18px;
+  width: 33.33%;
+}
+.viewprofile-section .container .row .content .intro .content .box ul li a {
+  padding-left: 5px;
+  color: black;
+}
+.viewprofile-section .container .row .content .intro .content .box ul li a.setdark {
+  color: white;
+}
+.viewprofile-section .container .row .content .intro .content .box ul li:nth-child(3) {
+  border: none;
+}
+.viewprofile-section .container .row .content .details {
+  width: 90%;
+  height: 100%;
+}
+.viewprofile-section .container .row .content .details .heading {
+  background-color: white;
+  padding: 15px 0px;
+}
+.viewprofile-section .container .row .content .details .heading.setdark {
+  color: white;
+  background-color: black;
+}
+.viewprofile-section .container .row .content .details .heading h4 {
+  font-size: 20px;
+  text-align: center;
+}
+.viewprofile-section .container .row .content .details .content .blank-post {
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.viewprofile-section .container .row .content .details .content .blank-post ul {
+  width: 50%;
+}
+.viewprofile-section .container .row .content .details .content .blank-post ul li {
+  border-radius: 5px;
+  width: 33.33%;
+  border: 2px solid #c4c7c9;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.viewprofile-section .container .row .content .details .content .blank-post ul li a {
+  height: -moz-max-content;
+  height: max-content;
+  text-align: center;
+  background-color: #dcf0ff;
+  padding: 7px 0px;
+  width: 100px;
+  border-radius: 5px;
+  color: #50b5ff;
+  font-size: 18px;
+}
+.viewprofile-section .container .row .content .details .content .post {
+  transition: all 0.3s;
+  height: 100%;
+}
+.viewprofile-section .container .row .content .details .content .post .content {
+  background-color: white;
+}
+.viewprofile-section .container .row .content .details .content .post .content.setdark {
+  color: white;
+  background-color: black;
+}
+.viewprofile-section .container .row .content .details .content .post .content ul {
+  padding: 30px;
+  width: 100%;
+}
+.viewprofile-section .container .row .content .details .content .post .content ul li {
+  width: 33.3333333333%;
+  height: 300px;
+  position: relative;
+  padding: 5px;
+}
+.viewprofile-section .container .row .content .details .content .post .content ul li .image-box {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  border-radius: 5px;
+  overflow: hidden;
+}/*# sourceMappingURL=viewprofile.css.map */

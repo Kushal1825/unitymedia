@@ -1,0 +1,88 @@
+.explore-section {
+  width: 80vw;
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding: 10px;
+  &.setdark {
+    background-color: black;
+  }
+  &.compromise {
+    width: 95%;
+  }
+  .container {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+
+    .row {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      .box {
+        width: 80%;
+        height: 100%;
+        padding: 1px;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        align-content: start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+        .image-box {
+          width: calc(33.3333% - 4px);
+        //   height: 315px;
+
+          margin: 2px;
+          .image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            &:hover {
+              .details {
+                display: flex; // Change display to flex for proper alignment
+              }
+
+              img {
+                opacity: 0.8; // Optional: Add a subtle effect to the image when hovered
+              }
+            }
+            img {
+              transition: all 0.3s;
+            }
+
+            .details {
+              transition: all 0.3s;
+              display: none;
+              position: absolute;
+              background-color: rgba(0, 0, 0, 0.5);
+              top: 0px;
+              left: 0px;
+              height: 100%;
+              color: white;
+              width: 100%;
+              align-items: center;
+              justify-content: center;
+              span {
+                font-size: 18px;
+                padding: 10px;
+              }
+            }
+          }
+          &.setdark {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+}

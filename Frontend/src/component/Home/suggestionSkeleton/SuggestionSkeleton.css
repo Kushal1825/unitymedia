@@ -1,0 +1,51 @@
+.suggestion-skeleton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  width: 100%;
+  max-width: 300px;
+}
+.suggestion-skeleton .skeleton {
+  background: #ddd;
+  border-radius: 5px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+.suggestion-skeleton .skeleton.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.suggestion-skeleton .skeleton.info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.suggestion-skeleton .skeleton.name {
+  width: 100px;
+  height: 12px;
+}
+.suggestion-skeleton .skeleton.username {
+  width: 80px;
+  height: 10px;
+}
+.suggestion-skeleton .skeleton.button {
+  width: 60px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    background: #e0e0e0;
+  }
+  50% {
+    background: #d0d0d0;
+  }
+  100% {
+    background: #e0e0e0;
+  }
+}/*# sourceMappingURL=SuggestionSkeleton.css.map */

@@ -1,0 +1,336 @@
+.Home-section {
+  width: 80vw;
+  height: 90vh;
+  background-color: #f8f9fa;
+}
+.Home-section.setdark {
+  background-color: black;
+  color: white;
+}
+.Home-section.compromise {
+  max-width: 95%;
+}
+.Home-section .story-upload {
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.Home-section .story-upload.active {
+  transform: scale(1);
+  opacity: 1;
+}
+.Home-section .story-upload .content {
+  width: 30%;
+  background-color: white;
+  border-radius: 15px;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+.Home-section .story-upload .content.setdark {
+  color: black;
+}
+.Home-section .story-upload .content:hover .details form .input-box {
+  transform: translateY(-15px);
+}
+.Home-section .story-upload .content .heading {
+  padding: 15px 0px;
+  border-bottom: 1px solid #6b6767;
+}
+.Home-section .story-upload .content .details {
+  padding: 60px 0px;
+}
+.Home-section .story-upload .content .details form .input-box {
+  transition: all 0.3s;
+}
+.Home-section .story-upload .content .details form .input-box label i {
+  font-size: 50px;
+}
+.Home-section .story-upload .content .details form p {
+  padding: 15px;
+  font-size: 20px;
+}
+.Home-section .story-upload .content .details form .btn {
+  padding: 15px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.Home-section .story-upload .content .details form .btn button {
+  background-color: rgb(0, 149, 246);
+  color: white;
+  padding: 7px 14px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+.Home-section .story-upload .content .details form .btn button:nth-child(1) {
+  background-color: green;
+}
+.Home-section .container .row .box {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  background-color: #f8f9fa;
+  height: 90vh;
+}
+.Home-section .container .row .box.setdark {
+  background-color: black;
+  color: white;
+}
+.Home-section .container .row .box .content {
+  justify-content: space-around;
+}
+.Home-section .container .row .box .content .main-contant {
+  width: 50%;
+  padding: 15px;
+}
+.Home-section .container .row .box .content .main-contant .story {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}
+.Home-section .container .row .box .content .main-contant .story::-webkit-scrollbar {
+  display: none;
+}
+.Home-section .container .row .box .content .main-contant .story .story-box.own {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  position: relative;
+}
+.Home-section .container .row .box .content .main-contant .story .story-box.own .border {
+  border-radius: 50%;
+  position: relative;
+  padding: 3px;
+  border: 3px solid rgba(0, 0, 0, 0.4);
+}
+.Home-section .container .row .box .content .main-contant .story .story-box.own .border .image-box {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Home-section .container .row .box .content .main-contant .story .story-box.own .border .image-box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.Home-section .container .row .box .content .main-contant .story .story-box.own .border i {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.175);
+  border-radius: 50%;
+  bottom: -3px;
+  right: -3px;
+  font-size: 25px;
+}
+.Home-section .container .row .box .content .main-contant .story .story-box.own:nth-child(1) .border {
+  border: none;
+}
+.Home-section .container .row .box .content .main-contant .story .story-box.own:nth-child(1) .border .image-box {
+  border: none;
+  height: 60px;
+  width: 60px;
+}
+.Home-section .container .row .box .content .main-contant .posts {
+  padding-top: 20px;
+  border-radius: 10px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content {
+  overflow: hidden;
+  background-color: white;
+}
+.Home-section .container .row .box .content .main-contant .posts .content.setdark {
+  background-color: #161b22;
+  color: white;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 {
+  padding: 10px 10px 30px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .user {
+  padding: 10px 5px 10px 5px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .user .image-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .user .details {
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .user .details ul li {
+  align-items: center;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .user .details ul li h4 {
+  padding: 0px 5px;
+  font-size: 16px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .user .details ul li i {
+  border-radius: 5px;
+  font-size: 19px;
+  background-color: #50b5ff;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .user .details ul li span {
+  padding: 0px 5px;
+  display: block;
+  font-size: 14px;
+  color: #b8bec5;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .user p {
+  padding: 5px 0px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .media {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: black;
+  overflow: hidden;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .caption {
+  padding: 5px 0px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction ul {
+  padding: 15px 0px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction ul li {
+  padding: 10px;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  justify-content: flex-end;
+  padding: 0px 5px;
+  font-size: 16px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction ul li.isLiked i {
+  color: red;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction ul li.isLiked i:hover {
+  color: red;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction ul li i {
+  font-size: 25px;
+  text-align: center;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px 10px 0px 0px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction ul li i:hover {
+  color: gray;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction .likes-count span {
+  font-size: 14px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction .caption {
+  font-size: 14px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction .add-comment {
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction .add-comment .comment-box {
+  width: 100%;
+  padding: 5px 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction .add-comment .comment-box.setdark {
+  color: white;
+}
+.Home-section .container .row .box .content .main-contant .posts .content .person1 .content .reaction .add-comment button {
+  color: blue;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.Home-section .container .row .box .content .suggestion {
+  width: 30%;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 15px;
+}
+.Home-section .container .row .box .content .suggestion .heading {
+  padding: 15px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 4px solid #f8f9fa;
+}
+.Home-section .container .row .box .content .suggestion .heading h4 {
+  text-transform: capitalize;
+}
+.Home-section .container .row .box .content .suggestion .heading.setdark {
+  border-bottom: 4px solid black;
+  background-color: #0d1117;
+  color: white;
+}
+.Home-section .container .row .box .content .suggestion .content {
+  border-radius: 0px 0px 10px 10px;
+  background-color: white;
+  height: -moz-max-content;
+  height: max-content;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.Home-section .container .row .box .content .suggestion .content.setdark {
+  background-color: #0d1117;
+  color: white;
+}
+.Home-section .container .row .box .content .suggestion .content ul li {
+  transition: all 0.3s;
+  padding: 10px;
+  border-radius: 5px;
+}
+.Home-section .container .row .box .content .suggestion .content ul li .person {
+  align-items: center;
+  width: 100%;
+}
+.Home-section .container .row .box .content .suggestion .content ul li .person .image-box {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Home-section .container .row .box .content .suggestion .content ul li .person .detail {
+  padding-left: 10px;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+.Home-section .container .row .box .content .suggestion .content ul li .person .detail h4 {
+  font-size: 16px;
+  overflow: hidden;
+}
+.Home-section .container .row .box .content .suggestion .content ul li .person .detail h4.setdark {
+  color: white;
+}
+.Home-section .container .row .box .content .suggestion .content ul li .person .detail button {
+  background-color: transparent;
+  border: none;
+  color: #50b5ff;
+  font-size: 17px;
+  padding: 5px;
+  border-radius: 10px;
+}/*# sourceMappingURL=home.css.map */

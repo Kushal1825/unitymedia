@@ -1,0 +1,479 @@
+.Navbar-section {
+  width: 20%;
+  height: 100vh;
+  background-color: white;
+}
+.Navbar-section.slide {
+  width: 5%;
+}
+.Navbar-section.setdark {
+  background-color: rgb(26, 26, 26);
+  color: white !important;
+}
+.Navbar-section .container {
+  height: 100vh;
+}
+.Navbar-section .container .row {
+  height: 100%;
+  position: relative;
+}
+.Navbar-section .container .row .slide-page {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: #f8f9fa;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  width: 400px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  z-index: 1;
+}
+.Navbar-section .container .row .slide-page.setdark {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.Navbar-section .container .row .slide-page.slideDeactive {
+  transform: translateX(0px);
+}
+.Navbar-section .container .row .slide-page .setting-panel {
+  display: none;
+}
+.Navbar-section .container .row .slide-page .setting-panel.settingActive {
+  display: block;
+}
+.Navbar-section .container .row .slide-page .setting-panel .heading {
+  padding: 15px 5px;
+}
+.Navbar-section .container .row .slide-page .setting-panel .heading h3 {
+  width: 90%;
+  padding: 15px;
+}
+.Navbar-section .container .row .slide-page .setting-panel .heading button {
+  width: 10%;
+  border: none;
+  background-color: transparent;
+}
+.Navbar-section .container .row .slide-page .setting-panel .heading button i {
+  font-size: 20px;
+  color: #50b5ff;
+}
+.Navbar-section .container .row .slide-page .setting-panel .heading p {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+.Navbar-section .container .row .slide-page .setting-panel form .input-box {
+  width: 100%;
+  padding: 10px 15px;
+  border-bottom: 2px solid #50b5ff;
+  align-items: center;
+}
+.Navbar-section .container .row .slide-page .setting-panel form .input-box input {
+  width: 25px;
+  height: 25px;
+}
+.Navbar-section .container .row .slide-page .setting-panel form .input-box label {
+  width: 70%;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 15px;
+}
+.Navbar-section .container .row .slide-page .setting-panel form .input-box i {
+  width: 15%;
+  font-size: 40px;
+  color: #50b5ff;
+}
+.Navbar-section .container .row .slide-page .notification-panel {
+  display: none;
+}
+.Navbar-section .container .row .slide-page .notification-panel.notificationActive {
+  display: block;
+}
+.Navbar-section .container .row .slide-page .notification-panel .heading {
+  padding: 15px 5px;
+}
+.Navbar-section .container .row .slide-page .notification-panel .heading h3 {
+  width: 90%;
+  padding: 15px;
+}
+.Navbar-section .container .row .slide-page .notification-panel .heading button {
+  width: 10%;
+  border: none;
+  background-color: transparent;
+}
+.Navbar-section .container .row .slide-page .notification-panel .heading button i {
+  font-size: 20px;
+  color: #50b5ff;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li {
+  transition: all 0.3s;
+  padding: 10px;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following {
+  align-items: center;
+  width: 100%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following .image-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following .detail {
+  padding-left: 10px;
+  width: 86%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following .detail .message {
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following .detail .message p {
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following .detail .message span {
+  width: 100%;
+  display: block;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following .detail .btn {
+  width: 50%;
+  justify-content: center;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following .detail .btn button {
+  width: 70px;
+  height: 40px;
+  background-color: #3e474d;
+  color: white;
+  font-size: 17px;
+  padding: 7px;
+  border-radius: 5px;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .following .detail .btn button:nth-child(1) {
+  background-color: #50b5ff;
+  margin-right: 5px;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .follow {
+  align-items: center;
+  width: 100%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .follow .image-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .follow .detail {
+  padding-left: 10px;
+  width: 86%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .follow .detail .message {
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .follow .detail .message p {
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .follow .detail .message span {
+  width: 100%;
+  display: block;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .follow .detail .btn {
+  width: 20%;
+  justify-content: center;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .follow .detail .btn button {
+  width: 70px;
+  height: 40px;
+  background-color: #50b5ff;
+  color: white;
+  font-size: 17px;
+  padding: 7px;
+  border-radius: 5px;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .like {
+  align-items: center;
+  width: 100%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .like .image-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .like .image-box:nth-child(2) {
+  width: 20%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .like .detail {
+  padding-left: 10px;
+  width: 86%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .like .detail .message {
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .like .detail .message p {
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .like .detail .message span {
+  width: 100%;
+  display: block;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .comment {
+  align-items: center;
+  width: 100%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .comment .image-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .comment .image-box:nth-child(2) {
+  width: 20%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .comment .detail {
+  padding-left: 10px;
+  width: 86%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .comment .detail .message {
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .comment .detail .message p {
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .notification-panel .content ul li .comment .detail .message span {
+  width: 100%;
+  display: block;
+}
+.Navbar-section .container .row .slide-page .search-panel {
+  display: none;
+}
+.Navbar-section .container .row .slide-page .search-panel.searchActive {
+  display: block;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading {
+  padding: 15px 5px;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading h3 {
+  width: 90%;
+  padding: 15px;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading button {
+  width: 10%;
+  border: none;
+  background-color: transparent;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading button i {
+  font-size: 20px;
+  color: #50b5ff;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading form {
+  width: 100%;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading form .search-box {
+  position: relative;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading form .search-box input {
+  border-radius: 5px;
+  padding: 15px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading form .search-box input.setdark {
+  background-color: black;
+  border: 2px solid #50b5ff;
+  border-radius: 5px;
+}
+.Navbar-section .container .row .slide-page .search-panel .heading form .search-box i {
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li {
+  transition: all 0.3s;
+  padding: 10px;
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li .person {
+  align-items: center;
+  width: 100%;
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li .person .image-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li .person .detail {
+  padding-left: 10px;
+  width: 86%;
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li .person .detail .message {
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li .person .detail .message p {
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li .person .detail .message span {
+  width: 100%;
+  display: block;
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li .person .detail .btn {
+  width: 20%;
+  justify-content: center;
+}
+.Navbar-section .container .row .slide-page .search-panel .content ul li .person .detail .btn button {
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  font-size: 18px;
+  color: #3e474d;
+  padding: 5px;
+  border-radius: 10px;
+}
+.Navbar-section .container .row .box {
+  height: 100%;
+  background-color: white;
+  width: 100%;
+  transition: all 0.3s;
+}
+.Navbar-section .container .row .box.setdark {
+  background-color: #161b22;
+  color: white;
+}
+.Navbar-section .container .row .box .content {
+  border-radius: 5px;
+  height: 100%;
+}
+.Navbar-section .container .row .box .content .main-menu {
+  height: 100%;
+  transition: all 0.3s;
+}
+.Navbar-section .container .row .box .content .main-menu.slide {
+  padding: 0px;
+}
+.Navbar-section .container .row .box .content .main-menu .btn {
+  width: 100%;
+  padding: 10px 15px;
+  transition: all 0.3s;
+}
+.Navbar-section .container .row .box .content .main-menu .btn.slide {
+  width: 100%;
+}
+.Navbar-section .container .row .box .content .main-menu .btn:hover {
+  background-color: black;
+}
+.Navbar-section .container .row .box .content .main-menu .btn:hover button i {
+  color: white;
+}
+.Navbar-section .container .row .box .content .main-menu .btn button {
+  text-align: center;
+  width: 100%;
+}
+.Navbar-section .container .row .box .content .main-menu .btn button.setdark i {
+  color: white;
+}
+.Navbar-section .container .row .box .content .main-menu .btn button i {
+  font-size: 25px;
+  color: black;
+  width: 100%;
+}
+.Navbar-section .container .row .box .content .main-menu .btn button.slide i {
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+}
+.Navbar-section .container .row .box .content .main-menu ul li {
+  margin: 5px 0px;
+  padding: 10px;
+}
+.Navbar-section .container .row .box .content .main-menu ul li a {
+  color: black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.Navbar-section .container .row .box .content .main-menu ul li a.active {
+  background-color: #3e474d;
+  color: white;
+}
+.Navbar-section .container .row .box .content .main-menu ul li a:hover {
+  background-color: #3e474d;
+  color: white;
+}
+.Navbar-section .container .row .box .content .main-menu ul li a i {
+  font-size: 25px;
+  display: block;
+}
+.Navbar-section .container .row .box .content .main-menu ul li a p {
+  padding-left: 10px;
+}
+.Navbar-section .container .row .box .content .main-menu ul li a.setdark {
+  color: white;
+}
+.Navbar-section .container .row .box .content .main-menu ul li a.slide p {
+  display: none;
+}
+.Navbar-section .container .row .box .content .main-menu ul li a.slide i {
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+}
+.Navbar-section .container .row .box .content .main-menu ul li span {
+  color: black;
+  padding: 10px;
+  transition: all 0.3s;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.Navbar-section .container .row .box .content .main-menu ul li span:hover {
+  background-color: #3e474d;
+  color: white;
+}
+.Navbar-section .container .row .box .content .main-menu ul li span i {
+  font-size: 25px;
+  display: block;
+}
+.Navbar-section .container .row .box .content .main-menu ul li span p {
+  padding-left: 10px;
+}
+.Navbar-section .container .row .box .content .main-menu ul li span.setdark {
+  color: white;
+}
+.Navbar-section .container .row .box .content .main-menu ul li span.slide p {
+  display: none;
+}
+.Navbar-section .container .row .box .content .main-menu ul li span.slide i {
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+}/*# sourceMappingURL=Navbar.css.map */

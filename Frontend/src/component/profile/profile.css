@@ -1,0 +1,319 @@
+.profile-section {
+  width: 80%;
+  padding-top: 15px;
+}
+.profile-section.setdark {
+  background-color: black;
+}
+.profile-section.compromise {
+  width: 95%;
+}
+.profile-section .popup-box {
+  padding: 50px 0px;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.profile-section .popup-box.active {
+  display: flex;
+}
+.profile-section .popup-box.setdark {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.profile-section .popup-box .content {
+  width: 450px;
+  background-color: white;
+  border-radius: 15px;
+  z-index: 2;
+  position: relative;
+  justify-content: center;
+}
+.profile-section .popup-box .content.setdark {
+  background-color: black;
+}
+.profile-section .popup-box .content .heading {
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 1px solid #6b6767;
+  text-align: center;
+  justify-content: space-between;
+}
+.profile-section .popup-box .content .heading.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #c4c7c9;
+}
+.profile-section .popup-box .content .heading h4 {
+  width: 90%;
+}
+.profile-section .popup-box .content .heading .btn {
+  width: 10%;
+}
+.profile-section .popup-box .content .heading .btn button {
+  width: 100%;
+}
+.profile-section .popup-box .content .heading .btn button i {
+  font-size: 25px;
+  color: #6b6767;
+}
+.profile-section .popup-box .content form {
+  padding: 15px 0px;
+  width: 95%;
+}
+.profile-section .popup-box .content form .search-box {
+  position: relative;
+}
+.profile-section .popup-box .content form .search-box input {
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.profile-section .popup-box .content form .search-box input.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.profile-section .popup-box .content form .search-box i {
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  color: #6b6767;
+}
+.profile-section .popup-box .content .data {
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  background-color: white;
+  height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding: 0px 10px;
+}
+.profile-section .popup-box .content .data.setdark {
+  background-color: black;
+  color: white;
+}
+.profile-section .popup-box .content .data ul li {
+  margin: 5px 0px;
+  transition: all 0.3s;
+  padding: 5px;
+  border-radius: 5px;
+}
+.profile-section .popup-box .content .data ul li.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.profile-section .popup-box .content .data ul li .person {
+  align-items: center;
+  width: 100%;
+}
+.profile-section .popup-box .content .data ul li .person .image-box {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile-section .popup-box .content .data ul li .person .detail {
+  padding-left: 10px;
+  width: 55%;
+}
+.profile-section .popup-box .content .data ul li .person .detail h4 {
+  overflow: hidden;
+}
+.profile-section .popup-box .content .data ul li .person .btn {
+  width: 25%;
+}
+.profile-section .popup-box .content .data ul li .person .btn button {
+  color: white;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  font-size: 19px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.profile-section .popup-box .content .data ul li .person .btn button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.profile-section .container {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.profile-section .container .row .content {
+  height: 100%;
+  justify-content: center;
+}
+.profile-section .container .row .content.setdark {
+  background-color: black;
+}
+.profile-section .container .row .content .intro {
+  width: 90%;
+  background-color: white;
+  border-radius: 5px;
+  padding-bottom: 15px;
+}
+.profile-section .container .row .content .intro.setdark {
+  background-color: black;
+  color: white;
+}
+.profile-section .container .row .content .intro .content {
+  background-color: transparent;
+  width: 100%;
+}
+.profile-section .container .row .content .intro .content .box {
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding-top: 15px;
+}
+.profile-section .container .row .content .intro .content .box .content {
+  padding: 30px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.profile-section .container .row .content .intro .content .box .content .image-box {
+  width: 150px;
+  width: 35%;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.profile-section .container .row .content .intro .content .box .content .image-box form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+.profile-section .container .row .content .intro .content .box .content .image-box form label i {
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+}
+.profile-section .container .row .content .intro .content .box .content .name {
+  width: 65%;
+  padding: 15px;
+}
+.profile-section .container .row .content .intro .content .box .content .name h3 i {
+  padding-left: 5px;
+  border-radius: 5px;
+  font-size: 19px;
+  color: #50b5ff;
+}
+.profile-section .container .row .content .intro .content .box .content .name h4 {
+  padding: 10px 0px;
+}
+.profile-section .container .row .content .intro .content .box .content p {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+}
+.profile-section .container .row .content .intro .content .box ul {
+  width: 100%;
+  padding-bottom: 15px;
+}
+.profile-section .container .row .content .intro .content .box ul li {
+  text-align: center;
+  border-right: 2px solid #c4c7c9;
+  font-size: 18px;
+  width: 33.33%;
+}
+.profile-section .container .row .content .intro .content .box ul li a {
+  padding-left: 5px;
+  color: black;
+}
+.profile-section .container .row .content .intro .content .box ul li a.setdark {
+  color: white;
+}
+.profile-section .container .row .content .intro .content .box ul li:nth-child(3) {
+  border: none;
+}
+.profile-section .container .row .content .details {
+  width: 90%;
+  height: 100%;
+}
+.profile-section .container .row .content .details .heading {
+  background-color: white;
+  padding: 15px 0px;
+  border-bottom: 1px solid #6b6767;
+}
+.profile-section .container .row .content .details .heading.setdark {
+  color: white;
+  background-color: black;
+}
+.profile-section .container .row .content .details .heading h4 {
+  font-size: 20px;
+  text-align: center;
+}
+.profile-section .container .row .content .details .content .blank-post {
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.profile-section .container .row .content .details .content .blank-post ul {
+  width: 50%;
+}
+.profile-section .container .row .content .details .content .blank-post ul li {
+  border-radius: 5px;
+  width: 33.33%;
+  border: 2px solid #c4c7c9;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.profile-section .container .row .content .details .content .blank-post ul li a {
+  height: -moz-max-content;
+  height: max-content;
+  text-align: center;
+  background-color: #dcf0ff;
+  padding: 7px 0px;
+  width: 100px;
+  border-radius: 5px;
+  color: #50b5ff;
+  font-size: 18px;
+}
+.profile-section .container .row .content .details .content .post {
+  transition: all 0.3s;
+  height: 100%;
+}
+.profile-section .container .row .content .details .content .post .content {
+  background-color: white;
+}
+.profile-section .container .row .content .details .content .post .content.setdark {
+  color: white;
+  background-color: black;
+}
+.profile-section .container .row .content .details .content .post .content ul {
+  padding: 30px;
+  width: 100%;
+}
+.profile-section .container .row .content .details .content .post .content ul li {
+  width: 33.3333333333%;
+  height: 300px;
+  position: relative;
+  padding: 5px;
+}
+.profile-section .container .row .content .details .content .post .content ul li .image-box {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  border-radius: 5px;
+  overflow: hidden;
+}/*# sourceMappingURL=profile.css.map */

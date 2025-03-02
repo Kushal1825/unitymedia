@@ -1,0 +1,221 @@
+.story-seen {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  color: white;
+}
+.story-seen .company-logo {
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.story-seen .company-logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.story-seen .company-logo a span {
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+.story-seen .company-logo a img {
+  width: -moz-max-content;
+  width: max-content;
+  height: 50px;
+}
+.story-seen .cls-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.story-seen .cls-btn svg {
+  color: white;
+}
+.story-seen .container {
+  width: 100vw;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.story-seen .container .prev-div,
+.story-seen .container .next-div {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 200px;
+  height: 350px;
+  position: relative;
+}
+.story-seen .container .prev-div .user-profile,
+.story-seen .container .next-div .user-profile {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.42);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.story-seen .container .prev-div .user-profile img,
+.story-seen .container .next-div .user-profile img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+.story-seen .container .prev-div .user-profile .time,
+.story-seen .container .next-div .user-profile .time {
+  font-size: 14px;
+}
+.story-seen .container .prev-div img,
+.story-seen .container .next-div img {
+  width: 100%;
+  height: 100%;
+}
+.story-seen .container .current-div {
+  width: 500px;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 5px;
+  align-items: center;
+  gap: 10px;
+}
+.story-seen .container .current-div .main-div {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 5px;
+  background-color: black;
+  position: relative;
+}
+.story-seen .container .current-div .main-div .play-pause-handler {
+  position: absolute;
+  top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+}
+.story-seen .container .current-div .main-div .play-pause-handler button {
+  font-size: 14px;
+  color: white;
+}
+.story-seen .container .current-div .main-div .progress-container {
+  position: absolute;
+  top: 10px;
+  gap: 2px;
+  width: 100%;
+  height: 3px;
+  display: flex;
+  justify-content: center;
+  padding: 0px 10px;
+}
+.story-seen .container .current-div .main-div .progress-container .progress-bar {
+  border-radius: 5px;
+  width: 100%;
+  height: 4px;
+  background-color: gray;
+  overflow: hidden;
+}
+.story-seen .container .current-div .main-div .progress-container .progress-bar .progress {
+  height: 100%;
+  background-color: white;
+}
+.story-seen .container .current-div .main-div .user-info {
+  display: flex;
+  position: absolute;
+  gap: 5px;
+  top: 40px;
+  left: 20px;
+  align-items: center;
+}
+.story-seen .container .current-div .main-div .user-info img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.story-seen .container .current-div .main-div .story-container {
+  width: 100%;
+  height: 100%;
+}
+.story-seen .container .current-div .main-div .story-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.story-seen .container .current-div .main-div .story-container .story-skeleton {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.story-seen .container .current-div .main-div .story-container .spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.story-seen .container .current-div .main-div .story-container .story-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.story-seen .container .current-div .main-div .story-container .visible {
+  opacity: 1;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.story-seen .container .current-div .main-div .handler {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+.story-seen .container .current-div .main-div .handler li i {
+  font-size: 30px;
+}/*# sourceMappingURL=StorySeen.css.map */

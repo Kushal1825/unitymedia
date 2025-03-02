@@ -1,0 +1,80 @@
+.explore-section {
+  width: 80vw;
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+.explore-section.setdark {
+  background-color: black;
+}
+.explore-section.compromise {
+  width: 95%;
+}
+.explore-section .container {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+.explore-section .container .row {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.explore-section .container .row .box {
+  width: 80%;
+  height: 100%;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  align-content: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0px;
+}
+.explore-section .container .row .box .image-box {
+  width: calc(33.3333% - 4px);
+  margin: 2px;
+}
+.explore-section .container .row .box .image-box .image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.explore-section .container .row .box .image-box .image:hover .details {
+  display: flex;
+}
+.explore-section .container .row .box .image-box .image:hover img {
+  opacity: 0.8;
+}
+.explore-section .container .row .box .image-box .image img {
+  transition: all 0.3s;
+}
+.explore-section .container .row .box .image-box .image .details {
+  transition: all 0.3s;
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  color: white;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.explore-section .container .row .box .image-box .image .details span {
+  font-size: 18px;
+  padding: 10px;
+}
+.explore-section .container .row .box .image-box.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+}/*# sourceMappingURL=explore.css.map */

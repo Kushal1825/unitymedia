@@ -1,0 +1,44 @@
+.message-input-container {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 25px;
+  position: relative;
+  width: 100%;
+}
+.message-input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  background: white;
+}
+.message-input-container .send-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+}
+.message-input-container .emoji-picker {
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  margin-right: 10px;
+  color: #666;
+}
+.message-input-container .emoji-picker .emoji-dropdown {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  z-index: 10;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}/*# sourceMappingURL=MessageInput.css.map */

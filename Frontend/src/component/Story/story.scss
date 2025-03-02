@@ -1,0 +1,168 @@
+// Stories.scss
+$primary-color: #ffffff;
+$secondary-color: #e1306c;
+$background-color: rgba(0, 0, 0, 1);
+
+.stories-container {
+  padding: 0rem 0.7rem;
+}
+
+.stories-list {
+  display: flex;
+  gap: 1rem;
+  // height: 70px;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+
+  .user-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    .story-ring {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      padding: 2px;
+      background: linear-gradient(45deg, $secondary-color, #ffdc80);
+      margin-bottom: 0.5rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: #333;
+    }
+  }
+}
+
+.story-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $background-color;
+  z-index: 1000;
+
+  .progress-bars {
+    // background-color: gray;
+    display: flex;
+    gap: 4px;
+    padding: 1rem;
+    // position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .progress-bar {
+      flex: 1;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 2px;
+      overflow: hidden;
+
+      .progress {
+        height: 100%;
+        background: $primary-color;
+        transition: width 0.05s linear;
+
+        &.active {
+          background: linear-gradient(90deg, $secondary-color, #ffdc80);
+        }
+      }
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    z-index: 999;
+    color: $primary-color;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .story-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    
+    height: 100%;
+    .story-box{
+      background-color: black;
+
+      max-width: 400px;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .user-info{
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        img{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+      .story-images{
+        width: 100%;
+        height: 100%;
+        img{
+          max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        }
+      }
+    }
+
+    // img {
+    //   max-width: 100%;
+    //   max-height: 90vh;
+    //   object-fit: contain;
+    // }
+  }
+
+  .navigation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+    .nav-btn {
+      pointer-events: all;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 2rem;
+      padding: 1rem;
+      cursor: pointer;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &.left { left: 0; }
+      &.right { right: 0; }
+    }
+  }
+}

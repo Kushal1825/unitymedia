@@ -1,0 +1,538 @@
+.profileedit-section {
+  width: 80%;
+}
+.profileedit-section.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section.compromise {
+  width: 95%;
+}
+.profileedit-section .container .row .option {
+  width: 30%;
+}
+.profileedit-section .container .row .option .content {
+  width: 100%;
+  padding: 15px;
+}
+.profileedit-section .container .row .option .content ul {
+  background-color: white;
+  border-radius: 10px;
+}
+.profileedit-section .container .row .option .content ul.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section .container .row .option .content ul.setdark li:hover, .profileedit-section .container .row .option .content ul.setdark li.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.profileedit-section .container .row .option .content ul.setdark li:hover i, .profileedit-section .container .row .option .content ul.setdark li:hover p, .profileedit-section .container .row .option .content ul.setdark li.active i, .profileedit-section .container .row .option .content ul.setdark li.active p {
+  color: white;
+}
+.profileedit-section .container .row .option .content ul li {
+  border-radius: 5px;
+  align-items: center;
+  padding: 15px;
+}
+.profileedit-section .container .row .option .content ul li i {
+  font-size: 19px;
+}
+.profileedit-section .container .row .option .content ul li p {
+  padding-left: 10px;
+}
+.profileedit-section .container .row .option .content ul li:hover, .profileedit-section .container .row .option .content ul li.active {
+  background-color: black;
+}
+.profileedit-section .container .row .option .content ul li:hover i, .profileedit-section .container .row .option .content ul li:hover p, .profileedit-section .container .row .option .content ul li.active i, .profileedit-section .container .row .option .content ul li.active p {
+  color: white;
+}
+.profileedit-section .container .row .setting {
+  width: 70%;
+  overflow: hidden;
+}
+.profileedit-section .container .row .setting .content {
+  padding: 15px;
+  height: 100vh;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+.profileedit-section .container .row .setting .content .edit-profile {
+  height: 100vh;
+  display: none;
+  background-color: white;
+  border-radius: 10px;
+}
+.profileedit-section .container .row .setting .content .edit-profile.active {
+  display: block;
+}
+.profileedit-section .container .row .setting .content .edit-profile.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content {
+  padding: 0px 15px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content .heading {
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li {
+  padding: 10px 0px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li button {
+  padding: 7px 28px;
+  font-size: 19px;
+  background-color: #50b5ff;
+  border-radius: 10px;
+  color: white;
+  letter-spacing: 1px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li h4 {
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li textarea {
+  font-size: 17px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li textarea.setdark {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1) {
+  padding: 15px;
+  background-color: #f8f9fa;
+  align-items: center;
+  border-radius: 10px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1).setdark {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1).setdark .details div label {
+  background-color: #353535;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1).setdark .details div input {
+  color: white;
+  background-color: rgba(20, 20, 20, 0.1);
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1) .image-box {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 77px;
+  height: 77px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1) .details {
+  padding: 0px 15px;
+  width: 100%;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1) .details div {
+  display: flex;
+  width: 100%;
+  position: relative;
+  padding-top: 10px;
+  gap: 10px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1) .details div label {
+  top: 0px;
+  left: 0px;
+  background-color: rgb(248, 249, 250);
+  border-radius: 10px 10px 10px 0px;
+  padding: 2px 5px;
+  font-size: 13px;
+  position: absolute;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1) .details div input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: rgba(20, 20, 20, 0.1);
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(5) {
+  padding: 15px 0px;
+  border-radius: 10px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(5) .box {
+  padding: 5px 0px;
+  width: 100%;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(5) .box label {
+  font-size: 19px;
+  padding-left: 15px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(5) .box input {
+  width: 30px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(7) {
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(7) p {
+  width: 97%;
+}
+.profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(7) input {
+  width: 3%;
+}
+.profileedit-section .container .row .setting .content .notification {
+  display: none;
+  height: 100vh;
+  background-color: white;
+  border-radius: 10px;
+}
+.profileedit-section .container .row .setting .content .notification.active {
+  display: block;
+}
+.profileedit-section .container .row .setting .content .notification.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .notification .content {
+  height: 500px;
+  padding: 0px;
+}
+.profileedit-section .container .row .setting .content .notification .content .heading {
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .notification .content form ul {
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .notification .content form ul li {
+  padding-left: 10px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: inset 0 -10px 5px -10px rgba(0, 0, 0, 0.2);
+}
+.profileedit-section .container .row .setting .content .notification .content form ul li:nth-child(1) .off {
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.profileedit-section .container .row .setting .content .notification .content form ul li h4 {
+  padding: 15px 0px;
+}
+.profileedit-section .container .row .setting .content .notification .content form ul li label {
+  font-size: 18px;
+  padding: 10px 15px;
+}
+.profileedit-section .container .row .setting .content .notification .content form ul li input {
+  padding: 5px;
+  background-color: black;
+  width: 3%;
+}
+.profileedit-section .container .row .setting .content .account-privacy {
+  display: none;
+  background-color: white;
+  border-radius: 10px;
+}
+.profileedit-section .container .row .setting .content .account-privacy.active {
+  display: block;
+}
+.profileedit-section .container .row .setting .content .account-privacy.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .account-privacy .content {
+  padding: 0px;
+}
+.profileedit-section .container .row .setting .content .account-privacy .content .heading {
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .account-privacy .content .box {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  justify-content: space-between;
+}
+.profileedit-section .container .row .setting .content .account-privacy .content .box .content h4 {
+  padding: 10px 0px;
+}
+.profileedit-section .container .row .setting .content .account-privacy .content .box .content input {
+  padding: 15px;
+  width: 30px;
+  height: 20px;
+}
+.profileedit-section .container .row .setting .content .account-privacy .content .box .content a {
+  display: block;
+  padding-bottom: 15px;
+}
+.profileedit-section .container .row .setting .content .close-friends {
+  display: none;
+  background-color: white;
+  border-radius: 10px;
+}
+.profileedit-section .container .row .setting .content .close-friends.active {
+  display: block;
+}
+.profileedit-section .container .row .setting .content .close-friends.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .close-friends .content.searchActive {
+  display: block;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .heading {
+  padding: 15px 5px;
+  width: 100%;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .heading h3 {
+  width: 90%;
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .heading button {
+  width: 10%;
+  border: none;
+  background-color: transparent;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .heading button i {
+  font-size: 20px;
+  color: #50b5ff;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .heading .search-box {
+  position: relative;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .heading .search-box input {
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  width: 100%;
+  transition: all 0.3s;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .heading .search-box input.setdark {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .heading .search-box i {
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .data ul li {
+  transition: all 0.3s;
+  padding: 10px;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .data ul li .person {
+  align-items: center;
+  width: 100%;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .data ul li .person .image-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .data ul li .person .detail {
+  padding-left: 10px;
+  width: 90%;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .data ul li .person .detail .message {
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .data ul li .person .detail .message p {
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .data ul li .person .detail .message span {
+  width: 100%;
+  display: block;
+}
+.profileedit-section .container .row .setting .content .close-friends .content form .data ul li .person .detail input {
+  width: 4%;
+}
+.profileedit-section .container .row .setting .content .block {
+  display: none;
+  border-radius: 10px;
+  background-color: white;
+}
+.profileedit-section .container .row .setting .content .block.active {
+  display: block;
+}
+.profileedit-section .container .row .setting .content .block.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .block .content {
+  padding: 0px;
+}
+.profileedit-section .container .row .setting .content .block .content .heading {
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .block .content .heading h3 {
+  padding: 10px 0px;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li {
+  transition: all 0.3s;
+  padding: 10px 15px;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li .person {
+  align-items: center;
+  width: 100%;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li .person .image-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li .person .detail {
+  padding-left: 10px;
+  width: 90%;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li .person .detail .message {
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li .person .detail .message p {
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li .person .detail .message span {
+  width: 100%;
+  display: block;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li .person .detail .btn {
+  width: 15%;
+  justify-content: center;
+}
+.profileedit-section .container .row .setting .content .block .content .data ul li .person .detail .btn button {
+  width: 100%;
+  height: 40px;
+  background-color: #3e474d;
+  color: white;
+  font-size: 17px;
+  padding: 7px;
+  border-radius: 5px;
+}
+.profileedit-section .container .row .setting .content .security {
+  display: none;
+  border-radius: 10px;
+  background-color: white;
+}
+.profileedit-section .container .row .setting .content .security.active {
+  display: block;
+}
+.profileedit-section .container .row .setting .content .security.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .security .content .heading {
+  padding: 15px 0px;
+}
+.profileedit-section .container .row .setting .content .security .content .heading h3 {
+  padding: 10px 0px;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container.hidden {
+  display: none;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container form {
+  padding: 30px;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container form h4 {
+  padding-bottom: 15px;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container form ul {
+  overflow: hidden;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #f8f9fa;
+  padding: 15px;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container form ul.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container form ul li {
+  padding: 5px;
+  justify-content: space-between;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container form ul li input {
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container form ul li input.setdark {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .security .content .form-container form ul li button {
+  padding: 7px 28px;
+  font-size: 19px;
+  background-color: #50b5ff;
+  border-radius: 10px;
+  color: white;
+}
+.profileedit-section .container .row .setting .content .personal-details {
+  display: none;
+  border-radius: 10px;
+  background-color: white;
+}
+.profileedit-section .container .row .setting .content .personal-details.active {
+  display: block;
+}
+.profileedit-section .container .row .setting .content .personal-details.setdark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .personal-details .content .heading {
+  padding-top: 15px;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form {
+  padding: 30px;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form .contact-info {
+  height: 180px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form .contact-info.setdark {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form .contact-info .contact-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form .contact-info .contact-container input {
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 100%;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form .contact-info .contact-container label {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form .contact-info .contact-container label.setdark {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form .contact-info .contact-container label span {
+  width: 80px;
+}
+.profileedit-section .container .row .setting .content .personal-details .content form .contact-info .contact-container label input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+}/*# sourceMappingURL=profileedit.css.map */

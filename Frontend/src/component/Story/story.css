@@ -1,0 +1,142 @@
+.stories-container {
+  padding: 0rem 0.7rem;
+}
+
+.stories-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+.stories-list .user-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.stories-list .user-story .story-ring {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(45deg, #e1306c, #ffdc80);
+  margin-bottom: 0.5rem;
+}
+.stories-list .user-story .story-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.stories-list .user-story span {
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.story-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  z-index: 1000;
+}
+.story-viewer .progress-bars {
+  display: flex;
+  gap: 4px;
+  padding: 1rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.story-viewer .progress-bars .progress-bar {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.story-viewer .progress-bars .progress-bar .progress {
+  height: 100%;
+  background: #ffffff;
+  transition: width 0.05s linear;
+}
+.story-viewer .progress-bars .progress-bar .progress.active {
+  background: linear-gradient(90deg, #e1306c, #ffdc80);
+}
+.story-viewer .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  z-index: 999;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.story-viewer .story-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.story-viewer .story-content .story-box {
+  background-color: black;
+  max-width: 400px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.story-viewer .story-content .story-box .user-info {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+}
+.story-viewer .story-content .story-box .user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.story-viewer .story-content .story-box .story-images {
+  width: 100%;
+  height: 100%;
+}
+.story-viewer .story-content .story-box .story-images img {
+  max-width: 100%;
+  max-height: 90vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.story-viewer .navigation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.story-viewer .navigation .nav-btn {
+  pointer-events: all;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.story-viewer .navigation .nav-btn:hover {
+  color: #ffffff;
+}
+.story-viewer .navigation .nav-btn.left {
+  left: 0;
+}
+.story-viewer .navigation .nav-btn.right {
+  right: 0;
+}/*# sourceMappingURL=story.css.map */

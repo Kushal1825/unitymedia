@@ -1,0 +1,89 @@
+.login-section {
+  background-color: #0D1117;
+  color: white;
+  width: 100%;
+}
+.login-section .container {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-section .container .row {
+  width: 500px;
+  background-color: #1F2428;
+  border-radius: 5px;
+  padding: 15px;
+}
+.login-section .container .row .heading {
+  text-align: center;
+  padding: 15px;
+  padding-top: 0px;
+  justify-content: center;
+}
+.login-section .container .row .heading .image-box {
+  width: 80px;
+  height: 80px;
+}
+.login-section .container .row .heading h1 {
+  padding: 0px 15px;
+  font-size: 60px;
+}
+.login-section .container .row .heading p {
+  width: 100%;
+  padding: 10px 0px;
+}
+.login-section .container .row .content form .input-box {
+  padding: 15px 0px 5px 5px;
+}
+.login-section .container .row .content form .input-box input {
+  display: block;
+  width: 100%;
+  padding: 10px 5px;
+  color: white;
+  font-size: 17px;
+  border-radius: 4px;
+  border: none;
+  background-color: #242C38;
+}
+.login-section .container .row .content form .checkbox {
+  padding: 10px 0px;
+}
+.login-section .container .row .content form .checkbox ul {
+  align-items: center;
+}
+.login-section .container .row .content form .checkbox ul li {
+  width: 50%;
+}
+.login-section .container .row .content form .checkbox ul li:nth-child(2) {
+  text-align: right;
+}
+.login-section .container .row .content form .checkbox ul li.forget-password a {
+  color: blue;
+}
+.login-section .container .row .content form .checkbox ul li label {
+  padding: 15px 0px 15px 5px;
+}
+.login-section .container .row .content form .btn {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.login-section .container .row .content form .btn button {
+  padding: 8px 0px;
+  width: 100%;
+  background-color: #50b5ff;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  transition: all 0.3s;
+}
+.login-section .container .row .content form .btn button:hover {
+  background-color: blue;
+}
+.login-section .container .row .content p {
+  padding: 10px;
+  padding-left: 5px;
+}
+.login-section .container .row .content p a {
+  padding-left: 10px;
+  color: lightblue;
+}/*# sourceMappingURL=login.css.map */

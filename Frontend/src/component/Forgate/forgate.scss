@@ -1,0 +1,134 @@
+.forgate-section {
+  width: 100%;
+  height: 100vh;
+  background-color: #0d1117;
+  color: white;
+  padding: 75px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 100%;
+  .container {
+    width: 100%;
+    .row {
+      justify-content: center;
+      align-items: center;
+
+      .box {
+        width: 40%;
+        background-color: #1f2428;
+        border-radius: 5px;
+        padding: 50px 25px;
+
+        .heading {
+          text-align: center;
+          padding: 15px;
+          padding-top: 0px;
+          justify-content: center;
+          .image-box {
+            width: 80px;
+            height: 80px;
+          }
+          h1 {
+            padding: 0px 15px;
+            font-size: 60px;
+          }
+          p {
+            width: 100%;
+            padding: 10px 0px;
+          }
+        }
+        div {
+          width: 100%;
+          .email-box {
+            width: 100%;
+            font-size: 18px;
+            padding-left: 15px;
+
+            input {
+              padding: 15px;
+              width: 100%;
+              border-radius: 10px;
+              background-color: #242c38;
+              color: white;
+              border: none;
+            }
+            .btn {
+              padding: 15px 0px;
+              width: 100%;
+              justify-content: space-between;
+              button {
+                font-size: 18px;
+                padding: 10px 30px;
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                border-radius: 5px;
+              }
+            }
+          }
+          .otp-box {
+            width: 100%;
+            font-size: 18px;
+            padding-left: 15px;
+
+            input {
+              padding: 15px;
+              width: 100%;
+              border-radius: 10px;
+              background-color: #242c38;
+              color: white;
+              border: none;
+            }
+            .btn {
+              padding: 15px 0px;
+              width: 100%;
+              justify-content: space-between;
+              button {
+                font-size: 18px;
+                padding: 10px 30px;
+                background-color: green;
+                color: white;
+                border-radius: 5px;
+              }
+              p {
+                cursor: pointer;
+                color: #50b5ff;
+              }
+            }
+          }
+          .input-box {
+            width: 100%;
+            font-size: 18px;
+            padding-left: 15px;
+
+            input {
+              padding: 15px;
+              width: 100%;
+              border-radius: 10px;
+              margin: 5px 0px;
+              background-color: #242c38;
+              color: white;
+              border: none;
+            }
+            .btn {
+              padding: 15px 0px;
+              width: 100%;
+              justify-content: space-between;
+              button {
+                font-size: 18px;
+                padding: 10px 30px;
+                background-color: rgba(#50b5ff, 0.8);
+                color: white;
+                border-radius: 5px;
+              }
+              p {
+                cursor: pointer;
+                color: #50b5ff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,635 @@
+.profileedit-section{
+    &.setdark{
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+    }
+    width: 80%;
+    &.compromise{
+        width: 95%;
+        }
+    .container{
+        .row{
+            .option{
+                width: 30%;
+                .content{
+                    width: 100%;
+                    padding: 15px;
+                    ul{
+                        &.setdark{
+                            background-color: rgba(0, 0, 0, 0.9);
+                            color: white;
+                            li{
+                                &:hover,
+                                &.active{
+                                    background-color: rgba(255,255,255,0.2);
+                                    i,p{
+                                        color: white;
+                                    }
+                                }  
+
+                            }
+
+                        }
+                        background-color: white;
+                        border-radius: 10px;
+                        li{
+                            border-radius: 5px;
+                            align-items: center;
+                            padding: 15px;
+                            i{
+                                font-size: 19px;
+                            }
+                            p{
+                                padding-left: 10px;
+                            }
+
+                            &:hover,&.active{
+                                background-color: black;
+                                i,p{
+                                    color: white;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            .setting{
+                width: 70%;
+                overflow: hidden;
+                .content{
+                    padding: 15px;
+                    height: 100vh;                     
+                    scroll-behavior: smooth;           
+                    overflow-y: auto; 
+                    scrollbar-width: none;
+                    overflow-x: hidden;
+                    .edit-profile{
+                        height: 100vh;
+                        display: none;
+                        &.active {
+                            display: block;
+                          }
+                        background-color: white;
+                        border-radius: 10px;
+                        &.setdark{
+                            background-color: rgba(0, 0, 0, 0.9);
+                            color: white;
+                        }
+                        .content{
+                           
+                           padding:0px 15px; 
+                           .heading{
+                            padding: 15px;
+                           }
+                           form{
+                            ul{
+                               li{
+                                padding: 10px 0px;
+                                display: flex;
+                                flex-wrap: nowrap;
+                                button{
+                                    padding: 7px 28px;
+                                    font-size: 19px;
+                                    background-color: #50b5ff;
+                                    border-radius: 10px;
+                                    color: white;
+                                    letter-spacing: 1px;
+                                    }
+                                h4{
+                                    padding: 15px;
+                                }
+                                
+                                textarea{
+                                   font-size: 17px;
+                                    padding: 15px;
+                                    border-radius: 5px;
+                                    background-color:#f8f9fa;
+                                    &.setdark{
+                                        background-color: rgba(255,255,255,0.2);
+                                        color: white;
+                                    }
+                                }
+                                &:nth-child(1){
+                                    padding: 15px;                            
+                                    background-color: #f8f9fa;
+                                    align-items: center;
+                                    border-radius: 10px;
+                                   
+                                    &.setdark{
+                                        background-color: rgba(255,255,255,0.2);
+                                        color: white;
+                                        .details{
+                                            div{
+                                                label{
+                                                    
+                                                    background-color: #353535;
+                                                }
+                                                input{
+                                                    color:white;
+                                                    background-color: rgba(20, 20, 20,0.1);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .image-box{
+                                        border-radius: 50%;
+                                        overflow: hidden;
+                                        width: 77px;
+                                        height: 77px;
+
+                                    }
+                                    .details{
+                                        padding:0px 15px;
+                                        width: 100%;
+                                        // width:max-content;
+                                        div{
+                                            display: flex;
+                                            width: 100%;
+                                            position: relative;
+                                            padding-top: 10px;
+                                            gap: 10px;
+                                            // flex-wrap: nowrap;
+                                            label{
+                                                top: 0px;
+                                                left: 0px;
+                                                // background-color: rgba($color: #000000, $alpha: 0.1);
+                                                // padding: 10px 0px;
+                                                // margin-left: 20px;
+                                                background-color: rgb(248, 249, 250);
+                                                border-radius: 10px 10px 10px 0px;
+                                                padding: 2px 5px;
+                                                font-size: 13px;
+                                                position: absolute;
+                                            }
+                                            
+                                            input{
+                                                width: 100%;
+                                                padding: 15px 20px;
+                                                font-size: 16px;
+                                                border: none;
+                                                border-radius: 10px;
+                                                outline: none;
+                                                // background-color: transparent;
+                                                background-color: rgba(20, 20, 20,0.1);
+                                            }
+                                        }
+                                        
+                                    }
+                                   
+                                }
+                                &:nth-child(5){
+                                    padding: 15px 0px;                                 
+                                    border-radius: 10px;
+                                   .box{ 
+                                    padding: 5px 0px;                                       
+                                        width:100%;
+                                        label{
+                                            font-size: 19px;
+                                            padding-left: 15px;
+                                        }
+                                        input{
+                                            width: 30px;
+                                        }
+                                    }
+                                }
+                                &:nth-child(7){
+                                    padding: 15px;
+                                    // background-color: #f8f9fa;
+                                    p{
+                                        width: 97%;
+                                    }
+                                    input{
+                                        width: 3%;
+                                    }
+                                }
+                              
+                               } 
+                            }
+                           }
+                        }
+                    }
+                    .notification{
+                        display: none;
+                        height: 100vh;
+                        &.active {
+                            display: block;
+                          }
+                        background-color: white;
+                        border-radius: 10px;
+                        &.setdark{
+                            background-color: rgba(0, 0, 0, 0.9);
+                            color: white;
+                        }
+                        .content{
+                            height: 500px;
+                            padding: 0px; 
+                            .heading{
+                             padding: 15px;
+                            }
+                            form{
+                                ul{
+                                    padding: 15px;
+                                    li{
+                                        padding-left: 10px;
+                                        border-radius: 0px 0px 10px 10px;
+                                        // border-bottom: 1px solid #181818; 
+                                        box-shadow: inset 0 -10px 5px -10px rgba(0, 0, 0, 0.2);
+                                        &:nth-child(1){
+                                            .off{
+                                                justify-content: space-between;
+                                                padding-right: 10px;
+                                            }
+                                        }
+                                        h4{
+                                            padding: 15px 0px;
+                                        }
+                                        
+label{
+    font-size: 18px;
+    padding:10px 15px;
+}
+input{
+    padding: 5px;
+background-color: black;    
+width: 3%;
+}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .account-privacy{
+                        display: none;
+                        &.active {
+                            display: block;
+                          }
+                        background-color: white;
+                        border-radius: 10px;
+                        &.setdark{
+                            background-color: rgba(0, 0, 0, 0.9);
+                            color: white;
+                        }
+                        .content{
+                           
+                           padding: 0px; 
+                           .heading{
+                            padding: 15px;
+                           } 
+.box{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    justify-content: space-between;
+    .content{
+       
+        h4{
+            padding: 10px 0px;
+        }
+        input{
+            padding: 15px;
+            width: 30px;
+            height: 20px;
+   
+        }
+        a{
+            display: block;
+         padding-bottom: 15px;
+        }
+    }
+  
+       
+}
+                        }
+                    }
+                    .close-friends{
+                        display: none;
+                        &.active {
+                            display: block;
+                          }
+                        background-color: white;
+                        border-radius: 10px;
+                        &.setdark{
+                            background-color: rgba(0, 0, 0, 0.9);
+                            color: white;
+                        }
+                        .content{
+                           
+                            &.searchActive{
+                                display: block;
+                            }
+                            form{
+                                .heading{
+                                    padding:15px 5px;
+                                    h3{
+                                      width: 90%;
+                                      padding:15px;
+                                    }
+                                    button{
+                                      width: 10%;
+                                      border: none;
+                                      background-color: transparent;
+                                      i{
+                                        font-size: 20px;
+                                        color: #50b5ff;
+                                      }
+                                    }
+                                    
+                                        width: 100%;
+                                        .search-box{
+                                            position: relative;
+                                            
+                    input{
+                    border-radius: 5px;
+                    padding: 15px;
+                    background-color: #f8f9fa;
+                    width: 100%;
+                    transition: all 0.3s;
+                    &.setdark{
+                        background-color: rgba(255,255,255,0.2);
+                        color: white;
+                    }
+                    }
+                    i{
+                        font-size: 22px;
+                        position: absolute;
+                        top: 50%;
+                        right: 0%;
+                        transform: translate(-50%,-50%);
+                    }
+                                        }
+                                    
+                                   
+                                  }
+                                  .data{
+                                   
+                                    ul{
+                                        li{
+                                            transition: all 0.3s;
+                                         
+                                            padding: 10px;
+                                            .person{
+                                                align-items: center;
+                                                width: 100%;
+                                                .image-box{                              
+                                                    width: 55px;
+                                                    height: 55px;
+                                                    border-radius: 50%;
+                                                    overflow: hidden;
+                                                }
+                                                .detail{
+                                                    padding-left: 10px;
+                                                    width: 90%;
+                                                    .message{
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                        width: 96%;
+                                                        p{
+                                                            width: 100%;
+                                                            font-size: 20px;
+                                                            overflow: hidden;
+                                                        }
+                                                        span{
+                                                            width: 100%;
+                                                            display: block;
+                                                        }
+                    
+                                                    }
+                                                    
+                                                        input{
+                                                            width: 4%;
+                                                         }
+                                   }
+                                            }
+                                        }
+                                       }
+                                  }
+                            }
+                          
+                        }
+                    }
+                    .block{
+                        display: none;
+                        &.active {
+                            display: block;
+                          }
+                        border-radius: 10px;
+                        background-color: white;
+                        &.setdark{
+                            background-color: rgba(0, 0, 0, 0.9);
+                            color: white;
+                        }
+                        .content{                         
+                         
+                            padding: 0px; 
+                            .heading{
+                                padding: 15px;
+                             
+                            h3{
+                                padding: 10px 0px;
+                            }
+                            }
+                            .data{
+                   
+                                ul{
+                                    li{
+                                        transition: all 0.3s;
+                                      
+                                        padding:10px 15px;
+                                        .person{
+                                            align-items: center;
+                                            width: 100%;
+                                            .image-box{                              
+                                                width: 50px;
+                                                height: 50px;
+                                                border-radius: 50%;
+                                                overflow: hidden;
+                                            }
+                                            .detail{
+                                                padding-left: 10px;
+                                                width: 90%;
+                                                .message{
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    width:85%;
+                                                    p{
+                                                        width: 100%;
+                                                        font-size: 20px;
+                                                        overflow: hidden;
+                                                    }
+                                                    span{
+                                                        width: 100%;
+                                                        display: block;
+                                                    }
+                
+                                                }
+                                                .btn{
+                                                   width: 15%;
+                                                    justify-content: center;
+                                                    button{                                           
+                                                        width: 100%;
+                                                        height: 40px;
+                                                        background-color:#3e474d;;                                            
+                                                        color: white;
+                                                        font-size: 17px;
+                                                        padding: 7px;
+                                                        border-radius: 5px;
+                                                      
+                                                    }
+                                                }
+                                               
+                                                
+                
+                                            }
+                                        }
+                                    }
+                                   }
+                              }
+                        }
+                    }
+                    .security{
+                        display: none;
+                        &.active {
+                            display: block;
+                          }
+                        border-radius: 10px;
+                        background-color: white;
+                        &.setdark{
+                            background-color: rgba(0, 0, 0, 0.9);
+                            color: white;
+                        }
+                        .content{
+                          
+                            .heading{
+                                padding: 15px 0px;
+                             
+                            h3{
+                                padding: 10px 0px;
+                            }
+                            }
+                            .form-container {
+                                &.hidden {
+                                  display: none;
+                                }
+                                form{
+                                    padding: 30px;
+                                    h4{
+                                        padding-bottom: 15px;
+                                       
+                                    }
+                                    ul{
+                                        overflow: hidden;
+                                        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+                                        border-radius: 15px;
+                                        background-color: #f8f9fa;
+                                        padding: 15px;
+                                        &.setdark{
+                                            background-color: rgba(255,255,255,0.1);
+                                            border:2px solid rgba(0,0,0,0.2);
+                                            color: white;
+                                        }
+                                        li{
+                                            padding: 5px ;
+    justify-content: space-between;
+    input{
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    &.setdark{
+        background-color: rgba(255,255,255,0.2);
+        color: white;
+    }
+    }
+ 
+    button{
+    padding: 7px 28px;
+    font-size: 19px;
+    background-color: #50b5ff;
+    border-radius: 10px;
+    color: white;
+    }
+                                        }
+                                    }
+                                }
+                              }
+                           
+                         
+                           
+                        }
+                    }
+                    .personal-details{
+                        display: none;
+                        &.active {
+                            display: block;
+                          }
+                        border-radius: 10px;
+                        background-color: white;
+                        &.setdark{
+                            background-color: rgba(0, 0, 0, 0.9);
+                            color: white;
+                        }
+                        .content{
+                          
+                            .heading{
+                                padding-top:15px;
+                             }
+                            form{
+                                padding: 30px;
+                              .contact-info {                                  
+                                    height:180px;
+                                    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+                                    border-radius: 15px;
+                                    background-color: #f8f9fa;
+                                    padding: 15px;
+                                            display: flex;
+                                            flex-direction: column;
+                                            &.setdark{
+                                                background-color: rgba(255,255,255,0.1);
+                                                border:2px solid rgba(0,0,0,0.2);
+                                                color: white;
+                                            }
+                                          .contact-container {
+                                              display: flex;
+                                              flex-direction: column;
+                                              padding: 5px ;
+                                              input{
+                                                padding:10px 15px;
+                                                border-radius: 5px;
+                                                width: 100%;
+                                             
+                                                }
+                                             label{
+                                                display: flex;
+                                                align-items: center;
+                                                border: 1px solid #ccc;
+                                                border-radius: 5px;
+                                                padding: 5px 10px;
+                                                background-color: #f9f9f9;
+                                                font-size: 14px;
+                                                margin-top:15px ;
+                                                &.setdark{
+                                                    background-color: rgba(255,255,255,0.2);
+                                                    color: white;
+                                                }
+                                             span {
+                                               width: 80px;
+                                               }
+                                            input{
+                                                  border: none;
+                                                  background: transparent;
+                                                  outline: none;
+                                                  width: 100%;
+                                                
+                                                }
+                                              }
+                                            }
+                                         }
+                             }
+                        }
+                    }
+                  
+                }
+                
+            }
+        }
+    }
+}

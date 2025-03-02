@@ -1,0 +1,355 @@
+.Chate-section {
+  background-color: #f8f9fa;
+  color: black;
+  width: 100%;
+  transition: all 0.3s;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.Chate-section.setdark {
+  background-color: black;
+  color: white;
+  color: white;
+}
+.Chate-section.compromise {
+  width: 95%;
+}
+.Chate-section .container {
+  width: 100%;
+}
+.Chate-section .container .row {
+  width: 100%;
+}
+.Chate-section .container .row .no-conversation-container {
+  display: flex;
+  width: 70%;
+  height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+  color: #555;
+}
+.Chate-section .container .row .no-conversation-container .icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.Chate-section .container .row .no-conversation-container h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.Chate-section .container .row .no-conversation-container p {
+  font-size: 14px;
+  color: #777;
+}
+.Chate-section .container .row .user {
+  padding: 15px;
+  width: 400px;
+}
+.Chate-section .container .row .user .content .conversation-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+}
+.Chate-section .container .row .user .content .conversation-skeleton .skeleton-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+.Chate-section .container .row .user .content .conversation-skeleton .skeleton-item .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f2f2f2 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+.Chate-section .container .row .user .content .conversation-skeleton .skeleton-item .text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.Chate-section .container .row .user .content .conversation-skeleton .skeleton-item .text .name {
+  width: 40%;
+  height: 12px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f2f2f2 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 5px;
+}
+.Chate-section .container .row .user .content .conversation-skeleton .skeleton-item .text .message {
+  width: 80%;
+  height: 10px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f2f2f2 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 5px;
+}
+@keyframes loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.Chate-section .container .row .user .content .heading {
+  width: 100%;
+  padding-bottom: 5px;
+}
+.Chate-section .container .row .user .content .heading h3 {
+  padding-bottom: 5px;
+}
+.Chate-section .container .row .user .content .heading form .search-box {
+  position: relative;
+}
+.Chate-section .container .row .user .content .heading form .search-box input {
+  border-radius: 5px;
+  padding: 15px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.Chate-section .container .row .user .content .heading form .search-box input.setdark {
+  background-color: black;
+  border: 2px solid #50b5ff;
+  border-radius: 5px;
+}
+.Chate-section .container .row .user .content .heading form .search-box i {
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+}
+.Chate-section .container .row .user .content .users-list {
+  padding-top: 15px;
+}
+.Chate-section .container .row .user .content .users-list .content {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.Chate-section .container .row .user .content .users-list .content .person {
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.Chate-section .container .row .user .content .users-list .content .person.setdark {
+  background-color: black;
+}
+.Chate-section .container .row .user .content .users-list .content .person:hover {
+  background-color: black;
+  color: white;
+}
+.Chate-section .container .row .user .content .users-list .content .person .image {
+  height: 60px;
+  width: 60px;
+}
+.Chate-section .container .row .user .content .users-list .content .person .image.isOnline {
+  position: relative;
+}
+.Chate-section .container .row .user .content .users-list .content .person .image.isOnline::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  z-index: 999;
+  bottom: 0px;
+  right: 0px;
+  background-color: green;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+.Chate-section .container .row .user .content .users-list .content .person .image.isOnline.dark::before {
+  border: 3px solid black;
+}
+.Chate-section .container .row .user .content .users-list .content .person .image img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.Chate-section .container .row .user .content .users-list .content .person ul {
+  width: 80%;
+  padding: 5px 0px 0px 10px;
+}
+.Chate-section .container .row .user .content .users-list .content .person ul li {
+  justify-content: space-between;
+}
+.Chate-section .container .row .chate {
+  width: 71%;
+  height: 100%;
+  background-color: #ffffff;
+}
+.Chate-section .container .row .chate .content .user-info {
+  padding: 5px;
+  align-items: center;
+  background-color: lightgray;
+  justify-content: start;
+  transition: all 0.3s;
+}
+.Chate-section .container .row .chate .content .user-info.setdark {
+  background-color: black;
+}
+.Chate-section .container .row .chate .content .user-info .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Chate-section .container .row .chate .content .user-info .profile .image-box {
+  width: 45px;
+  height: 45px;
+}
+.Chate-section .container .row .chate .content .user-info .profile .image-box img {
+  border-radius: 50%;
+}
+.Chate-section .container .row .chate .content .user-info .profile ul {
+  padding-left: 10px;
+}
+.Chate-section .container .row .chate .content .chates-list {
+  height: 68vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.Chate-section .container .row .chate .content .chates-list .content .message-skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.Chate-section .container .row .chate .content .chates-list .content .message-skeleton {
+  width: 60%;
+  height: 25px;
+  border-radius: 15px;
+  padding: 16px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f2f2f2 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite ease-in-out;
+}
+.Chate-section .container .row .chate .content .chates-list .content .message-skeleton.sent {
+  align-self: flex-end;
+  background-color: #cce5ff;
+}
+.Chate-section .container .row .chate .content .chates-list .content .message-skeleton.received {
+  align-self: flex-start;
+  background-color: #e0e0e0;
+}
+@keyframes loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.Chate-section .container .row .chate .content .chates-list .content p {
+  padding: 5px 10px;
+  text-align: center;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul {
+  width: 100%;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li {
+  padding: 5px 15px;
+  justify-content: left;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage {
+  justify-content: right;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message {
+  background-color: rgba(80, 182, 255, 0.6823529412);
+  padding: 5px 10px;
+  font-size: 14px;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li .image-box {
+  width: 45px;
+  height: 45px;
+  position: relative;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li .image-box span {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li .image-box img {
+  border-radius: 50%;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li .message {
+  border-radius: 5px;
+  background-color: rgb(239, 239, 239);
+  padding: 5px 10px;
+  font-size: 14px;
+  align-items: center;
+  margin-left: 5px;
+  transition: all 0.3s;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li .message.setdark {
+  background-color: #dcf0ff;
+  color: black;
+}
+.Chate-section .container .row .chate .content .input-chate {
+  width: 100%;
+}
+.Chate-section .container .row .chate .content .input-chate .content {
+  width: 100%;
+}
+.Chate-section .container .row .chate .content .input-chate .content a {
+  color: #50b5ff;
+  height: 100%;
+  width: 5%;
+  background-color: transparent;
+  text-align: center;
+  border-radius: 5px;
+}
+.Chate-section .container .row .chate .content .input-chate .content a i {
+  font-size: 20px;
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+}
+.Chate-section .container .row .chate .content .input-chate .content form {
+  width: 95%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.Chate-section .container .row .chate .content .input-chate .content form input {
+  width: 100%;
+  padding: 5px;
+  transition: all 0.3s;
+  background-color: transparent;
+  border: none;
+}
+.Chate-section .container .row .chate .content .input-chate .content form input.setdark {
+  background-color: black;
+  border-radius: 5px;
+}
+.Chate-section .container .row .chate .content .input-chate .content form div {
+  color: #50b5ff;
+  margin-right: 20px;
+  background-color: transparent;
+  text-align: center;
+  padding: 5px 0px;
+  border-radius: 5px;
+  font-size: 22px;
+}
+.Chate-section .container .row .chate .content .input-chate .content form div i {
+  font-size: 22px;
+  padding: 5px 0px;
+  padding-right: 5px;
+  width: -moz-max-content;
+  width: max-content;
+}/*# sourceMappingURL=Chate.css.map */

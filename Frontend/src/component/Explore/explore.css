@@ -38,6 +38,7 @@
 }
 .explore-section .container .row .box .image-box {
   width: calc(33.3333% - 4px);
+  height: 315px;
   margin: 2px;
 }
 .explore-section .container .row .box .image-box .image {

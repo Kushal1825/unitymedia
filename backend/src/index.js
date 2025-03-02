@@ -22,6 +22,9 @@ connectDB()
     console.log("MONGODB db connection Failed !! ", err);
 })
 
+app.use("/",(req,res)=>{
+    res.send("Hello");
+});
 
 app.use('/api/user',userRouter)
 app.use("/api/post",postRouter)

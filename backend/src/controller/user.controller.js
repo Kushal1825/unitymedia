@@ -50,7 +50,6 @@ const signupUser = asyncHandler(async (req, res) => {
     }
 
     const existingUserByUsername = await User.findOne({
-      email,
       username,
       isVerified: true,
     });
@@ -991,8 +990,30 @@ const closeFriendList = asyncHandler(async (req, res) => {
 
 const updateNotificationSetting = asyncHandler(async (req,res)=>{
   try {
-    const {like,comment,follow} = req.body;
+    const userId = req.user?._id; // Assuming authenticated user
+    const updates = {};
+    
+    // List of allowed fields and values
+    const allowedFields = ['like', 'comment', 'follow'];
+    const allowedValues = ['all', 'off'];
+
+    // Validate and build updates
+    allowedFields.forEach(field => {
+      if (req.body[field] && allowedValues.includes(req.body[field])) {
+        updates[`notificationSettings.${field}`] = req.body[field];
+      }
+    });
+
+    // Update user in database
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { $set: updates },
+      { new: true, runValidators: true }
+
+    ).select('notificationSettings');
+    res.status(200).json(new ApiResponse(200,updatedUser,"Update Successfully"));
   } catch (error) {
+    console.log(error);
     
   }
 })
@@ -1018,5 +1039,6 @@ export {
   userBlockList,
   addCloseFriend,
   removeCloseFriend,
-  closeFriendList
+  closeFriendList,
+  updateNotificationSetting
 };

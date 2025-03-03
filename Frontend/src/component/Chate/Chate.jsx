@@ -92,13 +92,7 @@ const Chate = () => {
   
             setConversation((prev) => [...prev, mockConversation]);
         }
-          // setSelectedConversation((prev) => ({
-          //   id: conversation?._id,
-          //   username: conversation?.participants[0].username,
-          //   userId: conversation?.participants[0]._id,
-          //   userProfilePic: conversation?.participants[0]?.avatar?.url,
-          //   mock: conversation?.mock,
-          // }));
+          
         }
       } else {
         toast.error("User is not exists");

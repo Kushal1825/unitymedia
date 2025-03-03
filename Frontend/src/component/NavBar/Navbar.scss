@@ -293,6 +293,7 @@
           &.searchActive {
             display: block;
           }
+          z-index: 999;
           .heading {
             padding: 15px 5px;
             h3 {

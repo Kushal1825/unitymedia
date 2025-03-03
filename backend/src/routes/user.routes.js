@@ -1,5 +1,5 @@
 import express from "express";
-import { addCloseFriend, BlockedUser, changeUserPassword, closeFriendList, forgetPassword, getCurrentUser, getUserProfile, loginUser, logoutUser, removeCloseFriend, ResetPassword, searchUser, signupUser, suggestUsers, unblockUser, updatePrivacySetting, updateUserAvtar,updateUserInfo, userBlockList, verifyResetToken, verifyUser } from "../controller/user.controller.js";
+import { addCloseFriend, BlockedUser, changeUserPassword, closeFriendList, forgetPassword, getCurrentUser, getUserProfile, loginUser, logoutUser, removeCloseFriend, ResetPassword, searchUser, signupUser, suggestUsers, unblockUser, updateNotificationSetting, updatePrivacySetting, updateUserAvtar,updateUserInfo, userBlockList, verifyResetToken, verifyUser } from "../controller/user.controller.js";
 import { verifyJWT } from "../middleware/auth.middleware.js";
 import { upload } from "../middleware/multer.middleware.js";
 
@@ -25,6 +25,7 @@ router.patch('/unblock/:userId',verifyJWT,unblockUser);
 router.get('/block/list',verifyJWT,userBlockList);
 router.patch('/closeFriend/add/:userId',verifyJWT,addCloseFriend);
 router.patch("/closeFriend/remove/:userId",verifyJWT,removeCloseFriend);
-router.get("/list/closeFriend",verifyJWT,closeFriendList)
+router.get("/list/closeFriend",verifyJWT,closeFriendList);
+router.put("/notification-settings",verifyJWT,updateNotificationSetting);
 
 export default router;

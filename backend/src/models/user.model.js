@@ -67,13 +67,13 @@ const userSchema = new mongoose.Schema(
     notificationSettings:{
       like:{
         type:String,
-        enum:['all',"following","off"],
-        default:"following"
+        enum:['all',"off"],
+        default:"all"
       },
       comment: {
         type: String,
-        enum: ['all', 'following', 'off'], // Define allowed values
-        default: 'following'
+        enum: ['all', 'off'], // Define allowed values
+        default: 'all'
       },
       follow: {
         type: String,

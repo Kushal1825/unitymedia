@@ -87,11 +87,13 @@ const toggleFollow = asyncHandler(async (req, res) => {
         following_id: verifyUser._id,
       });
 
-      const notification = await Notification.create({
-        user_id: verifyUser._id,
-        sender_id: req.user._id,
-        notification_type: "follow",
-      });
+      if(verifyUser.notificationSettings.follow==="all"){
+              const notification = await Notification.create({
+                user_id: verifyUser._id,
+                sender_id: req.user._id,
+                notification_type: "follow",
+              });
+      }
 
       return res
         .status(200)

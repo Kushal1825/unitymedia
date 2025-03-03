@@ -44,7 +44,28 @@ const ProfileEdit = () => {
       console.log(error);
       
     }
-  }
+  };
+
+  const handleChange = async (type, value) => {
+    try {
+      setLoading(true);
+      const res = await axios.put(
+        `${API_URL}/api/user/notification-settings`,
+        { [type]: value },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      if(res.data.success){
+        toast.success("Update Successfully");
+        await fetchProfile(token);
+      }else{
+        toast.error(res.data.message)
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const fetchBlockedList = async()=>{
     try {
@@ -461,6 +482,7 @@ const ProfileEdit = () => {
                             type="radio"
                             id="likes-everyone"
                             name="like-check"
+                            onClick={()=>handleChange("like","all")}
                             checked={
                               userProfile?.notificationSettings.like == "all"
                                 ? true
@@ -474,6 +496,7 @@ const ProfileEdit = () => {
                             type="radio"
                             id="likes-off"
                             name="like-check"
+                            onClick={()=>handleChange("like","off")}
                             checked={
                               userProfile?.notificationSettings.like == "off"
                                 ? true
@@ -490,6 +513,7 @@ const ProfileEdit = () => {
                           <input
                             type="radio"
                             name="comment-check"
+                            onClick={()=>handleChange("comment","all")}
                             checked={
                               userProfile?.notificationSettings.comment == "all"
                                 ? true
@@ -507,6 +531,7 @@ const ProfileEdit = () => {
                                 ? true
                                 : false
                             }
+                            onClick={()=>handleChange("comment","off")}
                           />
                           <label htmlFor="">off</label>
                         </div>
@@ -522,6 +547,7 @@ const ProfileEdit = () => {
                                 ? true
                                 : false
                             }
+                            onClick={()=>handleChange("follow","all")}
                           />
                           <label htmlFor="">on</label>
                         </div>
@@ -533,6 +559,7 @@ const ProfileEdit = () => {
                                 ? true
                                 : false
                             }
+                            onClick={()=>handleChange("follow","off")}
                           />
                           <label htmlFor="">off</label>
                         </div>

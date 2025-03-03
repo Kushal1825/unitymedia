@@ -329,7 +329,9 @@ function Navbar() {
                     <li>
                       <span
                         onClick={handleLogout}
-                        className={`flex ${dark ? "setdark" : ""} logout`}
+                        className={`flex ${dark ? "setdark" : ""} logout  ${
+                          navbarActive ? "slide" : ""
+                        }`}
                       >
                         <div><MdLogout /> </div> <p>Logout</p>
                       </span>

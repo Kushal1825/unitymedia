@@ -276,6 +276,7 @@
 }
 .Navbar-section .container .row .slide-page .search-panel {
   display: none;
+  z-index: 999;
 }
 .Navbar-section .container .row .slide-page .search-panel.searchActive {
   display: block;

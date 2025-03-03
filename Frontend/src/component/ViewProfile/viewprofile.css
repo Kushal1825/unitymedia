@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -102,7 +102,7 @@
 }
 
 .viewprofile-section {
-  width: 80%;
+  width: 85%;
   padding-top: 15px;
 }
 .viewprofile-section.setdark {
@@ -324,12 +324,16 @@
   padding: 10px 0px;
 }
 .viewprofile-section .container .row .content .intro .content .box .content .name button {
-  background-color: #dcf0ff;
+  background-color: #ececec;
+  font-weight: 700;
+  color: #0396ff;
   padding: 7px 0px;
-  width: 100px;
+  width: 200px;
   border-radius: 5px;
-  color: #50b5ff;
   font-size: 18px;
+}
+.viewprofile-section .container .row .content .intro .content .box .content .name button.dark-mode {
+  background-color: rgba(55, 55, 55, 0.4470588235);
 }
 .viewprofile-section .container .row .content .intro .content .box .content .account-status p {
   padding: 5px 0px;

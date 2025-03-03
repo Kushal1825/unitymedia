@@ -7,7 +7,7 @@ const PrivateRoute = () => {
   const [isLogin, setIsLogin] = useState(false); 
   const navigate = useNavigate();
   const location=useLocation();
-  // const { fetchProfile } = useContext(ApiContext);
+  const { token } = useContext(ApiContext);
 
   const getCookie = (name) => {
     const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));

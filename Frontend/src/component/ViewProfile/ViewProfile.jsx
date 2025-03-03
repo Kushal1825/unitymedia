@@ -150,92 +150,6 @@ const ViewProfile = () => {
   const handlestoryclose = () => {
     setstoryupload(false);
   };
-  const users = [
-    {
-      id: 1,
-      name: "Sonu",
-      img: "../../../images/profile1.jpg",
-      time: "03:45 PM",
-      relation: "Close Friend",
-    },
-    {
-      id: 2,
-      name: "Dimpy",
-      img: "../../../images/profile2.jpg",
-      time: "03:45 PM",
-      relation: "Friend",
-    },
-    {
-      id: 3,
-      name: "Nisha",
-      img: "../../../images/profile3.jpg",
-      time: "03:45 PM",
-      relation: "Close Friend",
-    },
-    {
-      id: 4,
-      name: "Krunal",
-      img: "../../../images/profile4.jpg",
-      time: "03:45 PM",
-      relation: "Friend",
-    },
-    {
-      id: 5,
-      name: "Kushal",
-      img: "../../../images/profile5.jpg",
-      time: "03:45 PM",
-      relation: "Close Friend",
-    },
-    {
-      id: 6,
-      name: "Aakash",
-      img: "../../../images/profile6.jpg",
-      time: "03:45 PM",
-      relation: "Close Friend",
-    },
-    {
-      id: 7,
-      name: "Rony",
-      img: "../../../images/profile7.jpg",
-      time: "03:45 PM",
-      relation: "Friend",
-    },
-    {
-      id: 8,
-      name: "Krishn",
-      img: "../../../images/profile8.jpg",
-      time: "03:45 PM",
-      relation: "Friend",
-    },
-    {
-      id: 9,
-      name: "Keval",
-      img: "../../../images/profile9.jpg",
-      time: "03:45 PM",
-      relation: "Close Friend",
-    },
-    {
-      id: 10,
-      name: "Om",
-      img: "../../../images/profile10.jpg",
-      time: "03:45 PM",
-      relation: "Friend",
-    },
-    {
-      id: 11,
-      name: "Sonu",
-      img: "../../../images/profile1.jpg",
-      time: "03:45 PM",
-      relation: "Close Friend",
-    },
-    {
-      id: 12,
-      name: "Dimpy",
-      img: "../../../images/profile2.jpg",
-      time: "03:45 PM",
-      relation: "Friend",
-    },
-  ];
 
 
 
@@ -327,7 +241,7 @@ const ViewProfile = () => {
                         </h3>
                         <h4>{profileData?.fullName}</h4>
 
-                        <button onClick={followHandler}>
+                        <button onClick={followHandler} className={`${dark?"dark-mode":""}`}>
                           {profileData.isFollow?"Following":profileData.hasFollowReqest?"Requested":"Follow"}
                         </button>
                       </div>
@@ -346,27 +260,39 @@ const ViewProfile = () => {
                           posts
                         </NavLink>
                       </li>
-                      <li onClick={getFollowers}>
+                      <li onClick={()=>{
+                        if((profileData?.is_private && profileData?.isFollow) || profileData?.is_private===false){
+                          getFollowers();
+                        }
+                        }}>
                         <span>{profileData?.followingCount}</span>
                         <NavLink
                           className={` ${dark ? "setdark" : ""}`}
                           onClick={() => {
-                            settitle("Following");
-                            setbtntxt("Following");
-                            setstoryupload(true);
+                            if((profileData?.is_private && profileData?.isFollow) || profileData?.is_private===false){
+                              settitle("Following");
+                              setbtntxt("Following");
+                              setstoryupload(true);
+                            }
                           }}
                         >
                           following
                         </NavLink>
                       </li>
-                      <li onClick={getFollowings}>
+                      <li onClick={()=>{
+                        if((profileData?.is_private && profileData?.isFollow) || profileData?.is_private===false){
+                          getFollowings()
+                        }
+                        }}>
                         <span>{profileData?.followerCount}</span>
                         <NavLink
                           className={` ${dark ? "setdark" : ""}`}
                           onClick={() => {
-                            settitle("Follower");
-                            setbtntxt("remove");
-                            setstoryupload(true);
+                            if((profileData?.is_private && profileData?.isFollow) || profileData?.is_private===false){
+                              settitle("Follower");
+                              setbtntxt("remove");
+                              setstoryupload(true);
+                            }
                           }}
                         >
                           followers

@@ -5,6 +5,8 @@ import { useDarkMode } from "../DarkModeContext/DarkModeContext.jsx";
 import Notification from "./Notification.jsx";
 import axios from "axios";
 import ApiContext from "../../utils/ApiContext.jsx";
+import { MdLogout } from "react-icons/md";
+import toast from "react-hot-toast";
 // import { ProfileProvider, useProfile } from "../../utils/ProfileContext.jsx";
 function Navbar() {
   // dark mode code start
@@ -50,6 +52,26 @@ function Navbar() {
       
     } catch (error) {
       console.log(error);
+      
+    }
+  };
+
+  const handleLogout = async()=>{
+    try {
+      const response = await axios.post(`${API_URL}/api/user/logout`,{},{
+        headers:{
+          Authorization:`Bearer ${token}`
+        },
+        withCredentials:true,
+      });
+
+      if(response.data.success){
+        toast.success("Logout successfully");
+        navigate("/login");
+      }else{
+        toast.error(response.data.message)
+      }
+    } catch (error) {
       
     }
   }
@@ -99,93 +121,7 @@ function Navbar() {
     setSettingPanel(false);
     setNotification(false);
   };
-  // Setting page code end
-  const users = [
-    // {
-    //   id: 1,
-    //   name: "Sonu",
-    //   img: "../../../images/profile1.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Close Friend",
-    // },
-    // {
-    //   id: 2,
-    //   name: "Dimpy",
-    //   img: "../../../images/profile2.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Friend",
-    // },
-    // {
-    //   id: 3,
-    //   name: "Nisha",
-    //   img: "../../../images/profile3.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Close Friend",
-    // },
-    // {
-    //   id: 4,
-    //   name: "Krunal",
-    //   img: "../../../images/profile4.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Friend",
-    // },
-    // {
-    //   id: 5,
-    //   name: "Kushal",
-    //   img: "../../../images/profile5.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Close Friend",
-    // },
-    // {
-    //   id: 6,
-    //   name: "Aakash",
-    //   img: "../../../images/profile6.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Close Friend",
-    // },
-    // {
-    //   id: 7,
-    //   name: "Rony",
-    //   img: "../../../images/profile7.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Friend",
-    // },
-    // {
-    //   id: 8,
-    //   name: "Krishn",
-    //   img: "../../../images/profile8.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Friend",
-    // },
-    // {
-    //   id: 9,
-    //   name: "Keval",
-    //   img: "../../../images/profile9.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Close Friend",
-    // },
-    // {
-    //   id: 10,
-    //   name: "Om",
-    //   img: "../../../images/profile10.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Friend",
-    // },
-    // {
-    //   id: 11,
-    //   name: "Sonu",
-    //   img: "../../../images/profile1.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Close Friend",
-    // },
-    // {
-    //   id: 12,
-    //   name: "Dimpy",
-    //   img: "../../../images/profile2.jpg",
-    //   time: "03:45 PM",
-    //   relation: "Friend",
-    // },
-  ];
+
   return (
     <>
       <section
@@ -263,11 +199,7 @@ function Navbar() {
                               {/* <span>{user.relation}</span> */}
                             </div>
 
-                            {/* <div className="btn flex">
-                              <button>
-                                <i className="fa-solid fa-xmark"></i>
-                              </button>
-                            </div> */}
+                           
                           </div>
                         </div>
                       </li>
@@ -287,15 +219,7 @@ function Navbar() {
                     navbarActive ? "slide" : ""
                   }`}
                 >
-                  {/* <div className={`btn ${navbarActive ? "slide" : ""}`}>
-                      <button className={`${dark ? "setdark" : ""} ${
-                          navbarActive ? "slide" : ""
-                        }`}
-                        onClick={handleNavbarToggle}
-                      ><i className={`fa-solid fa-${text}`}></i>
-                      </button>
-                    
-                    </div> */}
+                  
                   <ul>
                     <li>
                       <NavLink
@@ -388,7 +312,7 @@ function Navbar() {
                         }
                       >
                         <i className="fa-solid fa-gear"></i>
-                        <p>Profile Setting</p>
+                        <p>Setting</p>
                       </NavLink>
                     </li>
 
@@ -400,6 +324,14 @@ function Navbar() {
                         }`}
                       >
                         <i className="fa-solid fa-bell"></i> <p>Notification</p>
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        onClick={handleLogout}
+                        className={`flex ${dark ? "setdark" : ""} logout`}
+                      >
+                        <div><MdLogout /> </div> <p>Logout</p>
                       </span>
                     </li>
                   </ul>

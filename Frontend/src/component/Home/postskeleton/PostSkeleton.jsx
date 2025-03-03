@@ -1,9 +1,12 @@
 import React from "react";
 import "./PostSkeleton.css";
+import { useDarkMode } from "../../DarkModeContext/DarkModeContext.jsx";
 
 const PostSkeleton = () => {
+  const { dark } = useDarkMode();
+
   return (
-    <div className="post-skeleton">
+    <div className={`post-skeleton ${dark ? "dark" : ""}`}>
       <div className="skeleton header">
         <div className="skeleton avatar"></div>
         <div className="skeleton name"></div>

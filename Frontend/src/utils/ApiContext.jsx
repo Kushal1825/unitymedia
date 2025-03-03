@@ -15,6 +15,8 @@ export const ApiProvider = ({ children }) => {
 
   useEffect(() => {
     const refreshToken = getCookie("refreshToken");
+    // console.log(refreshToken);
+    
 
     if (refreshToken && refreshToken !== token) {
       setToken(refreshToken);

@@ -25,6 +25,7 @@ const StoryUpload = () => {
       setDragActive(false);
     }
   };
+  // const {dark}=useDarkMode();
 
   const handleDrop = (e) => {
     e.preventDefault();
@@ -86,7 +87,9 @@ const StoryUpload = () => {
   };
 
   return (
-    <div className="story-upload-container">
+    <section className={`story-upload ${dark?"dark":""}`}>
+    
+    <div className={`story-upload-container ${dark?"dark":""}`}>
       <h2>Upload Story</h2>
       
       <div className="story-type-toggle">
@@ -141,6 +144,7 @@ const StoryUpload = () => {
         )
       }
     </div>
+    </section>
   );
 };
 

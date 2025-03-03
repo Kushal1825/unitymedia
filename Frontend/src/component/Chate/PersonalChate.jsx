@@ -122,7 +122,7 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
 
   return (
     <>
-      <div className="chate">
+      <div className={`chate ${dark?"dark":""}`}>
         <div className="content">
           <div className={`user-info flex ${dark ? "setdark" : ""}`}>
             <div className="profile flex">

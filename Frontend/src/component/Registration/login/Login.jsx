@@ -1,4 +1,4 @@
-import react, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useDarkMode } from "../../DarkModeContext/DarkModeContext";
 import "./login.css";
@@ -17,7 +17,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const {API_URL,setToken,token,fetchProfile} = useContext(ApiContext)
+  const {API_URL,setToken} = useContext(ApiContext)
 
   const saveTokenToCookie = async (token) => {
     const cookieName = "refreshToken";
@@ -38,12 +38,12 @@ const Login = () => {
     setIsLoading(true);
     // console.log(API_URL);
     try {
-      const response = await axios.post(`http://localhost:5000/api/user/login`,logindata);
+      const response = await axios.post(`${API_URL}/api/user/login`,logindata);
       if(response.data.success){
         toast.success(response.data.message)
         await saveTokenToCookie(response.data.data.refreshToken);
         setToken(response?.data?.data?.refreshToken)
-        // await fetchProfile(response?.data.data.refreshToken);
+        
         setIsLoading(false);
         navigate("/");
       }

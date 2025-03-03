@@ -45,7 +45,7 @@ const StorySeen = () => {
             return prev + 1;
           });
         }
-        }, 50);
+        }, 80);
         return () => clearInterval(timer);
 
     }

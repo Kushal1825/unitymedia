@@ -3,7 +3,8 @@
   padding: 0px;
   box-sizing: border-box; 
   list-style: none;
-  font-family: "Familjen Grotesk", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif ;
+  transition: background-color 0.2s ease;
 }
 body{
   overflow-x: hidden;
@@ -12,7 +13,7 @@ body{
   /* scroll-behavior: smooth; */
 }
 .container{
-  max-width: 1400px;
+  /* max-width: 1400px; */
   margin: 0px auto;
 }
 .flex{

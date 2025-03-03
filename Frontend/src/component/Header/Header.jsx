@@ -3,6 +3,8 @@ import "./header.css";
 import { NavLink } from "react-router-dom";
 import { useDarkMode } from "../DarkModeContext/DarkModeContext.jsx";
 // import { useProfile } from "../../utils/ProfileContext.jsx";
+import { MdOutlineDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
 import ApiContext from "../../utils/ApiContext.jsx";
 const Header = () => {
   const {
@@ -14,10 +16,16 @@ const Header = () => {
     navbarActive,
   } = useDarkMode();
 
-  const handleModeChange = (e) => {
-    if (e.target.checked) {
+
+  const handleModeChange = (val) => {
+
+    if (val) {
+      console.log(val);
+      
       enableDarkMode(); // Enable dark mode when the checkbox is checked
     } else {
+      console.log(val);
+      
       disableDarkMode(); // Disable dark mode when the checkbox is unchecked
     }
   };
@@ -43,15 +51,14 @@ const Header = () => {
             <div className="user">
               <div className="content flex">
                 <div className="dark-mode flex">
-                  <p>{dark ? "Dark Theme" : "Light Theme"}</p>
-                  <label className="switch">
-                    <input
-                      type="checkbox"
-                      checked={dark} // Checked state is based on `dark`
-                      onChange={handleModeChange} // Handle the mode change
-                    />
-                    <span className="slider round"></span>
-                  </label>
+                  
+                  {dark?<button className={`theme-changer ${dark?"dark":""}`} onClick={()=>handleModeChange(false)}>
+                    <CiLight />
+                    </button>:
+                    <button className={`theme-changer`} onClick={()=>handleModeChange(true)}>
+                      <MdOutlineDarkMode />
+                    </button>
+                    }
                 </div>
                 <div className="image-box">
                   <NavLink to={`/profile`}>

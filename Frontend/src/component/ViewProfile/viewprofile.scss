@@ -1,50 +1,46 @@
 $text-primary: #262626;
 $text-secondary: #8e8e8e;
-$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
+$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+  Arial, sans-serif;
 
 $button-blue: #0095f6;
 
 .loader-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 999;
-  
-    .spinner {
-      width: 50px;
-      height: 50px;
-      border: 5px solid transparent;
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-  
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid transparent;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
   }
 
-  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
 
 .private-account-container {
   text-align: center;
   max-width: 350px;
   padding: 40px 20px;
   margin: 0 auto;
-
-  
 
   .lock-icon {
     font-size: 52px;
@@ -124,21 +120,21 @@ $button-blue: #0095f6;
   }
 }
 
-.viewprofile-section{
-    width: 80%;
-    padding-top: 15px;
-    &.setdark{
-        background-color: black;
-    }
-    &.compromise{
-        width: 95%;
-        }
-.popup-box{
+.viewprofile-section {
+  width: 85%;
+  padding-top: 15px;
+  &.setdark {
+    background-color: black;
+  }
+  &.compromise {
+    width: 95%;
+  }
+  .popup-box {
     padding: 50px 0px;
-    &.active{       
-       display: flex;
+    &.active {
+      display: flex;
     }
-   display: none;
+    display: none;
     background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 0px;
@@ -148,358 +144,356 @@ $button-blue: #0095f6;
     align-items: center;
     justify-content: center;
     z-index: 3;
-    &.setdark{
-        background-color: rgba(255, 255, 255, 0.2);
+    &.setdark {
+      background-color: rgba(255, 255, 255, 0.2);
     }
-    .content{
-        width: 450px;     
+    .content {
+      width: 450px;
+      background-color: white;
+      border-radius: 15px;
+      z-index: 2;
+      position: relative;
+
+      justify-content: center;
+      &.setdark {
+        background-color: black;
+      }
+      .heading {
+        width: 100%;
+        padding: 15px;
         background-color: white;
-        border-radius: 15px;
-        z-index: 2;
-        position: relative;
-       
-        justify-content: center;
-        &.setdark{
-            background-color: black;
+        border-radius: 10px 10px 0px 0px;
+        border-bottom: 1px solid #6b6767;
+        text-align: center;
+        justify-content: space-between;
+        &.setdark {
+          background-color: rgba(255, 255, 255, 0.1);
+          color: #c4c7c9;
         }
-        .heading{
+
+        h4 {
+          width: 90%;
+        }
+        .btn {
+          width: 10%;
+          button {
             width: 100%;
-            padding: 15px;
-            background-color: white;
-            border-radius: 10px 10px 0px 0px;
-            border-bottom: 1px solid #6b6767;
-            text-align: center;
-            justify-content: space-between;
-            &.setdark{
-                background-color: rgba(255, 255, 255, 0.1);
-                color: #c4c7c9;
+            i {
+              font-size: 25px;
+              color: #6b6767;
             }
-        
-            h4{
-                width: 90%;
-            }
-            .btn{
-width: 10%;
-button{
-    width: 100%;
-    i{
-        font-size: 25px;
-        color: #6b6767;
-    }
-}
-            }
-           }       
-          
-                form{
-                    padding: 15px 0px;
-                    width: 95%;
-                    .search-box{
-                        position: relative;
-                        
-input{
-border-radius: 5px;
-padding: 10px;
-width: 100%;
-transition: all 0.3s;
-&.setdark{
-   background-color: rgba(255, 255, 255, 0.1);
-color: white;
-}
-}
-i{
-    font-size: 22px;
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    transform: translate(-50%,-50%);
-    color: #6b6767;
-    
-}
-                    }
-                }
-                                                                                     
-         .data{           
-                width: 100%;
-                border-radius:0px 0px 5px 5px;
-                background-color:white;                 
-                height: 70vh;   
-                overflow-y: auto; 
-                overflow-x: hidden;
-                scrollbar-width: none; 
-                scroll-behavior: smooth;
-                padding:0px 10px; 
-                &.setdark{
-                    background-color:black;
-                    color: white;
-                }
-              
-                   ul{
-                    li{
-                        margin: 5px 0px;
-                        transition: all 0.3s;
-                    
-                        &.setdark{
-                            background-color: rgba(255, 255, 255, 0.1); // Adapt background for the hover
-                            color: white;
-                         }
-                        padding: 5px;
-                        border-radius: 5px;
-                        .person{
-                            align-items: center;
-                            width: 100%;
-                           
-                            .image-box{
-                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                                width: 60px;
-                                height: 60px;
-                                border-radius: 50%;
-                                overflow: hidden;
-                            }
-                            .detail{
-                                padding-left: 10px;
-                                width: 55%;
-                                h4{
-                                overflow: hidden;
-                                }
-                               }
-                            .btn{
-                                width: 25%;
-                                button{
-                                    color: white;
-                                    width: 100%;
-                                    background-color:rgba(0, 0, 0, 0.6);
-                                    border: none;
-                                    font-size: 19px;
-                                    padding: 5px;
-                                    border-radius: 5px;
-                                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-                                    &:hover {
-                                        background-color:rgba(0, 0, 0, 0.8);
-                                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                                      }
-                                }
-                            }
-                        }
-                    }
-                   }
-            }
-    }
-}
-    .container{
-        height: 90vh;
-        overflow-y: auto; 
-        overflow-x: hidden;
-        scrollbar-width:none; 
-        scroll-behavior: smooth;
-        .row{          
-            .content{                             
-                height: 100%;                        
-                justify-content: center;
-                &.setdark{
-                    background-color: black;
-                }
-                .intro{               
-                    width: 90%;
-                    background-color: white;                 
-                    border-radius: 5px;
-                    padding-bottom: 15px;
-                    &.setdark{
-                    background-color: black;
-                    color: white;
-                    }
-                    .content{
-                        background-color:transparent; ;
-                        width: 100%;
-                        position: relative;
-                  
-                        .box{
-                            align-items: center;
-                            justify-content: center;
-                            width: 100%;
-                             padding-top:15px ;                                                 
-                            .content{
-                                padding: 30px;
-                            
-                                align-items: center;
-                                text-align: center;
-                                width: 100%;
-                                .image-box{                                 
-                                    width: 150px;
-                                    height: 150px;
-                                    border-radius:50%;
-                                    overflow: hidden;
-                               
-                                   form{
-                                        position: absolute;
-                                        top: 10px;
-                                        right: 10px;
-                                        z-index: 1;
-                                        label{
-                                            i{
-                                                font-size: 20px;
-                                                background-color: transparent;
-                                                color: white;
-
-                                            }
-                                        }
-                                    }
-                                  
-                                }
-                                .name{
-                                  width: 30%;
-                                  padding: 15px;
-                                
-                                    h3{
-                                      i{
-                                              padding-left: 5px;
-                                              border-radius: 5px;
-                                              font-size: 19px;                                      
-                                              color: #50b5ff;
-                                          }
-                                      }
-                                      h4{
-                                        padding: 10px 0px;
-                                     
-                                      }
-
-                                      button{
-                                        background-color: #dcf0ff;
-                                        padding: 7px 0px;
-                                        width: 100px;
-                                        border-radius: 5px;
-                                        color: #50b5ff;  
-                                        font-size: 18px;
-                                      }
-                                    
-                                }
-                                .account-status{
-                                   
-                                    p{
-                                        padding: 5px 0px;
-                                        font-size: 22px;
-                                        
-            i{
-                text-align: center;
-                font-size: 22px;
-                padding: 10px;
-            }
-                                    }
-                                   }
-                                p{
-                                    width: 100%;
-                                    padding: 15px;
-                                   
-                                    font-size: 16px;
-                                }
-                               
-                            }
-                            ul{
-                                width: 100%;
-                                padding-bottom: 15px;
-                                
-                               
-                         li{
-                            text-align: center;
-                             border-right: 2px solid #c4c7c9;
-                             font-size: 18px;
-                             width: 33.33%;
-                             a{
-                                 padding-left: 5px;
-                                 color:  black;
-                                 &.setdark{
-                                   
-                                    color: white;
-                                    }
-                             }
-                             &:nth-child(3){
-                                 border: none;
-                             }
-                         }
-                        }
-                    
-                        }
-                    }
-                }
-               
-                .details{
-                    width: 90%;
-                    height: 100%;
-                    .heading{
-                        background-color: white;
-                        padding: 15px 0px;
-                        &.setdark{
-                            color: white;
-                            background-color: black;
-                        }
-                        h4{
-                            font-size: 20px;
-                            text-align: center;
-                        }
-                       }
-                    .content{
-                        .blank-post{
-                            justify-content: center;
-                            align-items: center;
-                            padding: 50px;
-                            ul{
-                                width: 50%;
-                             
-                                li{
-                                    border-radius: 5px;
-                                    width: 33.33%;
-                                    border: 2px solid #c4c7c9;
-                                       height: 100px;
-                                      align-items: center;  
-                                    justify-content: center;
-                                    a{
-                                       height: max-content;
-                                        text-align: center;
-                                       
-                                        background-color: #dcf0ff;
-                                        padding: 7px 0px;
-                                        width: 100px;
-                                        border-radius: 5px;
-                                        color: #50b5ff;  
-                                        font-size: 18px;
-                                    }
-                                }
-                            }
-                        }
-                        .post{
-                           transition: all 0.3s;
-                            height: 100%;
-                           .content{
-                                background-color: white;
-                                &.setdark{
-                                    color: white;
-                                    background-color: black;
-                                }
-                                ul{
-                                     padding: 30px;
-                                     width: 100%;
-                                 
-                                    li{
-                                    width: calc(100%/3);
-                                    height: 300px;
-                                    position: relative;
-                                    padding: 5px;
-                                
-                                        .image-box{
-                                        width: 100%;
-                                       height: 100%;
-transition: all 0.3s;
-border-radius: 5px;
-overflow: hidden;
-                                        }
-                                       
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            
+          }
         }
+      }
+
+      form {
+        padding: 15px 0px;
+        width: 95%;
+        .search-box {
+          position: relative;
+
+          input {
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            transition: all 0.3s;
+            &.setdark {
+              background-color: rgba(255, 255, 255, 0.1);
+              color: white;
+            }
+          }
+          i {
+            font-size: 22px;
+            position: absolute;
+            top: 50%;
+            right: 0%;
+            transform: translate(-50%, -50%);
+            color: #6b6767;
+          }
+        }
+      }
+
+      .data {
+        width: 100%;
+        border-radius: 0px 0px 5px 5px;
+        background-color: white;
+        height: 70vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        padding: 0px 10px;
+        &.setdark {
+          background-color: black;
+          color: white;
+        }
+
+        ul {
+          li {
+            margin: 5px 0px;
+            transition: all 0.3s;
+
+            &.setdark {
+              background-color: rgba(
+                255,
+                255,
+                255,
+                0.1
+              ); // Adapt background for the hover
+              color: white;
+            }
+            padding: 5px;
+            border-radius: 5px;
+            .person {
+              align-items: center;
+              width: 100%;
+
+              .image-box {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                overflow: hidden;
+              }
+              .detail {
+                padding-left: 10px;
+                width: 55%;
+                h4 {
+                  overflow: hidden;
+                }
+              }
+              .btn {
+                width: 25%;
+                button {
+                  color: white;
+                  width: 100%;
+                  background-color: rgba(0, 0, 0, 0.6);
+                  border: none;
+                  font-size: 19px;
+                  padding: 5px;
+                  border-radius: 5px;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                  &:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
+  }
+  .container {
+    height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    .row {
+      .content {
+        height: 100%;
+        justify-content: center;
+        &.setdark {
+          background-color: black;
+        }
+        .intro {
+          width: 90%;
+          background-color: white;
+          border-radius: 5px;
+          padding-bottom: 15px;
+          &.setdark {
+            background-color: black;
+            color: white;
+          }
+          .content {
+            background-color: transparent;
+            width: 100%;
+            position: relative;
+
+            .box {
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              padding-top: 15px;
+              .content {
+                padding: 30px;
+
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                .image-box {
+                  width: 150px;
+                  height: 150px;
+                  border-radius: 50%;
+                  overflow: hidden;
+
+                  form {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 1;
+                    label {
+                      i {
+                        font-size: 20px;
+                        background-color: transparent;
+                        color: white;
+                      }
+                    }
+                  }
+                }
+                .name {
+                  width: 30%;
+                  padding: 15px;
+
+                  h3 {
+                    i {
+                      padding-left: 5px;
+                      border-radius: 5px;
+                      font-size: 19px;
+                      color: #50b5ff;
+                    }
+                  }
+                  h4 {
+                    padding: 10px 0px;
+                  }
+
+                  button {
+                    &.dark-mode{
+
+                        background-color: #37373772;
+                    }
+                    background-color: #ececec;
+                    font-weight: 700;
+                    color: #0396ff;
+                    padding: 7px 0px;
+                    width: 200px;
+                    border-radius: 5px;
+                    font-size: 18px;
+                  }
+                }
+                .account-status {
+                  p {
+                    padding: 5px 0px;
+                    font-size: 22px;
+
+                    i {
+                      text-align: center;
+                      font-size: 22px;
+                      padding: 10px;
+                    }
+                  }
+                }
+                p {
+                  width: 100%;
+                  padding: 15px;
+
+                  font-size: 16px;
+                }
+              }
+              ul {
+                width: 100%;
+                padding-bottom: 15px;
+
+                li {
+                  text-align: center;
+                  border-right: 2px solid #c4c7c9;
+                  font-size: 18px;
+                  width: 33.33%;
+                  a {
+                    padding-left: 5px;
+                    color: black;
+                    &.setdark {
+                      color: white;
+                    }
+                  }
+                  &:nth-child(3) {
+                    border: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .details {
+          width: 90%;
+          height: 100%;
+          .heading {
+            background-color: white;
+            padding: 15px 0px;
+            &.setdark {
+              color: white;
+              background-color: black;
+            }
+            h4 {
+              font-size: 20px;
+              text-align: center;
+            }
+          }
+          .content {
+            .blank-post {
+              justify-content: center;
+              align-items: center;
+              padding: 50px;
+              ul {
+                width: 50%;
+
+                li {
+                  border-radius: 5px;
+                  width: 33.33%;
+                  border: 2px solid #c4c7c9;
+                  height: 100px;
+                  align-items: center;
+                  justify-content: center;
+                  a {
+                    height: max-content;
+                    text-align: center;
+
+                    background-color: #dcf0ff;
+                    padding: 7px 0px;
+                    width: 100px;
+                    border-radius: 5px;
+                    color: #50b5ff;
+                    font-size: 18px;
+                  }
+                }
+              }
+            }
+            .post {
+              transition: all 0.3s;
+              height: 100%;
+              .content {
+                background-color: white;
+                &.setdark {
+                  color: white;
+                  background-color: black;
+                }
+                ul {
+                  padding: 30px;
+                  width: 100%;
+
+                  li {
+                    width: calc(100% / 3);
+                    height: 300px;
+                    position: relative;
+                    padding: 5px;
+
+                    .image-box {
+                      width: 100%;
+                      height: 100%;
+                      transition: all 0.3s;
+                      border-radius: 5px;
+                      overflow: hidden;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -4,12 +4,14 @@ import { FiSend, FiSmile } from "react-icons/fi";
 import "./MessageInput.css";
 import toast from "react-hot-toast";
 import axios from "axios";
-import ApiContext from "../../../utils/ApiContext";
+import ApiContext from "../../../utils/ApiContext.jsx";
+import { useDarkMode } from "../../DarkModeContext/DarkModeContext.jsx";
 
 const MessageInput = ({onMessageSend}) => {
   const [message, setMessage] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const {API_URL,token}= useContext(ApiContext);
+  const {dark}=useDarkMode();
 
   const handleEmojiClick = (emojiData) => {
     setMessage((prev) => prev + emojiData.emoji);
@@ -25,7 +27,7 @@ const MessageInput = ({onMessageSend}) => {
   };
 
   return (
-    <form className="message-input-container" onSubmit={handleSendMessage}>
+    <form className={`message-input-container ${dark?"dark":""}`} onSubmit={handleSendMessage}>
       <div className="emoji-picker">
         <FiSmile onClick={() => setShowEmojiPicker(!showEmojiPicker)} />
         {showEmojiPicker && (
@@ -38,7 +40,9 @@ const MessageInput = ({onMessageSend}) => {
         type="text"
         placeholder="Type a message..."
         value={message}
+        className={`${dark?"dark":""}`}
         onChange={(e) => setMessage(e.target.value)}
+        autoComplete={false}
       />
       <button className="send-button">
         <FiSend />

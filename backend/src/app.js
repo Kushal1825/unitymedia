@@ -5,8 +5,8 @@ import {app,server} from "./socket/socket.js";
 // const app = express()
 
 app.use(cors({
-    origin:"*",
-    credentials:true,
+    origin: "http://localhost:3000",
+  credentials: true
 }))
 
 

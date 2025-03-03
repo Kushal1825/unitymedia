@@ -1,5 +1,5 @@
 .Home-section {
-  width: 80vw;
+  width: 85vw;
   height: 90vh;
   background-color: #f8f9fa;
 }
@@ -87,10 +87,10 @@
   color: white;
 }
 .Home-section .container .row .box .content {
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .Home-section .container .row .box .content .main-contant {
-  width: 50%;
+  width: 550px;
   padding: 15px;
 }
 .Home-section .container .row .box .content .main-contant .story {

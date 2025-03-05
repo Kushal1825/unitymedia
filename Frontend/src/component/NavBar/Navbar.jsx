@@ -58,6 +58,7 @@ function Navbar() {
 
   const handleLogout = async()=>{
     try {
+      navigate("/login");
       const response = await axios.post(`${API_URL}/api/user/logout`,{},{
         headers:{
           Authorization:`Bearer ${token}`
@@ -67,7 +68,6 @@ function Navbar() {
 
       if(response.data.success){
         toast.success("Logout successfully");
-        navigate("/login");
       }else{
         toast.error(response.data.message)
       }

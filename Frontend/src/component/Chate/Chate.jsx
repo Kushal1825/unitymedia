@@ -53,7 +53,7 @@ const Chate = () => {
       });
 
       const searchUser = res?.data?.data[0];
-      console.log(searchUser);
+      // console.log(searchUser);
 
       if (res.data.success) {
         const messagingYourSelf = searchUser?._id == profile?._id;
@@ -106,8 +106,29 @@ const Chate = () => {
       setSearchText("");
     }
   };
-  // console.log(selectedConversation);
 
+useEffect(()=>{
+  socket?.on("messagesSeen",({conversationId})=>{
+    setConversation(prev=>{
+      const updateConversation = prev.map((conversation)=>{
+
+        if(conversation._id === conversationId){
+          // console.log("Hellw2");
+          
+          return{
+            ...conversation,
+            lastMessage:{
+              ...conversation.lastMessage,
+              seen:true
+            }
+          };
+        }
+        return conversation;
+      })
+      return updateConversation;
+    })
+  })
+},[socket,setConversation])
   useEffect(() => {
     getConversation();
     setNavbarActive(true);

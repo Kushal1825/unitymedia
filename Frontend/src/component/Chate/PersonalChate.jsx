@@ -20,9 +20,11 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
 
   useEffect(()=>{
     socket.on('newMessage',(message)=>{
-      // console.log(message);
       
-      setMessages((prevMessages)=>[...prevMessages,message]);
+      if(message.sender===selectedConversation.userId){
+        console.log(message.conversationId,selectedConversation.id);
+        setMessages((prevMessages)=>[...prevMessages,message]);
+      }      
       setConversation(prevConvs =>{
         const updatedConversations = prevConvs.map(conversation=>{
 
@@ -45,9 +47,39 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
 
     return () => socket.off('newMessage');
   },[socket]);
+
+  useEffect(()=>{
+    const lastMessageIsfromOtherUser=messages.length && messages[messages.length-1].sender._id!==currentUser._id
+    if(lastMessageIsfromOtherUser){
+      socket.emit("markMessagesAsSeen",{
+        conversationId:selectedConversation.id,
+        userId:selectedConversation.userId
+      })
+    }
+    
+    socket.on('messagesSeen',({conversationId})=>{
+
+      
+      if(selectedConversation.id === conversationId){
+        setMessages(prev=> {
+          const updatedMessages = prev.map(message=>{
+            if(!message.seen){
+              return {
+                ...message,
+                seen:true,
+              }
+            }
+            return message
+          })
+          return updatedMessages;
+        })
+      }
+    })
+  },[socket,messages,selectedConversation])
+
   useEffect(()=>{
     messageEndRef.current?.scrollIntoView({ behavior: "smooth",block:"end" });
-  },[messages]);
+  },[socket,messages]);
 
 
   const sendMessageHandler = async (message) => {

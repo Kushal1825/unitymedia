@@ -19,9 +19,13 @@ const MessageInput = ({onMessageSend}) => {
 
   const handleSendMessage = async(e) => {
     e.preventDefault();
+    
+    
     if (message.trim()) {
       // console.log(message);
       await onMessageSend(message);
+      // console.log(message);
+      
       setMessage("");
     }else return;
   };

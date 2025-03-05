@@ -32,3 +32,7 @@ app.use("/api/story",storyRouter)
 app.use("/api/notification",NotificationRouter)
 
 app.use('/api/message',messageRouter)
+
+app.use("*",async(req,res)=>{
+    res.end("Hello")
+})

@@ -59,6 +59,7 @@ function Navbar() {
   const handleLogout = async()=>{
     try {
       navigate("/login");
+      //Finish
       const response = await axios.post(`${API_URL}/api/user/logout`,{},{
         headers:{
           Authorization:`Bearer ${token}`

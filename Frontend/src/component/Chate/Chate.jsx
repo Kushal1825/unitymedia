@@ -56,7 +56,7 @@ const Chate = () => {
       // console.log(searchUser);
 
       if (res.data.success) {
-        const messagingYourSelf = searchUser?._id == profile?._id;
+        const messagingYourSelf = searchUser?._id === profile?._id;
         if (messagingYourSelf) {
           toast.error("You cannot message your self");
         }
@@ -213,7 +213,7 @@ useEffect(()=>{
                             </li>
                             <li>
                               <p>
-                                {profile?._id ==
+                                {profile?._id ===
                                 conversation?.lastMessage?.sender ? (
                                   <div className={`${conversation?.lastMessage?.seen ? "seen":""}`}><IoCheckmarkDoneSharp /></div>
                                 ) : (

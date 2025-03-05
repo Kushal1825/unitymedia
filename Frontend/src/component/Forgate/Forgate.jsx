@@ -48,7 +48,7 @@ const Forgate = () => {
     setIsLoading(true);
     try {
       const TokenIsNotEmpty = forgotPasswordData.token.trim() !== "";
-      const verifyTokensize = forgotPasswordData.token.trim().length == 6;
+      const verifyTokensize = forgotPasswordData.token.trim().length === 6;
       console.log(verifyTokensize);
       
       if (TokenIsNotEmpty && verifyTokensize) {

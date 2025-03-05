@@ -72,7 +72,7 @@ const ViewPost = () => {
       // console.log(comment);
 
       if (comment.length > 1) {
-        const response = await axios.post(
+         await axios.post(
           `${API_URL}/api/comment/post/${id}`,
           { content: comment },
           {
@@ -140,7 +140,7 @@ const ViewPost = () => {
 
                 {/* Comments Section */}
                 <div className="comments">
-                  {commentData.length == 0 ? (
+                  {commentData.length === 0 ? (
                     <>No comment Yet</>
                   ) : (
                     commentData.map((comment) => {

@@ -1,4 +1,4 @@
-import react, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./profile.css";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../DarkModeContext/DarkModeContext.jsx";
@@ -111,7 +111,7 @@ const Profile = () => {
     fetchProfile();
   }, []);
 
-  const users = [];
+
   return (
     <>
       <section
@@ -235,7 +235,7 @@ const Profile = () => {
                   <h4>Posts</h4>
                 </div>
                 <div className={`content ${dark ? "setdark" : ""}`}>
-                  {userPost.length != 0 ? (
+                  {userPost.length !== 0 ? (
                     <div className="post">
                       <div className={`content ${dark ? "setdark" : ""}`}>
                         <ul className="flex">

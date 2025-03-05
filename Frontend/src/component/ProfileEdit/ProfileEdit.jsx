@@ -14,7 +14,7 @@ const ProfileEdit = () => {
   const { profile } = useContext(ApiContext);
   const [userProfile, setUserProfile] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const { API_URL, token, fetchProfile } = useContext(ApiContext);
   const [passwordData, setPasswordData] = useState({
     oldPassword: "",
@@ -230,7 +230,7 @@ const ProfileEdit = () => {
     if (!file) return;
 
     setLoading(true);
-    setError(null);
+    // setError(null);
 
     try {
       const formData = new FormData();
@@ -252,7 +252,7 @@ const ProfileEdit = () => {
       }
       toast.success("Profile Picture updated Successfully");
     } catch (err) {
-      setError("Failed to upload profile picture. Please try again.");
+      // setError("Failed to upload profile picture. Please try again.");
       console.error("Upload error:", err);
     } finally {
       setLoading(false);
@@ -315,7 +315,6 @@ const ProfileEdit = () => {
 
   const isActive = (section) => activeSection === section;
 
-  const users = [];
   return (
     <section
       className={`profileedit-section ${dark ? "setdark" : ""} ${
@@ -484,7 +483,7 @@ const ProfileEdit = () => {
                             name="like-check"
                             onClick={()=>handleChange("like","all")}
                             checked={
-                              userProfile?.notificationSettings.like == "all"
+                              userProfile?.notificationSettings.like === "all"
                                 ? true
                                 : false
                             }
@@ -498,7 +497,7 @@ const ProfileEdit = () => {
                             name="like-check"
                             onClick={()=>handleChange("like","off")}
                             checked={
-                              userProfile?.notificationSettings.like == "off"
+                              userProfile?.notificationSettings.like === "off"
                                 ? true
                                 : false
                             }
@@ -515,7 +514,7 @@ const ProfileEdit = () => {
                             name="comment-check"
                             onClick={()=>handleChange("comment","all")}
                             checked={
-                              userProfile?.notificationSettings.comment == "all"
+                              userProfile?.notificationSettings.comment === "all"
                                 ? true
                                 : false
                             }
@@ -527,7 +526,7 @@ const ProfileEdit = () => {
                             type="radio"
                             name="comment-check"
                             checked={
-                              userProfile?.notificationSettings.comment == "off"
+                              userProfile?.notificationSettings.comment === "off"
                                 ? true
                                 : false
                             }
@@ -543,7 +542,7 @@ const ProfileEdit = () => {
                           <input
                             type="radio"
                             checked={
-                              userProfile?.notificationSettings.follow == "all"
+                              userProfile?.notificationSettings.follow === "all"
                                 ? true
                                 : false
                             }
@@ -555,7 +554,7 @@ const ProfileEdit = () => {
                           <input
                             type="radio"
                             checked={
-                              userProfile?.notificationSettings.follow == "off"
+                              userProfile?.notificationSettings.follow === "off"
                                 ? true
                                 : false
                             }

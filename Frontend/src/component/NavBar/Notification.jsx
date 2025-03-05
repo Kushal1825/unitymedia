@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ApiContext from "../../utils/ApiContext";
 import toast from "react-hot-toast";
 
@@ -30,7 +30,7 @@ const Notification = ({ notification,fetchNotification }) => {
    }
   }
 
-  if (notification.notification_type == "comment") {
+  if (notification.notification_type === "comment") {
     return (
       <div className="comment flex">
         <div className="image-box">
@@ -52,7 +52,7 @@ const Notification = ({ notification,fetchNotification }) => {
         </div>
       </div>
     );
-  } else if (notification.notification_type == "like") {
+  } else if (notification.notification_type === "like") {
     return (
       <div className="like flex">
         <div className="image-box">
@@ -76,7 +76,7 @@ const Notification = ({ notification,fetchNotification }) => {
         </div>
       </div>
     );
-  } else if (notification.notification_type == "follow") {
+  } else if (notification.notification_type === "follow") {
     return (
       <div className="follow flex">
         <div className="image-box">

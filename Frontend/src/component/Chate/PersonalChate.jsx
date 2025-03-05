@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
 import { useDarkMode } from "../DarkModeContext/DarkModeContext.jsx";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -28,7 +27,7 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
       setConversation(prevConvs =>{
         const updatedConversations = prevConvs.map(conversation=>{
 
-          if(conversation._id == message.conversationId){
+          if(conversation._id === message.conversationId){
             
             return {
               ...conversation,
@@ -75,7 +74,7 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
         })
       }
     })
-  },[socket,messages,selectedConversation])
+  },[socket,messages,selectedConversation.id])
 
   useEffect(()=>{
     messageEndRef.current?.scrollIntoView({ behavior: "smooth",block:"end" });
@@ -98,7 +97,7 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
         setConversation(prevConvs =>{
           const updatedConversations = prevConvs.map(conversation=>{
 
-            if(conversation._id == selectedConversation.id){
+            if(conversation._id === selectedConversation.id){
               
               return {
                 ...conversation,

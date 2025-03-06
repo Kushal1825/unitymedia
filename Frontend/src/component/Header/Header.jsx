@@ -5,6 +5,10 @@ import { useDarkMode } from "../DarkModeContext/DarkModeContext.jsx";
 // import { useProfile } from "../../utils/ProfileContext.jsx";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
+import { IoIosNotifications } from "react-icons/io";
+import { CiSearch } from "react-icons/ci";
+import { HiMiniChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
+
 import ApiContext from "../../utils/ApiContext.jsx";
 const Header = () => {
   const {
@@ -59,6 +63,15 @@ const Header = () => {
                       <MdOutlineDarkMode />
                     </button>
                     }
+                </div>
+                <div className="minview chat">
+                <HiMiniChatBubbleOvalLeftEllipsis/>
+                </div>
+                <div className="minview search">
+                <IoIosNotifications/>
+                </div>
+                <div className="minview notification">
+                <CiSearch/>
                 </div>
                 <div className="image-box">
                   <NavLink to={`/profile`}>

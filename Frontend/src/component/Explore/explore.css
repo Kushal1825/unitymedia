@@ -38,7 +38,7 @@
 .explore-section .container .row .box .image-box {
   width: calc(33.3333% - 4px);
   height: 315px;
-  margin: 2px;
+  margin: 1px;
 }
 .explore-section .container .row .box .image-box .image {
   height: 100%;
@@ -77,4 +77,17 @@
 }
 .explore-section .container .row .box .image-box.setdark {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 475px) {
+  .explore-section {
+    width: 100%;
+    z-index: -1;
+  }
+  .explore-section .container .row .box {
+    width: 100%;
+  }
+  .explore-section .container .row .box .image-box {
+    height: 150px;
+  }
 }/*# sourceMappingURL=explore.css.map */

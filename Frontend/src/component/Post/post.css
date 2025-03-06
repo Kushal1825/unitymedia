@@ -61,4 +61,10 @@
 }
 .postupload-section .post-upload-container .dark-button:hover {
   background-color: #0066a1;
+}
+
+@media (max-width: 475px) {
+  .postupload-section {
+    width: 100%;
+  }
 }/*# sourceMappingURL=post.css.map */

@@ -513,4 +513,29 @@
   text-align: center;
   font-size: 30px;
   width: 100%;
+}
+
+@media (max-width: 475px) {
+  .Navbar-section {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    min-width: 100vw !important;
+    height: 50px !important;
+    z-index: 999;
+  }
+  .Navbar-section .container .row .box .content .main-menu ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .Navbar-section .container .row .box .content .main-menu ul li {
+    padding: 0px !important;
+  }
+  .Navbar-section .container .row .box .content .main-menu ul li a {
+    text-align: center;
+  }
+  .Navbar-section .container .row .box .content .main-menu ul li.mview {
+    display: none;
+  }
 }/*# sourceMappingURL=Navbar.css.map */

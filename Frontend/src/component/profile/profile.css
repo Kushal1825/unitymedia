@@ -185,42 +185,35 @@
 }
 .profile-section .container .row .content .intro .content .box .content {
   padding: 30px;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
 }
-.profile-section .container .row .content .intro .content .box .content .image-box {
+.profile-section .container .row .content .intro .content .box .content .detail {
+  display: flex;
+  flex-direction: row;
+}
+.profile-section .container .row .content .intro .content .box .content .detail .image-box {
   width: 150px;
-  width: 35%;
   height: 150px;
-  border-radius: 10px;
+  border-radius: 50%;
   overflow: hidden;
 }
-.profile-section .container .row .content .intro .content .box .content .image-box form {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-}
-.profile-section .container .row .content .intro .content .box .content .image-box form label i {
-  font-size: 20px;
-  background-color: transparent;
-  color: white;
-}
-.profile-section .container .row .content .intro .content .box .content .name {
+.profile-section .container .row .content .intro .content .box .content .detail .name {
   width: 65%;
   padding: 15px;
 }
-.profile-section .container .row .content .intro .content .box .content .name h3 i {
+.profile-section .container .row .content .intro .content .box .content .detail .name h3 i {
   padding-left: 5px;
   border-radius: 5px;
   font-size: 19px;
   color: #50b5ff;
 }
-.profile-section .container .row .content .intro .content .box .content .name h4 {
+.profile-section .container .row .content .intro .content .box .content .detail .name h4 {
   padding: 10px 0px;
 }
-.profile-section .container .row .content .intro .content .box .content p {
+.profile-section .container .row .content .intro .content .box .content div p {
   width: 100%;
   padding: 15px;
   font-size: 16px;
@@ -259,7 +252,11 @@
   background-color: black;
 }
 .profile-section .container .row .content .details .heading h4 {
-  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
   text-align: center;
 }
 .profile-section .container .row .content .details .content .blank-post {
@@ -316,4 +313,78 @@
   transition: all 0.3s;
   border-radius: 5px;
   overflow: hidden;
+}
+
+@media (max-width: 475px) {
+  .profile-section {
+    width: 100%;
+    background-color: white;
+    height: 100%;
+  }
+  .profile-section .popup-box {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-section .popup-box .content {
+    width: 350px;
+    height: 400px;
+  }
+  .profile-section .container .row {
+    height: 100%;
+  }
+  .profile-section .container .row .content {
+    width: 100%;
+  }
+  .profile-section .container .row .content .intro {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .profile-section .container .row .content .intro .content {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .profile-section .container .row .content .intro .content .box {
+    padding: 0px;
+    width: 100%;
+  }
+  .profile-section .container .row .content .intro .content .box .content {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .profile-section .container .row .content .intro .content .box .content .detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .profile-section .container .row .content .intro .content .box .content .image-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .profile-section .container .row .content .details {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    min-height: 70%;
+  }
+  .profile-section .container .row .content .details .heading {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.264);
+    padding: 15px 0px 30px 0px;
+    color: rgba(0, 0, 0, 0.632);
+  }
+  .profile-section .container .row .content .details .content .post .content ul {
+    padding: 1px;
+  }
+  .profile-section .container .row .content .details .content .post .content ul li {
+    height: 170px;
+    padding: 0px 2px 2px 0px;
+  }
 }/*# sourceMappingURL=profile.css.map */

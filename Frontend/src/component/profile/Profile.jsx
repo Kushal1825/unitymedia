@@ -3,6 +3,7 @@ import "./profile.css";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../DarkModeContext/DarkModeContext.jsx";
 import ApiContext from "../../utils/ApiContext.jsx";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import axios from "axios";
 const Profile = () => {
   const { dark, navbarActive } = useDarkMode();
@@ -177,6 +178,7 @@ const Profile = () => {
                 <div className="content flex">
                   <div className="box">
                     <div className="content flex">
+                      <div className="detail">
                       <div className="image-box">
                         <img src={userProfile?.avatar?.url  || '/images/user.png'} alt="" />
                       </div>
@@ -187,8 +189,11 @@ const Profile = () => {
                         </h3>
                         <h4>{userProfile?.fullName}</h4>
                       </div>
-
+                      </div>
+                      <div>
                       <p>{userProfile?.bio}</p>
+                      </div>
+
                     </div>
                   </div>
                   <div className="box flex">
@@ -196,6 +201,7 @@ const Profile = () => {
                       <li>
                         <span>{userProfile?.postCount}</span>
                         <NavLink className={` ${dark ? "setdark" : ""}`}>
+                        
                           posts
                         </NavLink>
                       </li>
@@ -232,7 +238,7 @@ const Profile = () => {
 
               <div className="details">
                 <div className={`heading ${dark ? "setdark" : ""}`}>
-                  <h4>Posts</h4>
+                  <h4> <BsFillGrid3X3GapFill /> Posts</h4>
                 </div>
                 <div className={`content ${dark ? "setdark" : ""}`}>
                   {userPost.length !== 0 ? (

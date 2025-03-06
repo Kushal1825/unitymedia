@@ -16,7 +16,7 @@ export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
   const { profile } = useContext(ApiContext);
   useEffect(() => {
-    const socket = io("https://unitymedia.onrender.com", {
+    const socket = io("http://localhost:5000", {
       query: {
         userId: profile?._id,
       },

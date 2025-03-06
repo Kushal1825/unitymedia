@@ -235,7 +235,7 @@ function Navbar() {
                         <i className="fa-solid fa-house"></i> <p>Home</p>
                       </NavLink>
                     </li>
-                    <li>
+                    <li className="mview">
                       <span
                         onClick={handlesearch}
                         className={`flex ${dark ? "setdark" : ""} ${
@@ -262,7 +262,7 @@ function Navbar() {
                       </NavLink>
                     </li>
 
-                    <li>
+                    <li className="mview">
                       <NavLink
                         to={`/chates`}
                         className={({ isActive }) =>
@@ -302,7 +302,7 @@ function Navbar() {
                         <p>Profile</p>
                       </NavLink>
                     </li>
-                    <li>
+                    <li className="mview">
                       <NavLink
                         to={`/profileedit`}
                         onClick={() => setNavbarActive(false)}
@@ -317,7 +317,7 @@ function Navbar() {
                       </NavLink>
                     </li>
 
-                    <li>
+                    <li className="mview">
                       <span
                         onClick={handlenotification}
                         className={`flex ${dark ? "setdark" : ""} ${
@@ -327,7 +327,7 @@ function Navbar() {
                         <i className="fa-solid fa-bell"></i> <p>Notification</p>
                       </span>
                     </li>
-                    <li>
+                    <li className="mview">
                       <span
                         onClick={handleLogout}
                         className={`flex ${dark ? "setdark" : ""} logout  ${

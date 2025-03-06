@@ -141,6 +141,7 @@
 }
 .story-seen .container .current-div .main-div .user-info {
   display: flex;
+  z-index: 9999;
   position: absolute;
   gap: 5px;
   top: 40px;
@@ -218,4 +219,58 @@
 }
 .story-seen .container .current-div .main-div .handler li i {
   font-size: 30px;
+}
+
+@media (max-width: 475px) {
+  .story-seen {
+    z-index: 9999;
+  }
+  .story-seen .company-logo {
+    display: none;
+  }
+  .story-seen .cls-btn {
+    display: none;
+  }
+  .story-seen .container {
+    width: 100%;
+    height: 100%;
+  }
+  .story-seen .container .prev-div {
+    display: none;
+  }
+  .story-seen .container .next-div {
+    display: none;
+  }
+  .story-seen .container .current-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  .story-seen .container .current-div .left-arrow {
+    z-index: 999;
+    position: absolute;
+    height: 100%;
+    width: 30%;
+  }
+  .story-seen .container .current-div .left-arrow svg {
+    display: none;
+  }
+  .story-seen .container .current-div .right-arrow {
+    z-index: 999;
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    width: 30%;
+  }
+  .story-seen .container .current-div .right-arrow svg {
+    display: none;
+  }
+  .story-seen .container .current-div .main-div {
+    width: 100vw;
+    height: 100vh;
+  }
+  .story-seen .container .current-div .main-div .play-pause-handler {
+    z-index: 99999;
+  }
 }/*# sourceMappingURL=StorySeen.css.map */

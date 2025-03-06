@@ -39,7 +39,7 @@
           width: calc(33.3333% - 4px);
           height: 315px;
 
-          margin: 2px;
+          margin: 1px;
           .image {
             height: 100%;
             width: 100%;
@@ -80,6 +80,23 @@
           }
           &.setdark {
             background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:475px){
+  .explore-section{
+    width: 100%;
+    z-index: -1;
+    .container{
+      .row{
+       
+        .box{
+          width: 100%;
+          .image-box{
+            height: 150px;
           }
         }
       }

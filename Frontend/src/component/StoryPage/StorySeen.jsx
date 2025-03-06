@@ -58,6 +58,7 @@ const StorySeen = () => {
     }
 
     setProgress(0);
+    setIsPause(false);
 
     if (currentStoryIndex < currentStories.length - 1) {
         setCurrentStoryIndex((prev) => prev + 1);
@@ -98,6 +99,7 @@ const StorySeen = () => {
 
   const handlePrev = () => {
     setProgress(0);
+    setIsPause(false);
     if (currentStoryIndex > 0) {
       setCurrentStoryIndex((prev) => prev - 1);
     } else if (currentUserIndex > 0) {
@@ -155,7 +157,7 @@ const StorySeen = () => {
               {
                 Storydata[currentUserIndex]?.stories?.map((val,i)=>{
                   return(
-                  <div className={`progress-bar ${currentStoryIndex > i ? "completed":""} ${currentStoryIndex === i ? "active" : "" }`}>
+                  <div key={i} className={`progress-bar ${currentStoryIndex > i ? "completed":""} ${currentStoryIndex === i ? "active" : "" }`}>
                     <div className="progress" style={{width: i === currentStoryIndex ? `${progress}%` : i < currentStoryIndex ? '100%' : '0'}}></div>
                   </div>
                 )}

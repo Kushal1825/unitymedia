@@ -5,9 +5,11 @@ import { useDarkMode } from "../DarkModeContext/DarkModeContext.jsx";
 // import { useProfile } from "../../utils/ProfileContext.jsx";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
-import { IoIosNotifications } from "react-icons/io";
+import { IoMdNotificationsOutline } from "react-icons/io";
+
 import { CiSearch } from "react-icons/ci";
-import { HiMiniChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 import ApiContext from "../../utils/ApiContext.jsx";
 const Header = () => {
@@ -15,9 +17,6 @@ const Header = () => {
     dark,
     enableDarkMode,
     disableDarkMode,
-    handleNavbarToggle,
-    text,
-    navbarActive,
   } = useDarkMode();
 
 
@@ -33,6 +32,7 @@ const Header = () => {
       disableDarkMode(); // Disable dark mode when the checkbox is unchecked
     }
   };
+  const navigate=useNavigate();
 
   const { profile } = useContext(ApiContext);
   // fetchProfile();
@@ -51,9 +51,19 @@ const Header = () => {
                 <h1 className={`${dark ? "setdark" : ""}`}>unity</h1>
               </NavLink>
             </div>
+            
 
             <div className="user">
               <div className="content flex">
+                <div className="minview notification">
+                <CiSearch/>
+                </div>
+                <div className="minview chat" onClick={()=>{navigate('/chates')}}>
+                <IoChatbubbleEllipsesOutline/>
+                </div>
+                <div className="minview search" onClick={()=>{}}>
+                <IoMdNotificationsOutline/>
+                </div>
                 <div className="dark-mode flex">
                   
                   {dark?<button className={`theme-changer ${dark?"dark":""}`} onClick={()=>handleModeChange(false)}>
@@ -63,15 +73,6 @@ const Header = () => {
                       <MdOutlineDarkMode />
                     </button>
                     }
-                </div>
-                <div className="minview chat">
-                <HiMiniChatBubbleOvalLeftEllipsis/>
-                </div>
-                <div className="minview search">
-                <IoIosNotifications/>
-                </div>
-                <div className="minview notification">
-                <CiSearch/>
                 </div>
                 <div className="image-box">
                   <NavLink to={`/profile`}>

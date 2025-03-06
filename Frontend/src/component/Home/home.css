@@ -338,4 +338,85 @@
   font-size: 17px;
   padding: 5px;
   border-radius: 10px;
+}
+
+@media (max-width: 475px) {
+  .Home-section {
+    width: 100%;
+  }
+  .Home-section .container .row .box .content .suggestion {
+    margin-bottom: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px;
+  }
+  .Home-section .container .row .box .content .suggestion .content {
+    border-radius: 0px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    display: flex;
+  }
+  .Home-section .container .row .box .content .suggestion .content ul {
+    display: flex;
+    gap: 10px;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .Home-section .container .row .box .content .suggestion .content ul::-webkit-scrollbar {
+    height: 6px;
+  }
+  .Home-section .container .row .box .content .suggestion .content ul::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+  }
+  .Home-section .container .row .box .content .suggestion .content ul li {
+    width: 200px;
+    height: 200px;
+    border-radius: 0px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.41);
+    flex-shrink: 0;
+  }
+  .Home-section .container .row .box .content .suggestion .content ul li .person {
+    width: 100%;
+    padding: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Home-section .container .row .box .content .suggestion .content ul li .person .image-box {
+    width: 100%;
+    height: 60%;
+    border-radius: 0px;
+  }
+  .Home-section .container .row .box .content .suggestion .content ul li .person .detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+  }
+  .Home-section .container .row .box .content .suggestion .content ul li .person .detail button {
+    padding: 5px;
+    width: 100%;
+    color: black;
+    background-color: rgba(80, 182, 255, 0.3490196078);
+  }
+  .Home-section .container .row .box .content .suggestion .content ul li .person .detail button.dark {
+    color: white;
+  }
 }/*# sourceMappingURL=home.css.map */

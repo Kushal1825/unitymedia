@@ -131,8 +131,10 @@
     padding: 5px 0px;
     box-shadow: 0px 1px 10px black ;
     .container{
+      height: 100%;
       .row{
         padding: 0px 15px;
+        height: 100%;
         .logo{
           a{
             .image-box{
@@ -145,11 +147,17 @@
           }
         }
         .user{
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          height: 100%;
           .content{
             padding: 0px;
             .minview{
               display: block;
-              font-size: 30px;
+              font-size: 25px;
+              padding: 3px;
+              margin: 0px 5px;
               
             }
             .image-box{
@@ -160,7 +168,12 @@
             }
             .dark-mode{
               padding: 0px;
+              display: block;
+              font-size: 25px;
+              padding: 3px;
+              margin: 0px 5px;
               .theme-changer{
+                font-size: 25px;
                 display: flex;
                 text-align: center;
                 align-items: center;

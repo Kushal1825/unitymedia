@@ -102,12 +102,7 @@ function Navbar() {
     setNotification(false);
   };
 
-  const handleSetting = () => {
-    setSlide(true);
-    setSettingPanel(true);
-    setSearch(false);
-    setNotification(false);
-  };
+
 
   const handlenotification = () => {
     setSlide(true);

@@ -119,8 +119,12 @@
     padding: 5px 0px;
     box-shadow: 0px 1px 10px black;
   }
+  .header-section .container {
+    height: 100%;
+  }
   .header-section .container .row {
     padding: 0px 15px;
+    height: 100%;
   }
   .header-section .container .row .logo a .image-box {
     height: 50px;
@@ -129,12 +133,20 @@
   .header-section .container .row .logo a h1 {
     display: none;
   }
+  .header-section .container .row .user {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+  }
   .header-section .container .row .user .content {
     padding: 0px;
   }
   .header-section .container .row .user .content .minview {
     display: block;
-    font-size: 30px;
+    font-size: 25px;
+    padding: 3px;
+    margin: 0px 5px;
   }
   .header-section .container .row .user .content .image-box {
     width: 45px;
@@ -143,8 +155,13 @@
   }
   .header-section .container .row .user .content .dark-mode {
     padding: 0px;
+    display: block;
+    font-size: 25px;
+    padding: 3px;
+    margin: 0px 5px;
   }
   .header-section .container .row .user .content .dark-mode .theme-changer {
+    font-size: 25px;
     display: flex;
     text-align: center;
     align-items: center;

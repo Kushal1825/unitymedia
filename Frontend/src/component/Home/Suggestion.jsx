@@ -83,7 +83,7 @@ const Suggestion = () => {
                         </h4>
                         <p>{user?.fullName}</p>
                       </NavLink>
-                      <button onClick={() => followHandler(user._id)}>
+                      <button className={`${dark?"dark":""}`} onClick={() => followHandler(user._id)}>
                         Follow
                       </button>
                     </div>

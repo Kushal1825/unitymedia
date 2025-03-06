@@ -27,6 +27,8 @@ const PrivateRoute = () => {
       }
   };
 
+  
+
   useEffect(() => {
     checkAuthentication();
   }, [navigate]); // Re-run if fetchProfile or navigate changes

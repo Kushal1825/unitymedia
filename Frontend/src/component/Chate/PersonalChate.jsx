@@ -18,12 +18,8 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
   const currentUser = profile;
 
   useEffect(()=>{
-    socket.on('newMessage',(message)=>{
-      
-      if(message.sender===selectedConversation.userId){
-        console.log(message.conversationId,selectedConversation.id);
-        setMessages((prevMessages)=>[...prevMessages,message]);
-      }      
+    socket.on('newMessage',(message)=>{      
+      setMessages((prevMessages)=>[...prevMessages,message]);
       setConversation(prevConvs =>{
         const updatedConversations = prevConvs.map(conversation=>{
 

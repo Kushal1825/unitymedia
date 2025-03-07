@@ -244,6 +244,10 @@ const ViewProfile = () => {
                         <button onClick={followHandler} className={`${dark?"dark-mode":""}`}>
                           {profileData.isFollow?"Following":profileData.hasFollowReqest?"Requested":"Follow"}
                         </button>
+                        <button onClick={followHandler} className={`${dark?"dark-mode":""}`}>
+                        Block
+                          {/* {profileData.isFollow?"Following":profileData.hasFollowReqest?"Requested":"Follow"} */}
+                        </button>
                       </div>
                       <div className="account-status">
                         {/* <p><i className="fa-solid fa-lock"></i>Private Account</p>

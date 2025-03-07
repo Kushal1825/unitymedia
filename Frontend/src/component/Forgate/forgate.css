@@ -125,4 +125,27 @@
 .forgate-section .container .row .box div .input-box .btn p {
   cursor: pointer;
   color: #50b5ff;
+}
+
+@media (max-width: 475px) {
+  .forgate-section .container .row .box {
+    width: 80%;
+    padding: 50px 5px;
+  }
+  .forgate-section .container .row .box .heading .image-box {
+    width: 55px;
+    height: 55px;
+  }
+  .forgate-section .container .row .box .heading h1 {
+    font-size: 40px;
+  }
+  .forgate-section .container .row .box div .email-box {
+    padding: 5px;
+  }
+  .forgate-section .container .row .box div .otp-box .btn p {
+    font-size: 18px;
+  }
+  .forgate-section .container .row .box div .otp-box .btn button {
+    padding: 10px 15px;
+  }
 }/*# sourceMappingURL=forgate.css.map */

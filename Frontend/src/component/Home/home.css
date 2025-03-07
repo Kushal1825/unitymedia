@@ -1,8 +1,3 @@
-@media (max-width: 475px) {
-  .Home-section {
-    width: 100vw !important;
-  }
-}
 .Home-section {
   width: 85vw;
   height: 90vh;
@@ -147,8 +142,8 @@
 }
 .Home-section .container .row .box .content .main-contant .story .story-box.own:nth-child(1) .border .image-box {
   border: none;
-  height: 60px;
-  width: 60px;
+  height: 65px;
+  width: 65px;
 }
 .Home-section .container .row .box .content .main-contant .posts {
   padding-top: 20px;

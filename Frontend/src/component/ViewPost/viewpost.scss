@@ -243,6 +243,26 @@
 }
 @media (max-width:475px){
   .viewpost-section{
-    
+    .container{
+      .row{
+        .main-box{
+          flex-direction: column;
+          width: 100%;
+          height: 75%;
+          .box{
+            width: 100% !important;
+            height: 35% !important;
+            &:nth-child(2){
+              height: 65%;
+            }
+            &.detail{
+ .comments{
+height: 21vh;
+ }
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -104,3 +104,43 @@
         }
     }
 }
+@media (max-width:475px){
+    .login-section {.container {
+        .row{
+        height: 60%;     
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .heading {
+            .image-box{
+            width: 55px;
+            height: 55px;
+        }
+        h1{
+            font-size: 40px;
+        }
+    }
+    .content {
+        form {
+            .checkbox {
+            ul{
+            
+            li.forget-password {
+            a{
+            color: #50b5ff;
+        }
+    
+    }
+    }
+    }
+    .btn{
+        padding: 10px 0px;
+    }
+    }
+    }
+  
+    }
+    
+}}
+}

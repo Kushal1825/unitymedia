@@ -359,13 +359,14 @@
     flex-direction: column;
   }
   .profile-section .container .row .content .intro .content .box .content .detail {
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .profile-section .container .row .content .intro .content .box .content .image-box {
-    width: 100px;
-    height: 100px;
+    height: 85px !important;
+    width: 85px !important;
     border-radius: 50%;
   }
   .profile-section .container .row .content .details {

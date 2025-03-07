@@ -439,7 +439,7 @@
     width: 100% !important;
   }
   .Chate-section .container {
-    width: 100%;
+    height: 10%;
   }
   .Chate-section .container .row {
     padding: 0px;
@@ -456,12 +456,25 @@
   }
   .Chate-section .container .row .chate {
     z-index: 9999;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     margin-bottom: 0px;
-    height: calc(100% - 100px);
+    height: 100%;
+  }
+  .Chate-section .container .row .chate .content {
+    position: relative;
   }
   .Chate-section .container .row .chate .content .user-info .profile .min-view {
     display: block !important;
     font-size: 30px;
     padding: 0px 20px 0px 0px;
+  }
+  .Chate-section .container .row .chate .content .chates-list {
+    padding: 0px;
+    height: 80vh;
+  }
+  .Chate-section .container .row .chate .content .message-input-container {
+    margin: 3px;
   }
 }/*# sourceMappingURL=Chate.css.map */

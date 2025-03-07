@@ -76,3 +76,31 @@ input{
   text-transform:initial;
   font-size: 17px;
 }
+@media (max-width:475px){
+a{
+    text-decoration: none;
+    font-weight: normal;
+    color:black;
+  }
+  h1{
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+  }
+  h2{
+    font-size: 32px;
+    color: blue;
+    font-weight: 600;
+  }
+  p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  h3{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  h4{
+    font-size: 17px;
+    font-weight: 600;
+  }
+}

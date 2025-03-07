@@ -17,7 +17,7 @@
   .container {
     width: 100%;
     // margin: 0px;
-    
+
     .row {
       display: flex;
       flex-wrap: nowrap;
@@ -31,72 +31,69 @@
         // height: 100%;
         background-color: white;
         text-align: center;
-        .icon{
+        .icon {
           border-radius: 50%;
           height: 100px;
           width: 100px;
           display: flex;
           align-items: center;
           justify-content: center;
-          color:black;
+          color: black;
           margin-bottom: 10px;
           border: 4px solid black;
         }
         color: #555;
 
-        &.dark{
+        &.dark {
           background-color: black;
-          .icon{
+          .icon {
             border: 4px solid white;
             color: white;
-           
           }
-          h2{
-            color:white
+          h2 {
+            color: white;
           }
-          p{
-            color:white
+          p {
+            color: white;
           }
         }
-      
+
         .icon {
           font-size: 50px;
           margin-bottom: 10px;
-
         }
-      
+
         h2 {
           font-size: 20px;
           font-weight: 600;
           margin-bottom: 5px;
         }
-      
+
         p {
           font-size: 14px;
           color: #777;
         }
       }
-      
+
       width: 100%;
       .user {
         padding: 15px;
         width: 30%;
         max-width: 400px;
         background-color: white;
-        &.dark{
+        &.dark {
           background-color: black;
           border-right: 1px solid #f2f2f22d;
         }
         border-right: 1px solid rgba(0, 0, 0, 0.256);
-        
+
         .content {
-          
           .conversation-skeleton {
             display: flex;
             flex-direction: column;
             gap: 12px;
             padding: 10px;
-          
+
             .skeleton-item {
               display: flex;
               align-items: center;
@@ -105,35 +102,50 @@
               background: #f2f2f2;
               border-radius: 10px;
               animation: pulse 1.5s infinite ease-in-out;
-          
+
               .avatar {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
-                background: linear-gradient(90deg, #e0e0e0 25%, #f2f2f2 50%, #e0e0e0 75%);
+                background: linear-gradient(
+                  90deg,
+                  #e0e0e0 25%,
+                  #f2f2f2 50%,
+                  #e0e0e0 75%
+                );
                 background-size: 200% 100%;
                 animation: loading 1.5s infinite;
               }
-          
+
               .text {
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
                 width: 100%;
-          
+
                 .name {
                   width: 40%;
                   height: 12px;
-                  background: linear-gradient(90deg, #e0e0e0 25%, #f2f2f2 50%, #e0e0e0 75%);
+                  background: linear-gradient(
+                    90deg,
+                    #e0e0e0 25%,
+                    #f2f2f2 50%,
+                    #e0e0e0 75%
+                  );
                   background-size: 200% 100%;
                   animation: loading 1.5s infinite;
                   border-radius: 5px;
                 }
-          
+
                 .message {
                   width: 80%;
                   height: 10px;
-                  background: linear-gradient(90deg, #e0e0e0 25%, #f2f2f2 50%, #e0e0e0 75%);
+                  background: linear-gradient(
+                    90deg,
+                    #e0e0e0 25%,
+                    #f2f2f2 50%,
+                    #e0e0e0 75%
+                  );
                   background-size: 200% 100%;
                   animation: loading 1.5s infinite;
                   border-radius: 5px;
@@ -141,7 +153,7 @@
               }
             }
           }
-          
+
           @keyframes loading {
             0% {
               background-position: -200% 0;
@@ -150,7 +162,7 @@
               background-position: 200% 0;
             }
           }
-          
+
           .heading {
             width: 100%;
             padding-bottom: 5px;
@@ -171,7 +183,7 @@
                   transition: all 0.3s;
                   &.setdark {
                     background-color: black;
-                    color:white;
+                    color: white;
                     border: 1px solid white;
                     outline: 1px solid lightblue;
                     border-radius: 5px;
@@ -199,8 +211,6 @@
               scrollbar-width: none;
               scroll-behavior: smooth;
 
-              
-
               .person {
                 background-color: white;
                 padding: 5px 10px;
@@ -218,9 +228,9 @@
                   // overflow: hidden;
                   height: 55px;
                   width: 55px;
-                  &.isOnline{
+                  &.isOnline {
                     position: relative;
-                    &::before{
+                    &::before {
                       content: "";
                       position: absolute;
                       height: 10px;
@@ -229,17 +239,16 @@
                       bottom: 0px;
                       right: 0px;
                       background-color: green;
-                      border:3px solid white;
+                      border: 3px solid white;
                       border-radius: 50%;
                     }
-                    &.dark{
-                      &::before{
-                        border:3px solid black;
+                    &.dark {
+                      &::before {
+                        border: 3px solid black;
                       }
                     }
                   }
                   img {
-
                     border-radius: 50%;
                     height: 100%;
                     width: 100%;
@@ -251,21 +260,21 @@
                   padding: 5px 0px 0px 10px;
                   li {
                     justify-content: space-between;
-                    h4{
+                    h4 {
                       font-size: 16px;
                       font-weight: 500;
                       font-family: Verdana, Geneva, Tahoma, sans-serif;
                     }
-                    p{
+                    p {
                       font-size: 14px;
                       display: flex;
-                      gap:3px;
+                      gap: 3px;
                       color: lightgray;
-                      div{
+                      div {
                         color: gray;
                       }
-                      div.seen{
-                        color:blue
+                      div.seen {
+                        color: blue;
                       }
                     }
                   }
@@ -282,7 +291,7 @@
         // height: 100%;
         height: 90vh;
         background-color: #ffffff;
-        &.dark{
+        &.dark {
           background-color: black;
         }
         .content {
@@ -306,14 +315,13 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              .back{
+              .back {
                 display: none;
               }
               .image-box {
                 width: 45px;
                 height: 45px;
                 img {
-                  
                   border-radius: 50%;
                 }
               }
@@ -337,27 +345,32 @@
                 gap: 10px;
                 padding: 10px;
               }
-              
+
               .message-skeleton {
                 width: 60%;
                 height: 25px;
                 border-radius: 15px;
                 padding: 16px;
-                background: linear-gradient(90deg, #e0e0e0 25%, #f2f2f2 50%, #e0e0e0 75%);
+                background: linear-gradient(
+                  90deg,
+                  #e0e0e0 25%,
+                  #f2f2f2 50%,
+                  #e0e0e0 75%
+                );
                 background-size: 200% 100%;
                 animation: loading 1.5s infinite ease-in-out;
-              
+
                 &.sent {
                   align-self: flex-end;
                   background-color: #cce5ff; // Light blue
                 }
-              
+
                 &.received {
                   align-self: flex-start;
                   background-color: #e0e0e0; // Light gray
                 }
               }
-              
+
               @keyframes loading {
                 0% {
                   background-position: -200% 0;
@@ -366,7 +379,7 @@
                   background-position: 200% 0;
                 }
               }
-              
+
               p {
                 padding: 5px 10px;
                 // background-color: red;
@@ -377,23 +390,22 @@
                 width: 100%;
 
                 li {
-                  
-                  &.ownMessage{
+                  &.ownMessage {
                     justify-content: right;
-                    
-                    .message{
+
+                    .message {
                       background-color: #50b6ffae;
                       // padding: 5px 10px;
                       font-size: 14px;
                       max-width: 60%;
-                      .setdark{
+                      .setdark {
                         background-color: gray;
                       }
                     }
-                    p{
+                    p {
                       width: 100%;
-                      span.seen{
-                        color:blue
+                      span.seen {
+                        color: blue;
                       }
                     }
                   }
@@ -427,14 +439,12 @@
                     &.setdark {
                       background-color: #ffffff;
                       color: black;
-                      
                     }
-                    p{
+                    p {
                       // width: max-content;
                     }
                   }
                 }
-                
               }
             }
           }
@@ -443,10 +453,8 @@
             .content {
               width: 100%;
               a {
-             
-             
-                color: #50b5ff;  
-             
+                color: #50b5ff;
+
                 height: 100%;
                 width: 5%;
                 background-color: transparent;
@@ -460,7 +468,6 @@
                 }
               }
               form {
-              
                 width: 95%;
                 display: flex;
                 flex-wrap: nowrap;
@@ -498,39 +505,49 @@
     }
   }
 }
-@media (max-width:475px){
-  .Chate-section{
+@media (max-width: 475px) {
+  .Chate-section {
     width: 100% !important;
-    .container{
-      width: 100%;
-      .row{
+    // height: 100%;
+    .container {
+      height: 10%;
+      // width: 100%;
+      .row {
         padding: 0px;
-        .user{
+        .user {
           width: 100%;
           border: none;
-          &.min-view-hide{
+          &.min-view-hide {
             display: none;
           }
         }
-        .no-conversation-container{
+        .no-conversation-container {
           display: none;
         }
-        .chate{
+        .chate {
           z-index: 9999;
+          position: absolute;
+          top: 0px;
+          left: 0px;
           margin-bottom: 0px;
-          height: calc(100% - 100px);
-          .content{
-            .user-info{
-              .profile{
-                
-                .min-view{
+          height: calc(100%);
+          .content {
+            position: relative;
+            .user-info {
+              .profile {
+                .min-view {
                   display: block !important;
-                  font-size: 30px ;
+                  font-size: 30px;
                   padding: 0px 20px 0px 0px;
-                  
                 }
-
               }
+            }
+            .chates-list {
+              padding: 0px;
+              height: 80vh;
+            }
+            .message-input-container {
+              margin: 3px;
             }
           }
         }

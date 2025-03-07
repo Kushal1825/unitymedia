@@ -328,12 +328,17 @@
   font-weight: 700;
   color: #0396ff;
   padding: 7px 0px;
-  width: 200px;
+  width: 100px;
   border-radius: 5px;
   font-size: 18px;
+  margin: 0px 5px;
 }
 .viewprofile-section .container .row .content .intro .content .box .content .name button.dark-mode {
   background-color: rgba(55, 55, 55, 0.4470588235);
+}
+.viewprofile-section .container .row .content .intro .content .box .content .name button:nth-child(4) {
+  background-color: rgba(255, 0, 0, 0.256);
+  color: red;
 }
 .viewprofile-section .container .row .content .intro .content .box .content .account-status p {
   padding: 5px 0px;
@@ -439,4 +444,42 @@
   transition: all 0.3s;
   border-radius: 5px;
   overflow: hidden;
+}
+
+@media (max-width: 475px) {
+  .viewprofile-section {
+    padding: 0px;
+    width: 100%;
+  }
+  .viewprofile-section .container {
+    height: 82vh;
+  }
+  .viewprofile-section .container .row .content {
+    width: 100%;
+  }
+  .viewprofile-section .container .row .content .intro {
+    width: 100%;
+  }
+  .viewprofile-section .container .row .content .intro .content .box .content {
+    justify-content: space-between;
+    padding: 15px;
+  }
+  .viewprofile-section .container .row .content .intro .content .box .content .image-box {
+    height: 85px;
+    width: 85px;
+  }
+  .viewprofile-section .container .row .content .intro .content .box .content .name {
+    width: 70%;
+    padding: 0px;
+  }
+  .viewprofile-section .container .row .content .details {
+    width: 100%;
+    padding: 5px;
+  }
+  .viewprofile-section .container .row .content .details .content .post .content ul {
+    padding: 0px;
+  }
+  .viewprofile-section .container .row .content .details .content .post .content ul li {
+    height: 150px;
+  }
 }/*# sourceMappingURL=viewprofile.css.map */

@@ -55,15 +55,15 @@ const Header = () => {
 
             <div className="user">
               <div className="content flex">
-                <div className="minview notification">
+                {/* <div className="minview notification">
                 <CiSearch/>
-                </div>
+                </div> */}
                 <div className="minview chat" onClick={()=>{navigate('/chates')}}>
                 <IoChatbubbleEllipsesOutline/>
                 </div>
-                <div className="minview search" onClick={()=>{}}>
+                {/* <div className="minview search" onClick={()=>{}}>
                 <IoMdNotificationsOutline/>
-                </div>
+                </div> */}
                 <div className="dark-mode flex">
                   
                   {dark?<button className={`theme-changer ${dark?"dark":""}`} onClick={()=>handleModeChange(false)}>

@@ -79,4 +79,23 @@
 }
 .signup-section .container .row .content form .btn button:hover {
   background-color: blue;
+}
+
+@media (max-width: 475px) {
+  .signup-section .container .row {
+    width: 80%;
+  }
+  .signup-section .container .row .heading .image-box {
+    width: 55px;
+    height: 55px;
+  }
+  .signup-section .container .row .heading h1 {
+    font-size: 40px;
+  }
+  .signup-section .container .row .content form .checkbox p a {
+    color: #50b5ff;
+  }
+  .signup-section .container .row .content form .checkbox label {
+    width: 90%;
+  }
 }/*# sourceMappingURL=signup.css.map */

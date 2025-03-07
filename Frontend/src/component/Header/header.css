@@ -143,7 +143,9 @@
     padding: 0px;
   }
   .header-section .container .row .user .content .minview {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 25px;
     padding: 3px;
     margin: 0px 5px;

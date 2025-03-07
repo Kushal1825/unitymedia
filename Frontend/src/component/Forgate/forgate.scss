@@ -132,3 +132,38 @@
     }
   }
 }
+@media (max-width:475px){
+  .forgate-section {.container {
+   
+    .row {
+   
+    .box{
+    width: 80%;
+    
+    padding:50px 5px;
+    .heading {
+      .image-box{
+      width: 55px;
+      height: 55px;
+  }
+  h1{
+      font-size: 40px;
+  }
+}
+    div{ 
+      .email-box{
+      padding: 5px;
+    }
+  .otp-box{
+    .btn{
+      p{
+        font-size: 18px;
+      }
+      button{
+        padding: 10px 15px;
+      }
+    }
+  }
+  }
+  }}}}
+}

@@ -154,7 +154,9 @@
           .content{
             padding: 0px;
             .minview{
-              display: block;
+              display: flex;
+              justify-content: center;
+              align-items: center;
               font-size: 25px;
               padding: 3px;
               margin: 0px 5px;

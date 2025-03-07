@@ -387,15 +387,17 @@
                   display: flex;
                   flex-wrap: nowrap;
                   flex-direction: column;
+                
                   .detail{
+                    width: 80%;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                   }
                   
                   .image-box{
-                    width: 100px;
-                    height: 100px;
+                    height: 85px !important;
+                    width: 85px !important;
                     border-radius: 50%;
                   }
                 }

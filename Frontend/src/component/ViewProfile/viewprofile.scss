@@ -364,13 +364,18 @@ $button-blue: #0095f6;
 
                         background-color: #37373772;
                     }
+                    &:nth-child(4){
+                      background-color: rgba(255, 0, 0, 0.256);
+                      color: red;
+                    }
                     background-color: #ececec;
                     font-weight: 700;
                     color: #0396ff;
                     padding: 7px 0px;
-                    width: 200px;
+                    width: 100px;
                     border-radius: 5px;
                     font-size: 18px;
+                    margin: 0px 5px;
                   }
                 }
                 .account-status {
@@ -494,6 +499,50 @@ $button-blue: #0095f6;
           }
         }
       }
+    }
+  }
+}
+@media (max-width:475px){
+  .viewprofile-section {
+    padding: 0px;
+    width: 100%;
+    .container{
+      height: 82vh;
+      .row{
+        
+        .content{
+          width: 100%;
+          .intro{
+            width: 100%;
+            .content{
+              .box {
+                .content{
+                  justify-content: space-between;
+padding: 15px;
+.image-box{
+  height: 85px;
+  width: 85px;
+}
+.name{
+  width: 70%;
+  padding: 0px;
+}
+      }
+      }
+      }
+      }
+      .details {
+        width: 100%;
+        padding: 5px;
+        .content {.post {.content {ul{
+        padding: 0px;
+        li{
+          height: 150px;
+        }
+      }}}}}
+      }
+      }
+      
     }
   }
 }

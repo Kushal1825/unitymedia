@@ -29,6 +29,27 @@ const Notification = ({ notification,fetchNotification }) => {
     
    }
   }
+  const cancelRequestHandler = async(id)=>{
+   try {
+    const response= await axios.post(`${API_URL}/api/follow/request/${id}/cancel`,{},{
+       headers:{
+         Authorization:`Bearer ${token}`
+       }
+     });
+ 
+     if(response.data.success){
+       toast.success(response.data.message);
+       await fetchNotification();
+     }
+     else{
+       toast.error(response.data.message);
+       await fetchNotification();
+     }
+   } catch (error) {
+    console.log(error);
+    
+   }
+  }
 
   if (notification.notification_type === "comment") {
     return (
@@ -118,7 +139,7 @@ const Notification = ({ notification,fetchNotification }) => {
 
           <div className="btn flex">
             <button onClick={()=>acceptRequestHandler(notification.sender._id)}>confirm</button>
-            <button>cancel</button>
+            <button onClick={()=>cancelRequestHandler(notification.sender._id)}>cancel</button>
           </div>
         </div>
       </div>

@@ -217,6 +217,12 @@
   bottom: 20px;
   right: 30px;
 }
+.story-seen .container .current-div .main-div .handler li {
+  color: whitesmoke;
+}
+.story-seen .container .current-div .main-div .handler li.isLiked {
+  color: red;
+}
 .story-seen .container .current-div .main-div .handler li i {
   font-size: 30px;
 }
@@ -271,6 +277,9 @@
     height: 100vh;
   }
   .story-seen .container .current-div .main-div .play-pause-handler {
+    z-index: 99999;
+  }
+  .story-seen .container .current-div .main-div .handler {
     z-index: 99999;
   }
 }/*# sourceMappingURL=StorySeen.css.map */

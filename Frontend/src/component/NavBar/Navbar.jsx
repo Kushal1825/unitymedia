@@ -219,7 +219,7 @@ function Navbar() {
                   <ul>
                     <li>
                       <NavLink
-                        to={`/home`}
+                        to={`/`}
                         onClick={() => setNavbarActive(false)}
                         className={({ isActive }) =>
                           `flex ${isActive ? "active" : ""} ${

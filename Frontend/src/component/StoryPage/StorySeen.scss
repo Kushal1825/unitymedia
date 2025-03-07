@@ -225,6 +225,12 @@
         }
         .handler {
           li {
+            color:whitesmoke;
+            &.isLiked{
+              color:red;
+
+              // border: 1px solid black;
+            }
             i {
               // backdrop-filter: blur(5px);
 
@@ -292,6 +298,9 @@
           .play-pause-handler{
             z-index: 99999;
           }
+        .handler{
+          z-index: 99999;
+        }
         }
       }
     }

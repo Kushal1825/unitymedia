@@ -714,10 +714,13 @@ const suggestUsers = asyncHandler(async (req, res) => {
 
     // Extract IDs from followings and requests
     const followingIds = followings.map((user) => user.following_id._id);
-    const requestIds = requestUser.map((notif) => notif.user_id); // Fix requestIds extraction
+    const requestIds = requestUser.map((notif) => notif.user_id); // Fix requestIds extraction;
+    const blockList = req?.user?.blockList.map((user)=>user);
+    // console.log(blockList);
+    
 
     // Exclude users who are followed, requested, or the current user
-    const excludeUsers = [...followingIds, req.user?._id, ...requestIds];
+    const excludeUsers = [...followingIds, req.user?._id, ...requestIds,...blockList];
 
     const suggestUsers = await User.aggregate([
       {

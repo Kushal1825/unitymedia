@@ -190,6 +190,15 @@ const getRandomPost = asyncHandler(async (req,res)=>{
           localField: "user_id",
           foreignField: "_id",
           as: "author",
+          pipeline:[
+            {
+             $match:{
+              blockList:{
+                $nin:[req.user?._id]
+              }
+             }
+            }
+          ]
         },
       },
       {
@@ -216,6 +225,11 @@ const getRandomPost = asyncHandler(async (req,res)=>{
           author:{
             $first:"$author"
           }
+        },
+      },
+      {
+        $match: {
+          author: { $ne: null } 
         },
       },
       {
@@ -272,105 +286,6 @@ res.status(200).json(new ApiResponse(200, {post,postIds}, "Post Fetch Successful
     
   }
 });
-
-// const getRandomPost = asyncHandler(async (req, res) => {
-//   try {
-//     let { postIds } = req.body || [];
-//     const userId = req.user?._id;
-
-//     // Get list of users the requester is following
-//     const followingList = await Follow.find({ follower_id: userId });
-//     const followingIds = followingList.map(follow => follow.following_id);
-
-//     // Get already sent posts
-//     const oldPosts = await Post.find({ _id: { $in: postIds } });
-//     const oldPostsIds = oldPosts.map(post => post._id);
-
-//     let matchCondition = { _id: { $nin: oldPostsIds } };
-
-//     // Prioritize posts from followed users, but include others if none found
-//     if (followingIds.length > 0) {
-//       matchCondition = { 
-//         $or: [
-//           { user_id: { $in: followingIds }, _id: { $nin: oldPostsIds } },  // Prefer followed users' posts
-//           { _id: { $nin: oldPostsIds } }  // Fallback to other posts if needed
-//         ] 
-//       };
-//     }
-
-//     const posts = await Post.aggregate([
-//       { $match: matchCondition },
-//       {
-//         $lookup: {
-//           from: "likes",
-//           localField: "_id",
-//           foreignField: "post_id",
-//           as: "likes",
-//         },
-//       },
-//       {
-//         $lookup: {
-//           from: "users",
-//           localField: "user_id",
-//           foreignField: "_id",
-//           as: "author",
-//         },
-//       },
-//       {
-//         $lookup: {
-//           from: "comments",
-//           localField: "_id",
-//           foreignField: "post_id",
-//           as: "comments",
-//         },
-//       },
-//       {
-//         $addFields: {
-//           comments: { $size: "$comments" },
-//           likes: { $size: "$likes" },
-//           isLike: {
-//             $cond: {
-//               if: { $gt: [{ $size: { $filter: { input: "$likes", as: "like", cond: { $eq: ["$$like.user_id", userId] } } } }, 0] },
-//               then: true,
-//               else: false,
-//             },
-//           },
-//           author: { $first: "$author" },
-//         },
-//       },
-//       { $sort: { createdAt: -1 } }, // Fetch latest posts first
-//       { $sample: { size: 5 } },
-//       {
-//         $project: {
-//           author: { password: 0, refreshToken: 0, emailVerifyCode: 0, emailVerifyCodeExpires: 0 },
-//           user_id: 0,
-//         },
-//       },
-//     ]);
-//     // console.log(posts);
-    
-
-//     // Update post views in parallel
-//     await Promise.all(
-//       posts.map(async (post) => {
-//         await Post.findByIdAndUpdate(post._id, { $inc: { view: 1 } });
-//       })
-//     );
-
-//     // Update the list of sent post IDs
-//     postIds = [...postIds, ...posts.map(post => post._id)];
-
-//     if (!posts.length) {
-//       return res.status(400).json(new ApiResponse(400, null, "Please follow someone to get posts."));
-//     }
-
-//     res.status(200).json(new ApiResponse(200, { posts, postIds }, "Posts fetched successfully"));
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json(new ApiResponse(500, null, "Internal Server Error"));
-//   }
-// });
-
 
 const getPostByUsername = asyncHandler(async (req, res) => {
   try {
@@ -680,6 +595,23 @@ const explorePost = asyncHandler(async (req,res)=>{
         }
       },
       {
+        $lookup:{
+          from:"users",
+          localField:"user_id",
+          foreignField:"_id",
+          as:"author",
+          pipeline:[
+            {
+             $match:{
+              blockList:{
+                $nin:[req.user?._id]
+              }
+             }
+            }
+          ]
+        }
+      },
+      {
         $lookup: {
           from: "likes",
           localField: "_id",
@@ -699,7 +631,15 @@ const explorePost = asyncHandler(async (req,res)=>{
         $addFields:{
           comments: { $size: "$comments" },
           likes: { $size: "$likes" },
+          author:{
+            $first:"$author"
+          }
         }
+      },
+      {
+        $match: {
+          author: { $ne: null } // Exclude posts where the author is missing
+        },
       },
       {
         $sample:{

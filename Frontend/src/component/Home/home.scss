@@ -8,7 +8,7 @@
     color: white;
   }
   &.compromise {
-    max-width: 95%;
+    width: 95%;
   }
   .story-upload {
     &.active {
@@ -401,7 +401,7 @@
 }
 @media (max-width:475px){
   .Home-section{
-    width: 100%;
+    width: 100vw !important;
     .container{
       .row{
         .box{

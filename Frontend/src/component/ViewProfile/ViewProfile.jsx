@@ -146,6 +146,27 @@ const ViewProfile = () => {
       console.log(error);
     }
   };
+  const blockHandler = async () => {
+    try {
+      const response = await axios.post(
+        `${API_URL}/api/user/block/${username}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (response.data.success) {
+        toast.success(response.data.message);
+      }else{
+        toast.error(response.data.message)
+      }
+      // console.log(response.data.message);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handlestoryclose = () => {
     setstoryupload(false);
@@ -244,7 +265,7 @@ const ViewProfile = () => {
                         <button onClick={followHandler} className={`${dark?"dark-mode":""}`}>
                           {profileData.isFollow?"Following":profileData.hasFollowReqest?"Requested":"Follow"}
                         </button>
-                        <button onClick={followHandler} className={`${dark?"dark-mode":""}`}>
+                        <button onClick={blockHandler} className={`${dark?"dark-mode":""}`}>
                         Block
                           {/* {profileData.isFollow?"Following":profileData.hasFollowReqest?"Requested":"Follow"} */}
                         </button>

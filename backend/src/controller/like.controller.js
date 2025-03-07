@@ -135,39 +135,13 @@ const toggleStoryLike = asyncHandler(async (req, res) => {
 
     if (findLike) {
       await Like.findByIdAndDelete(findLike._id);
-      await Notification.findOneAndDelete({
-        story_id: verifyStory._id,
-        sender_id: req.user?._id,
-        notification_type: "like",
-      });
+      
     } else {
-      const like = await Like.create({
+       await Like.create({
         story_id: storyId,
         user_id: req.user?._id,
       });
-      if (postOwner.notificationSettings.like === "all") {
-        await Notification.create({
-          user_id: findComment.author,
-          story_id: like.story_id,
-          notification_type: "like",
-          sender_id: like.user_id,
-        });
-      } else if (postOwner.notificationSettings.like === "following") {
-        const isFollowed = await Follow.findOne({
-          following_id: req.user?._id,
-          follower_id: postOwner._id,
-        });
-
-        if (isFollowed) {
-          await Notification.create({
-            user_id: findComment.author,
-            story_id: like.story_id,
-            notification_type: "like",
-            sender_id: like.user_id,
-          });
-        }
-      } else {
-      }
+      
     }
 
     const story = await Story.aggregate([
@@ -197,6 +171,7 @@ const toggleStoryLike = asyncHandler(async (req, res) => {
           author: {
             $first: "$author",
           },
+          
           isLike: {
             $cond: {
               if: {

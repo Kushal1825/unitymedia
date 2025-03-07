@@ -149,67 +149,10 @@ const getfollowingStory = asyncHandler(async (req,res)=>{
     const followingsId = followings.map((elem)=> elem.following_id._id)
     
 
-    // const stories = await Story.aggregate([
-    //    {
-    //     $match: {
-    //       user_id: { $in: followingsId }, 
-    //       expires_at: { $gt: new Date(Date.now()) } 
-    //     }
-    //   },
-    //   {
-    //     $lookup: {
-    //       from: "users",
-    //       localField: "user_id",
-    //       foreignField: "_id",
-    //       as: "Author",
-    //       pipeline:[
-    //         {$match:{
-    //           closeFriends:{
-    //             $in: [req.user._id]
-    //           }
-    //         }}
-    //       ]
-    //     }
-    //   },
-    //   {
-    //     $addFields: {
-    //       Author: { $first: "$Author" }
-    //     }
-    //   },
-    //   {
-    //     $project: {
-    //       _id: 1, // Include story ID
-    //       media_url: 1,
-    //       createdAt:1, 
-    //       // Include other desired story fields
-    //       Author: { 
-    //         _id: 1, 
-    //         username: 1, 
-    //         avatar: 1 // Include necessary author fields
-    //       }
-    //     }
-    //   },
-    //   {
-    //     $group: {
-    //       _id: "$Author._id", 
-    //       stories: { $push: "$$ROOT" } 
-    //     }
-    //   },
-      
-    //   {
-    //     $project: {
-    //       _id: 0, 
-    //       user: "$_id", 
-    //       stories: 1 
-    //     }
-    //   }
-    // ]);
-
-    // console.log(stories);
     const stories = await Story.aggregate([
       {
         $match: {
-          user_id: { $in: followingsId },
+          user_id: { $in: [...followingsId,req.user._id] },
           expires_at: { $gt: new Date() }
         }
       },
@@ -218,13 +161,44 @@ const getfollowingStory = asyncHandler(async (req,res)=>{
           from: "users",
           localField: "user_id",
           foreignField: "_id",
-          as: "Author"
+          as: "Author",
+          pipeline:[
+            {
+             $match:{
+              blockList:{
+                $nin:[req.user?._id]
+              }
+             }
+            }
+          ]
+        }
+      },
+      {
+        $lookup:{
+          from:"likes",
+          localField:"_id",
+          foreignField:"story_id",
+          as:"likes"
         }
       },
       {
         $addFields: {
-          Author: { $first: "$Author" }
+          Author: { $first: "$Author" },
+          isLike: {
+            $cond: {
+              if: {
+                $in: [req.user?._id, "$likes.user_id"],
+              },
+              then: true,
+              else: false,
+            },
+          },
         }
+      },
+      {
+        $match: {
+          Author: { $ne: null } // Exclude posts where the author is missing
+        },
       },
       {
         $match: {
@@ -246,6 +220,7 @@ const getfollowingStory = asyncHandler(async (req,res)=>{
           media_url: 1,
           createdAt: 1,
           isCloseFriend: 1,
+          isLike:1,
           Author: {
             _id: 1,
             username: 1,

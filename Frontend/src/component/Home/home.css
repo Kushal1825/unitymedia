@@ -8,7 +8,7 @@
   color: white;
 }
 .Home-section.compromise {
-  max-width: 95%;
+  width: 95%;
 }
 .Home-section .story-upload {
   transform: scale(0);
@@ -337,7 +337,7 @@
 
 @media (max-width: 475px) {
   .Home-section {
-    width: 100%;
+    width: 100vw !important;
   }
   .Home-section .container .row .box .content .suggestion {
     margin-bottom: 60px;

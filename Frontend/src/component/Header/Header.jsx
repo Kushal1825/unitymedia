@@ -44,7 +44,7 @@ const Header = () => {
         <div className="container">
           <div className="row flex">
             <div className="logo">
-              <NavLink to={`/home`} className="flex">
+              <NavLink to={`/`} className="flex">
                 <div className="image-box">
                   <img src="../../../images/logo2.png" alt="" />
                 </div>

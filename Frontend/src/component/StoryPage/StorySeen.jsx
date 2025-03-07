@@ -94,7 +94,16 @@ const StorySeen = () => {
     }
   };
   const likeHandler = async (id) => {
-    console.log(id);
+    try {
+      await axios.get(`${API_URL}/api/like/story/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      await fetchStories();
+    } catch (error) {
+      // console.log(error);
+    }
   };
 
   const handlePrev = () => {
@@ -192,15 +201,18 @@ const StorySeen = () => {
               />
             </div>
             <div className="handler">
-              <li
-                onClick={() =>
-                  likeHandler(
-                    Storydata[currentUserIndex]?.stories[currentStoryIndex]._id
-                  )
-                }
-              >
-                <i className="fa-regular fa-heart"></i>
-              </li>
+              
+                {Storydata[currentUserIndex]?.stories[currentStoryIndex]
+                    ?.isLike ? (
+                    <li className="isLiked" onClick={()=>likeHandler(Storydata[currentUserIndex]?.stories[currentStoryIndex]?._id)}>
+                      <i className="fa-solid fa-heart"></i>
+                    </li>
+                  ) : (
+                    <li  onClick={()=>likeHandler(Storydata[currentUserIndex]?.stories[currentStoryIndex]?._id)}>
+                      <i className="fa-regular fa-heart"></i>
+                    </li>
+                  )}
+              
             </div>
           </div>
           <div className="right-arrow" onClick={handleNext}>

@@ -6,8 +6,9 @@ import ApiContext from "../../utils/ApiContext.jsx";
 import Message from "./message/Message.jsx";
 import MessageInput from "./messageInput/MessageInput.jsx";
 import { useSocket } from "../../context/SocketContext.jsx";
+import { IoMdArrowBack } from "react-icons/io";
 
-const PersonalChates = ({ selectedConversation,setConversation }) => {
+const PersonalChates = ({ selectedConversation,setConversation,setSelectedConversation }) => {
   const { dark } = useDarkMode();
   const [isLoading, setIsLoading] = useState(true);
   const [messages, setMessages] = useState([]);
@@ -16,6 +17,7 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
   const {socket} = useSocket();
   const messageEndRef = useRef();
   const currentUser = profile;
+
 
   useEffect(()=>{
     socket.on('newMessage',(message)=>{      
@@ -153,10 +155,13 @@ const PersonalChates = ({ selectedConversation,setConversation }) => {
         <div className="content">
           <div className={`user-info flex ${dark ? "setdark" : ""}`}>
             <div className="profile flex">
+              <div className="back min-view" onClick={()=>setSelectedConversation(null)}>
+                <IoMdArrowBack/>
+              </div>
               <div className="image-box">
                 <img
                   src={selectedConversation?.userProfilePic || "/images/user.png"}
-                  alt="Krunal"
+                  alt="userImage"
                 />
               </div>
               <ul>

@@ -142,7 +142,7 @@ useEffect(()=>{
       >
         <div className="container">
           <div className="row flex">
-            <div className={`user ${dark?"dark":""}`}>
+            <div className={`user ${dark?"dark":""} ${selectedConversation?"min-view-hide":""}`}>
               <div className="content">
                 <div className="heading">
                   <h3>Messages</h3>
@@ -246,6 +246,7 @@ useEffect(()=>{
               <PersonalChates
                 selectedConversation={selectedConversation}
                 setConversation={setConversation}
+                setSelectedConversation={setSelectedConversation}
               />
             )}
           </div>

@@ -306,6 +306,9 @@
               display: flex;
               justify-content: center;
               align-items: center;
+              .back{
+                display: none;
+              }
               .image-box {
                 width: 45px;
                 height: 45px;
@@ -366,6 +369,8 @@
               
               p {
                 padding: 5px 10px;
+                // background-color: red;
+                max-width: 100%;
                 text-align: center;
               }
               ul {
@@ -378,10 +383,15 @@
                     
                     .message{
                       background-color: #50b6ffae;
-                      padding: 5px 10px;
+                      // padding: 5px 10px;
                       font-size: 14px;
+                      max-width: 60%;
+                      .setdark{
+                        background-color: gray;
+                      }
                     }
                     p{
+                      width: 100%;
                       span.seen{
                         color:blue
                       }
@@ -407,15 +417,20 @@
                   }
                   .message {
                     border-radius: 5px;
+                    max-width: 60%;
                     background-color: rgb(239, 239, 239);
-                    padding: 5px 10px;
+                    // padding: 5px 10px;
                     font-size: 14px;
                     align-items: center;
                     margin-left: 5px;
                     transition: all 0.3s;
                     &.setdark {
-                      background-color: #dcf0ff;
+                      background-color: #ffffff;
                       color: black;
+                      
+                    }
+                    p{
+                      // width: max-content;
                     }
                   }
                 }
@@ -475,6 +490,46 @@
                     width: max-content;
                   }
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:475px){
+  .Chate-section{
+    width: 100% !important;
+    .container{
+      width: 100%;
+      .row{
+        padding: 0px;
+        .user{
+          width: 100%;
+          border: none;
+          &.min-view-hide{
+            display: none;
+          }
+        }
+        .no-conversation-container{
+          display: none;
+        }
+        .chate{
+          z-index: 9999;
+          margin-bottom: 0px;
+          height: calc(100% - 50px);
+          .content{
+            .user-info{
+              .profile{
+                
+                .min-view{
+                  display: block !important;
+                  font-size: 30px ;
+                  padding: 0px 20px 0px 0px;
+                  
+                }
+
               }
             }
           }

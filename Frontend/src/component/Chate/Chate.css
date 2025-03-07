@@ -457,7 +457,7 @@
   .Chate-section .container .row .chate {
     z-index: 9999;
     margin-bottom: 0px;
-    height: calc(100% - 50px);
+    height: calc(100% - 100px);
   }
   .Chate-section .container .row .chate .content .user-info .profile .min-view {
     display: block !important;

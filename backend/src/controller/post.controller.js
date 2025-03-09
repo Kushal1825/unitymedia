@@ -5,6 +5,8 @@ import ApiResponse from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { deleteOnCloudinary, uploadOnCloudinary } from "../utils/cloudinary.js";
 import { Follow } from "../models/follow.model.js";
+import { Comment } from "../models/comment.model.js";
+import { Like } from "../models/like.model.js";
 
 const createPost = asyncHandler(async (req, res) => {
   try {
@@ -15,7 +17,7 @@ const createPost = asyncHandler(async (req, res) => {
 
     
     if (!postImageLocalPath) {
-      return res.status(400).json(new ApiResponse(400,null,"Post Image Required"));
+      return res.status(200).json(new ApiResponse(400,null,"Post Image Required"));
     }
     // console.log("local file availage");
     
@@ -23,7 +25,7 @@ const createPost = asyncHandler(async (req, res) => {
   
     if (!postImage) {
       return res
-        .status(500)
+        .status(200)
         .json(new ApiResponse(500, null, "Error while upload the Image"));
     }
     const user = await User.findById(req.user._id);
@@ -42,7 +44,7 @@ const createPost = asyncHandler(async (req, res) => {
   } catch (error) {
     console.error(error);
     return res
-      .status(500)
+      .status(200)
       .json(new ApiResponse(500, null, "Internal Server Error"));
   }
 });
@@ -54,7 +56,7 @@ const getPostById = asyncHandler(async (req, res) => {
     // const post = await Post.findById(id);
 
     if (!id) {
-      return res.status(400).json(new ApiResponse(400, null, "Id required"));
+      return res.status(200).json(new ApiResponse(400, null, "Id required"));
     }
 
     const post = await Post.aggregate([
@@ -145,14 +147,14 @@ const getPostById = asyncHandler(async (req, res) => {
 
     if (!post) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "No such Post Exists"));
     }
     res.status(200).json(new ApiResponse(200, post[0], "Post Fetch Successfully"));
   } catch (error) {
     console.error(error);
     return res
-      .status(500)
+      .status(200)
       .json(new ApiResponse(500, null, "Internal Server Error"));
   }
 });
@@ -274,14 +276,14 @@ const getRandomPost = asyncHandler(async (req,res)=>{
 
     if (!post) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "Please Follow Somebudy to get Posts"));
     }
 
 res.status(200).json(new ApiResponse(200, {post,postIds}, "Post Fetch Successfully"));
   } catch (error) {
     console.log(error);
-    return res.status(500)
+    return res.status(200)
     .json(new ApiResponse(500,null,"Internal Server Error"));
     
   }
@@ -295,7 +297,7 @@ const getPostByUsername = asyncHandler(async (req, res) => {
 
     if (!username) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "Username is required"));
     }
     const user = await User.findOne({ username });
@@ -304,7 +306,7 @@ const getPostByUsername = asyncHandler(async (req, res) => {
 
     if (!user) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "No such a user exists"));
     }
 
@@ -369,7 +371,7 @@ const getPostByUsername = asyncHandler(async (req, res) => {
 
     if (!post) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "No such Post Exists"));
     }
     res.status(200).json(new ApiResponse(200, post, "Post Fetch Successfully"));
@@ -444,7 +446,7 @@ const getMyPost = asyncHandler(async (req, res) => {
   
     if (!post) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "No such Post Exists"));
     }
     res.status(200).json(new ApiResponse(200, post, "Post Fetch Successfully"));
@@ -471,21 +473,59 @@ const deletePost = asyncHandler(async (req, res) => {
   
     if (postAuthor != currentUser) {
       return res
-        .status(400)
+        .status(200)
+        .json(new ApiResponse(400, null, "Only author of the post can delete "));
+    }
+    try {
+    const { id } = req.params;
+  
+    const post = await Post.findById(id);
+  
+    if (!post) {
+      return res.status(400).json(new ApiResponse(400, null, "Invalid Post id"));
+    }
+    const postAuthor = post.user_id.toString();
+    const currentUser = req.user?._id.toString();
+    // console.log(postAuthor,currentUser);
+  
+    if (postAuthor != currentUser) {
+      return res
+        .status(200)
         .json(new ApiResponse(400, null, "Only author of the post can delete "));
     }
     const image = post?.image;
   
-    const splitImageUrl = image.toString().split("/");
+    if (image) {
+      const fullImageName = post.image.split("/").pop();
+      const imageName = fullImageName.split(".")[0];
+
+      // Delete post, comments, likes, and image asynchronously
+      await Promise.all([
+          deleteOnCloudinary(imageName),
+          Comment.deleteMany({ post_id: id }),
+          Like.deleteMany({ post_id: id }),
+          Post.findByIdAndDelete(id),
+      ]);
+  } else {
+      // Delete only post, comments, and likes if no image exists
+      await Promise.all([
+          Comment.deleteMany({ post_id: id }),
+          Like.deleteMany({ post_id: id }),
+          Post.findByIdAndDelete(id),
+      ]);
+  }
   
-    const fullImageName = splitImageUrl[splitImageUrl.length - 1];
-    // console.log(fullImageName);
   
-    const imageName = fullImageName.split(".")[0];
-    // console.log(imageName);
-    await deleteOnCloudinary(imageName);
+    return res
+      .status(200)
+      .json(new ApiResponse(200, null, "Post Deleted Successfully"));
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json(new ApiResponse(500, null, "Internal Server Error"));
+  }
   
-    await Post.findByIdAndDelete(id);
   
     return res
       .status(200)
@@ -505,7 +545,7 @@ const updatePost = asyncHandler(async (req, res) => {
 
     if (!caption) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "Caption Is required"));
     }
 
@@ -513,7 +553,7 @@ const updatePost = asyncHandler(async (req, res) => {
 
     if (!post) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "Invalid Post Id"));
     }
 
@@ -523,7 +563,7 @@ const updatePost = asyncHandler(async (req, res) => {
 
     if (postAuthor != currentUser) {
       return res
-        .status(400)
+        .status(200)
         .json(new ApiResponse(400, null, "Only author of the post can update"));
     }
 

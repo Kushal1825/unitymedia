@@ -8,7 +8,7 @@
   width: 15%;
   min-width: 30px;
   // max-width: minmax(max-content,15%);
-  height: 100vh;
+  height: 100dvh;
   background-color: white;
   border-right: 1px solid rgba(0, 0, 0, 0.14);
   // border-radius: 5px;
@@ -21,7 +21,7 @@
     color: white !important;
   }
   .container {
-    height: 100vh;
+    height: 100dvh;
     .row {
       height: 100%;
       position: relative;
@@ -33,7 +33,7 @@
         transform: translateX(-100%);
         transition: all 0.3s;
         width: 400px;
-        height: 100vh;
+        height: 100dvh;
         overflow-y: auto;
         overflow-x: hidden;
         scrollbar-width: none;
@@ -124,14 +124,12 @@
              
               li {
                 transition: all 0.3s;
-                // &:hover{
-                //     background-color: black;
-                //     color: white;
-                // }
+               
                 padding: 10px;
                 .following {
                   align-items: center;
                   width: 100%;
+                  cursor: pointer;
                   .image-box {
                     width: 50px;
                     height: 50px;
@@ -178,6 +176,7 @@
                 .follow {
                   align-items: center;
                   width: 100%;
+                  cursor: pointer;
                   .image-box {
                     width: 50px;
                     height: 50px;
@@ -195,6 +194,7 @@
                         width: 100%;
                         font-size: 20px;
                         overflow: hidden;
+                        
                       }
                       span {
                         width: 100%;
@@ -219,6 +219,7 @@
                 .like {
                   align-items: center;
                   width: 100%;
+                  cursor: pointer;
                   .image-box {
                     width: 50px;
                     height: 50px;
@@ -242,6 +243,7 @@
                           width: 100%;
                           font-size: 20px;
                           overflow: hidden;
+                          cursor: pointer;
                         }
                       
                       span {
@@ -254,6 +256,7 @@
                 .comment {
                   align-items: center;
                   width: 100%;
+                  cursor: pointer;
                   .image-box {
                     width: 50px;
                     height: 50px;
@@ -280,6 +283,7 @@
                       span {
                         width: 100%;
                         display: block;
+                        cursor: pointer;
                       }
                     }
                   }
@@ -363,10 +367,12 @@
                         width: 100%;
                         font-size: 20px;
                         overflow: hidden;
+                        cursor: pointer;
                       }
                       span {
                         width: 100%;
                         display: block;
+                       
                       }
                     }
                     .btn {
@@ -451,6 +457,12 @@
               li {
                 margin: 5px 0px;
                 padding: 10px;
+                .image-box{
+                  width: 35px;
+height: 35px;
+border-radius: 50%;
+overflow: hidden;
+                }
                 @media (max-width:1000px) {
                   
                   p{
@@ -468,6 +480,7 @@
                   align-items: center;
                   transition: all 0.3s;
                   border-radius: 10px;
+               
                   &.active {
                     background-color: #1a1a1a;
                     color: white;
@@ -481,6 +494,9 @@
                     font-size: 25px;
                     display: block;
                     width: 30px;
+                    &.mview{
+                      display: none;
+                    }
                   }
                   p {
                     padding-left: 10px;
@@ -505,8 +521,6 @@
                   }
                 }
                 span{
-
-               
                   color: black;
                   padding: 10px;
                   transition: all 0.3s;
@@ -577,6 +591,12 @@
     z-index: 999;
     .container{
       .row{
+        
+        .slide-page{
+          top:-655px;
+          width: 100%;
+          height: 600px;
+        }
         .box{
           .content{
             .main-menu{
@@ -587,8 +607,12 @@
                 justify-content: space-around;
                 li{
                   padding: 0px !important;
+               
                   a{
                     text-align: center;
+                    &.mview{
+                      padding: 2px;
+                    }
                   }
                  &.mview{
                   display: none;

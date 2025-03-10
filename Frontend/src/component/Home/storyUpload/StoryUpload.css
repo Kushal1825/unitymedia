@@ -1,6 +1,6 @@
 .story-upload {
   width: 85%;
-  height: 92vh;
+  height: 92dvh;
 }
 .story-upload.dark {
   background-color: black;
@@ -100,4 +100,17 @@
 }
 .upload-button:hover {
   background-color: #0077c2;
+}
+
+@media (max-width: 475px) {
+  .story-upload {
+    width: 100%;
+    height: 90dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .story-upload .story-upload-container {
+    margin: 0px;
+  }
 }/*# sourceMappingURL=StoryUpload.css.map */

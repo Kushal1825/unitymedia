@@ -106,7 +106,7 @@
 }
 .story-viewer .story-content .story-box .story-images img {
   max-width: 100%;
-  max-height: 90vh;
+  max-height: 90dvh;
   -o-object-fit: contain;
      object-fit: contain;
 }

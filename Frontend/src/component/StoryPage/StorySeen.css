@@ -274,7 +274,7 @@
   }
   .story-seen .container .current-div .main-div {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
   }
   .story-seen .container .current-div .main-div .play-pause-handler {
     z-index: 99999;

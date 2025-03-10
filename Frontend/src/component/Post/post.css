@@ -1,7 +1,7 @@
 .postupload-section {
   width: 85%;
   display: flex;
-  height: 95vh;
+  height: 95dvh;
   justify-content: center;
   align-items: center;
 }
@@ -66,5 +66,19 @@
 @media (max-width: 475px) {
   .postupload-section {
     width: 100%;
+    height: 90dvh;
+  }
+  .postupload-section .post-upload-container {
+    width: 360px;
+  }
+  .postupload-section .post-upload-container .upload-box {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .postupload-section .post-upload-container .caption-input {
+    width: 275px;
+    height: 50px;
   }
 }/*# sourceMappingURL=post.css.map */

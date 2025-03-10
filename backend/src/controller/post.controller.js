@@ -7,6 +7,7 @@ import { deleteOnCloudinary, uploadOnCloudinary } from "../utils/cloudinary.js";
 import { Follow } from "../models/follow.model.js";
 import { Comment } from "../models/comment.model.js";
 import { Like } from "../models/like.model.js";
+import { Notification } from "../models/notification.model.js";
 
 const createPost = asyncHandler(async (req, res) => {
   try {
@@ -503,6 +504,7 @@ const deletePost = asyncHandler(async (req, res) => {
       await Promise.all([
           deleteOnCloudinary(imageName),
           Comment.deleteMany({ post_id: id }),
+          Notification.deleteMany({post_id:id}),
           Like.deleteMany({ post_id: id }),
           Post.findByIdAndDelete(id),
       ]);
@@ -510,6 +512,7 @@ const deletePost = asyncHandler(async (req, res) => {
       // Delete only post, comments, and likes if no image exists
       await Promise.all([
           Comment.deleteMany({ post_id: id }),
+          Notification.deleteMany({post_id:id}),
           Like.deleteMany({ post_id: id }),
           Post.findByIdAndDelete(id),
       ]);

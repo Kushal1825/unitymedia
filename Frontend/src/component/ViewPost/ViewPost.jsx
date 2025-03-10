@@ -156,7 +156,7 @@ const ViewPost = () => {
                       <ul>
                         <li className="flex">
                           <NavLink to={`/${postdata?.author?.username}`}>
-                            <h4>{postdata?.author?.username}</h4>
+                            <h4 className={`${dark ? "setdark" : ""}`}>{postdata?.author?.username}</h4>
                           </NavLink>
                         </li>
                         <li>

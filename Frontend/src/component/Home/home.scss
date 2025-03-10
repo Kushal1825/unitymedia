@@ -1,7 +1,7 @@
 
 .Home-section {
   width: 85vw;
-  height: 90vh;
+  height: 90dvh;
   background-color: #f8f9fa;
   &.setdark {
     background-color: black;
@@ -20,7 +20,7 @@
     transition: all 0.3s;
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -92,7 +92,7 @@
         scrollbar-width: none;
         scroll-behavior: smooth;
         background-color: #f8f9fa;
-        height: 90vh;
+        height: 90dvh;
         &.setdark {
           background-color: black;
           color: white;
@@ -440,8 +440,8 @@
                   }
               
                   li {
-                    width: 200px;
-                    height: 200px;
+                    width: 150px;
+                    height: 180px;
                     border-radius: 0px;
                     padding: 5px 10px;
                     display: flex;
@@ -461,8 +461,8 @@
                       align-items: center;
               
                       .image-box {
-                        width: 100%;
-                        height: 60%;
+                        width: 60%;
+                        height: 50%;
                         border-radius: 0px;
                       }
                       .detail{
@@ -472,6 +472,10 @@
                         justify-content: center;
                         align-items: start;
                         gap: 10px;
+                        a{
+                          text-align: center;
+                          width: 100%;
+                        }
                         button{
                           padding: 5px;
                           width: 100%;

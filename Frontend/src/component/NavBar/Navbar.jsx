@@ -230,7 +230,7 @@ function Navbar() {
                         <i className="fa-solid fa-house"></i> <p>Home</p>
                       </NavLink>
                     </li>
-                    <li className="mview">
+                    <li className="">
                       <span
                         onClick={handlesearch}
                         className={`flex ${dark ? "setdark" : ""} ${
@@ -288,12 +288,15 @@ function Navbar() {
                         to={`/profile`}
                         onClick={() => setNavbarActive(false)}
                         className={({ isActive }) =>
-                          `flex ${isActive ? "active" : ""} ${
+                          `flex mview ${isActive ? "active" : ""} ${
                             navbarActive ? "slide" : ""
                           } ${dark ? "setdark" : ""}`
                         }
                       >
-                        <i className="fa-solid fa-address-card"></i>
+                        <i className="fa-solid fa-address-card mview"></i>
+                        <div className="image-box">
+                        <img src={'/images/user.png'} alt="" />
+                        </div>
                         <p>Profile</p>
                       </NavLink>
                     </li>

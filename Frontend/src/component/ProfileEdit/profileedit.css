@@ -52,14 +52,14 @@
 }
 .profileedit-section .container .row .setting .content {
   padding: 15px;
-  height: 100vh;
+  height: 100dvh;
   scroll-behavior: smooth;
   overflow-y: auto;
   scrollbar-width: none;
   overflow-x: hidden;
 }
 .profileedit-section .container .row .setting .content .edit-profile {
-  height: 100vh;
+  height: 100dvh;
   display: none;
   background-color: white;
   border-radius: 10px;
@@ -181,7 +181,7 @@
 }
 .profileedit-section .container .row .setting .content .notification {
   display: none;
-  height: 100vh;
+  height: 100dvh;
   background-color: white;
   border-radius: 10px;
 }
@@ -535,4 +535,73 @@
   background: transparent;
   outline: none;
   width: 100%;
+}
+
+@media (max-width: 475px) {
+  .profileedit-section {
+    width: 100%;
+    height: 100dvh;
+  }
+  .profileedit-section .container .row .option {
+    width: 100%;
+  }
+  .profileedit-section .container .row .option .content ul {
+    padding: 0px 15px;
+  }
+  .profileedit-section .container .row .option .content ul li {
+    padding: 5px;
+  }
+  .profileedit-section .container .row .setting {
+    width: 100%;
+  }
+  .profileedit-section .container .row .setting .content {
+    width: 100%;
+    height: 100%;
+    padding-top: 0px;
+  }
+  .profileedit-section .container .row .setting .content .edit-profile {
+    height: 460px;
+  }
+  .profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1) {
+    padding: 5px 10px;
+  }
+  .profileedit-section .container .row .setting .content .edit-profile .content form ul li:nth-child(1) .image-box {
+    width: 100px;
+    height: 75px;
+  }
+  .profileedit-section .container .row .setting .content .notification {
+    height: 460px;
+  }
+  .profileedit-section .container .row .setting .content .notification .content form ul li h4 {
+    padding: 8px 0px;
+  }
+  .profileedit-section .container .row .setting .content .close-friends .content form .data ul {
+    height: 300px;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    scrollbar-width: none;
+    overflow-x: hidden;
+  }
+  .profileedit-section .container .row .setting .content .close-friends .content form .data ul li {
+    padding: 5px 0px;
+  }
+  .profileedit-section .container .row .setting .content .close-friends .content form .data ul li .person .detail {
+    width: 75%;
+  }
+  .profileedit-section .container .row .setting .block .content .data ul {
+    height: 340px;
+  }
+  .profileedit-section .container .row .setting .security .content .form-container form {
+    padding: 0px !important;
+  }
+  .profileedit-section .container .row .setting .personal-details .content .heading {
+    padding-bottom: 20px;
+  }
+  .profileedit-section .container .row .setting .personal-details .content form {
+    padding: 0px !important;
+  }
+  .profileedit-section .container .row .setting .personal-details .content form .contact-info {
+    padding: 5px !important;
+    height: 105px !important;
+  }
 }/*# sourceMappingURL=profileedit.css.map */

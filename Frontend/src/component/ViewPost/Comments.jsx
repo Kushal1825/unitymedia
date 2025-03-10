@@ -42,7 +42,7 @@ const Comments = ({data}) => {
           <ul>
             <li className="flex">
             <NavLink to={`/${comment?.author?.username}`}>
-                    <h4>{comment?.author?.username}</h4>
+                    <h4 className={`${dark ? "setdark" : ""}`}>{comment?.author?.username}</h4>
                   </NavLink>
             </li>
             <li>

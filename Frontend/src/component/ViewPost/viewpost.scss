@@ -1,6 +1,6 @@
 .viewpost-section {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   position: absolute;
   top: 0;
   left: 0;
@@ -66,10 +66,16 @@
               align-items: center;
               width: max-content;
               ul {
+                padding-left: 5px;
                 li {
                   align-items: center;
                   h4 {
                     padding: 0px 5px;
+                    
+                      &.setdark{
+                        color: white;
+                      }
+                    
                   }
 
                   i {
@@ -92,7 +98,7 @@
             }
           }
           .comments {
-            height: 60vh;
+            height: 60dvh;
             
             overflow-y: auto;
             overflow-x: hidden;
@@ -123,11 +129,18 @@
                 margin-left: 10px;
                 align-items: center;
                 gap:10px;
+                
                 ul{
                   width: 100%;
                   li{
                     display: flex;
-                    
+                  a{
+                    h4{
+                      &.setdark{
+                        color: white;
+                      }
+                    }
+                  }
                   }
                 }
                 span{
@@ -162,6 +175,7 @@
             ul {
               padding: 15px 0px;
               li {
+                
                 padding: 10px;
                 align-items: center;
                 width: max-content;
@@ -187,6 +201,7 @@
                   }
                 }
                 font-size: 16px;
+                
               }
             }
             .likes-count {
@@ -257,7 +272,7 @@
             }
             &.detail{
  .comments{
-height: 21vh;
+height: 21dvh;
  }
             }
           }

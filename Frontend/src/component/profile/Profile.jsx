@@ -189,6 +189,17 @@ const Profile = () => {
                         </h3>
                         <h4>{userProfile?.fullName}</h4>
                       </div>
+                      <NavLink
+                        to={`/profileedit`}                        
+                        className={({ isActive }) =>
+                          `flex ${isActive ? "active" : ""} ${
+                            dark ? "setdark" : ""
+                          } ${navbarActive ? "slide" : ""}`
+                        }
+                      >
+                        <i className="fa-solid fa-gear"></i>
+                        
+                      </NavLink>
                       </div>
                       <div>
                       <p>{userProfile?.bio}</p>
@@ -259,7 +270,7 @@ const Profile = () => {
                     </div>
                   ) : (
                     <div className="blank-post flex">
-                      <ul className="flex">
+                      <ul className="flex mview">
                         <li></li>
                         <li></li>
                         <li></li>

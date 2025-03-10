@@ -18,7 +18,7 @@ function Navbar() {
   const [notification, setNotification] = useState(false);
 
   const [search, setSearch] = useState(false);
-  const {API_URL,token}= useContext(ApiContext);
+  const {API_URL,token,profile}= useContext(ApiContext);
   const [searchQuery,setSearchQuery]=useState("");
   const [searchUser,setSearchUser]=useState([]);
 
@@ -295,7 +295,7 @@ function Navbar() {
                       >
                         <i className="fa-solid fa-address-card mview"></i>
                         <div className="image-box">
-                        <img src={'/images/user.png'} alt="" />
+                        <img src={`${profile?.avatar?.url}` || "/images/user.png"} alt="" />
                         </div>
                         <p>Profile</p>
                       </NavLink>

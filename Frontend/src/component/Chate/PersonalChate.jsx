@@ -46,7 +46,7 @@ const PersonalChates = ({ selectedConversation,setConversation,setSelectedConver
                 ...conversation,
                 lastMessage:{
                   content:lastMessage?.content,
-                  sender:lastMessage?.sender._id,
+                  sender:lastMessage?.sender?._id,
                   seen:lastMessage?.seen
                 }
               }
@@ -79,7 +79,7 @@ const PersonalChates = ({ selectedConversation,setConversation,setSelectedConver
               ...conversation,
               lastMessage:{
                 content:lastMessage?.content,
-                sender:lastMessage?.sender._id
+                sender:lastMessage?.sender?._id
               }
             }
           }
@@ -102,7 +102,7 @@ const PersonalChates = ({ selectedConversation,setConversation,setSelectedConver
               ...conversation,
               lastMessage:{
                 content:message?.content,
-                sender:message.senderId
+                sender:message?.senderId
               }
             }
           }

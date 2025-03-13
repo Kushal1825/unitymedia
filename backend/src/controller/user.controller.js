@@ -683,6 +683,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
           avatar: 1,
           email: 1,
           is_private:1,
+          notificationSettings:1,
           hasFollowReqest: 1,
         },
       },

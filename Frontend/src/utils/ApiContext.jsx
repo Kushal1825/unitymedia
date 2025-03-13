@@ -42,11 +42,34 @@ export const ApiProvider = ({ children }) => {
       });
 
       // console.log("Profile fetched:", response.data.data);
-      setProfile(response.data.data);
+      if(response?.data?.success)
+      {
+        setProfile(response.data.data);
+        fetchUserDetails(response?.data?.data?.username)
+      }
     } catch (error) {
       console.log("Error fetching profile:", error);
     }
   };
+  const fetchUserDetails=async(username)=>{
+    try {
+      const res = await axios.get(
+        `${API_URL}/api/user/profile/${username}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (res.data.success) {
+        setProfile((prev) => ({ ...res.data.data[0] }));
+        // console.log(userProfile);
+      }
+    } catch (error) {
+      console.log("Error fetching Profile:",error);
+      
+    }
+  }
 
   return (
     <ApiContext.Provider

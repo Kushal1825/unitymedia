@@ -20,8 +20,14 @@ const Profile = () => {
   const { API_URL, profile, token } = useContext(ApiContext);
   // console.log(profile);
 
-  const [userProfile, setUserProfile] = useState(null);
+  const [userProfile, setUserProfile] = useState(profile);
   const [userPost, setUserPost] = useState([]);
+
+  useEffect(()=>{
+    if(profile){
+      setUserProfile(profile);
+    }
+  },[profile]);
 
   
   const navigate = useNavigate();
@@ -34,22 +40,7 @@ const Profile = () => {
   
   const fetchProfile = async () => {
     try {
-      const response = await axios.get(
-        `${API_URL}/api/user/profile/${profile?.username}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      // console.log(response.data.data);
-
-      if (response.data.data) {
-        setUserProfile((prev) => ({ ...response.data.data[0] }));
-        // console.log(userProfile);
-      }
-
+      
       const postResponse = await axios.get(
         `${API_URL}/api/post/u/${profile.username}` ,
         {
@@ -60,7 +51,7 @@ const Profile = () => {
       );
       // console.log(postResponse.data.data);
 
-      if (response.data.data) {
+      if (postResponse.data.success) {
         setUserPost((prev) => postResponse.data.data);
         // console.log(userPost);
       }

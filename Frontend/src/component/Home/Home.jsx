@@ -7,20 +7,18 @@ import Posts from "./Posts";
 import ApiContext from "../../utils/ApiContext.jsx";
 import axios from "axios";
 import PostSkeleton from "./postskeleton/PostSkeleton.jsx";
-import StoryUpload from "./storyUpload/StoryUpload.jsx";
 import Story from "../Story/Story.jsx";
+import { usePost } from "../../context/PostContext.jsx";
 // import StoryViewer from "../StoryView/StoryView.jsx";
 const Home = () => {
   
   const { dark, navbarActive } = useDarkMode();
-  const { API_URL, token,profile } = useContext(ApiContext);
-  const [postIds, setPostIds] = useState([]);
-  const navigate=useNavigate();
-  const [posts, setPosts] = useState([]);
-  const [postLoading,setPostLoading]=useState(true);
-  const [followingStory,setFollowingStory]= useState([])
+  const { API_URL, token, profile } = useContext(ApiContext);
+  const { post, setPost, setPostIds, postIds } = usePost();  // Access context
 
-  // const [storyupload, setStoryUpload] = useState(false);
+  const navigate = useNavigate();
+  const [postLoading, setPostLoading] = useState(true);
+  const [followingStory, setFollowingStory] = useState([]);
 
   const fetchStories = async()=>{
     try{
@@ -30,9 +28,7 @@ const Home = () => {
         }
       });
 
-      if(response.data.success){
-        // console.log(response.data.data);
-        
+      if(response.data.success){        
         setFollowingStory(response.data.data);
       }
     }catch(error){
@@ -44,7 +40,6 @@ const Home = () => {
 
   const fetchPost = async () => {
     try {
-      
       const response = await axios.post(
         `${API_URL}/api/post/random-post`,
         { postIds },
@@ -52,11 +47,9 @@ const Home = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      // console.log(response.data.data.posts);
-      
-      if (response.data.data) {
-        setPosts((prev) => response.data.data.post);
-        setPostIds(response.data.data.postIds);
+      if (response.data.success) {
+        setPost(response.data.data.post);  // Set posts from API response
+        setPostIds(response.data.data.postIds);  // Update postIds
         setPostLoading(false);
       }
     } catch (error) {
@@ -65,9 +58,14 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchPost();
+    if (!post || post.length === 0){
+      console.log("Hellow");
+      fetchPost();
+    }else{
+      setPostLoading(false);
+    }
     fetchStories();
-  }, []);
+  }, [postIds]);
 
   
 
@@ -146,7 +144,7 @@ const Home = () => {
                   }
 
                   {!postLoading &&
-                    posts.map(post=>{
+                    post?.map(post=>{
                       // console.log(posts.length);
                       
                       return(

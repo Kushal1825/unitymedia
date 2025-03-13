@@ -36,7 +36,7 @@ const StorySeen = () => {
       
       const timer = setInterval(() => {
         
-        if(!isPause){
+        if(!isPause && !isLoading){
           setProgress((prev) => {
             if (prev >= 100) {
               handleNext();
@@ -49,7 +49,7 @@ const StorySeen = () => {
         return () => clearInterval(timer);
 
     }
-  }, [currentStoryIndex, currentUserIndex, Storydata,isPause]);
+  }, [currentStoryIndex, currentUserIndex, Storydata,isPause,isLoading]);
 
   const handleNext = () => {
     if (!Storydata.length || !currentStories.length) {

@@ -19,6 +19,77 @@ const PersonalChates = ({ selectedConversation,setConversation,setSelectedConver
   const currentUser = profile;
 
 
+  const onUnsend = async(id)=>{
+    try {
+      const res = await axios.delete(`${API_URL}/api/message/${id}/${selectedConversation?.userId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(res);
+      
+      if (res?.data?.success) {
+        setMessages(()=>{
+          return messages.filter((prev)=>prev._id !== id);
+        });
+        // console.log(message);
+        
+        setConversation(prevConvs =>{
+          const updatedConversations = prevConvs.map(conversation=>{
+            const lastMessage = res?.data?.data?.lastMessage; 
+            console.log(lastMessage);
+            
+            
+            if(conversation._id === lastMessage?.conversationId){
+              
+              return {
+                ...conversation,
+                lastMessage:{
+                  content:lastMessage?.content,
+                  sender:lastMessage?.sender._id,
+                  seen:lastMessage?.seen
+                }
+              }
+            }
+            return conversation;
+          })
+          return updatedConversations;
+        });
+
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      toast.error("Error", error.message, "error");
+    }
+  }
+
+  useEffect(()=>{
+    socket.on("MessageRemove",({messageId,lastMessage})=>{
+      setMessages(()=>{
+        return messages.filter((prev)=>prev._id !== messageId);
+      });
+
+      setConversation(prevConvs =>{
+        const updatedConversations = prevConvs.map(conversation=>{
+
+          if(conversation._id === lastMessage.conversationId){
+            
+            return {
+              ...conversation,
+              lastMessage:{
+                content:lastMessage?.content,
+                sender:lastMessage?.sender._id
+              }
+            }
+          }
+          return conversation;
+        })
+        return updatedConversations;
+      });
+
+      })
+  })
   useEffect(()=>{
     socket.on('newMessage',(message)=>{      
       setMessages((prevMessages)=>[...prevMessages,message]);
@@ -193,13 +264,13 @@ const PersonalChates = ({ selectedConversation,setConversation,setSelectedConver
                 {!isLoading &&
                   messages.map((message) => (
                     <div className="flex flex-col"
-                    style={{height:"100%",overflowY:"auto"}}
                       ref={messages.length-1 === messages.indexOf(message) ? messageEndRef : null}
                     >
                       <Message
                         key={message._id}
                         message={message}
                         ownMessage={currentUser?._id === message?.sender?._id || currentUser?._id === message?.sender }
+                        onUnsend={onUnsend}
                       />
                     </div>
                   ))}

@@ -334,6 +334,7 @@
   width: 100%;
 }
 .Chate-section .container .row .chate .content .chates-list .content ul li {
+  align-items: center;
   padding: 5px 15px;
   justify-content: left;
 }
@@ -341,18 +342,89 @@
   justify-content: right;
 }
 .Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message {
+  position: relative;
   background-color: rgba(80, 182, 255, 0.6823529412);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
   font-size: 14px;
   max-width: 60%;
 }
 .Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .setdark {
   background-color: gray;
 }
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler {
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler .options-container {
+  position: relative;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler .options-container .options-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #999;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.2s ease-in-out;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler .options-container .options-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler .options-container .dropdown-menu {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: #262626;
+  color: #fff;
+  z-index: 99999;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  text-align: center;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler .options-container .dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler .options-container .dropdown-menu button {
+  background: none;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  transition: background 0.2s ease-in-out;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler .options-container .dropdown-menu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage .message .handler .options-container .dropdown-menu button:first-child {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage span.seen {
+  color: blue;
+}
 .Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage p {
   width: 100%;
-}
-.Chate-section .container .row .chate .content .chates-list .content ul li.ownMessage p span.seen {
-  color: blue;
 }
 .Chate-section .container .row .chate .content .chates-list .content ul li .image-box {
   width: 45px;
@@ -371,6 +443,7 @@
 .Chate-section .container .row .chate .content .chates-list .content ul li .message {
   border-radius: 5px;
   max-width: 60%;
+  padding: 5px 10px;
   background-color: rgb(239, 239, 239);
   font-size: 14px;
   align-items: center;

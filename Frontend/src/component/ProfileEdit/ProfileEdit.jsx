@@ -483,7 +483,7 @@ const ProfileEdit = () => {
                             name="like-check"
                             onClick={()=>handleChange("like","all")}
                             checked={
-                              userProfile?.notificationSettings.like === "all"
+                              userProfile?.notificationSettings?.like === "all"
                                 ? true
                                 : false
                             }
@@ -497,7 +497,7 @@ const ProfileEdit = () => {
                             name="like-check"
                             onClick={()=>handleChange("like","off")}
                             checked={
-                              userProfile?.notificationSettings.like === "off"
+                              userProfile?.notificationSettings?.like === "off"
                                 ? true
                                 : false
                             }
@@ -514,7 +514,7 @@ const ProfileEdit = () => {
                             name="comment-check"
                             onClick={()=>handleChange("comment","all")}
                             checked={
-                              userProfile?.notificationSettings.comment === "all"
+                              userProfile?.notificationSettings?.comment === "all"
                                 ? true
                                 : false
                             }
@@ -526,7 +526,7 @@ const ProfileEdit = () => {
                             type="radio"
                             name="comment-check"
                             checked={
-                              userProfile?.notificationSettings.comment === "off"
+                              userProfile?.notificationSettings?.comment === "off"
                                 ? true
                                 : false
                             }
@@ -542,7 +542,7 @@ const ProfileEdit = () => {
                           <input
                             type="radio"
                             checked={
-                              userProfile?.notificationSettings.follow === "all"
+                              userProfile?.notificationSettings?.follow === "all"
                                 ? true
                                 : false
                             }
@@ -554,7 +554,7 @@ const ProfileEdit = () => {
                           <input
                             type="radio"
                             checked={
-                              userProfile?.notificationSettings.follow === "off"
+                              userProfile?.notificationSettings?.follow === "off"
                                 ? true
                                 : false
                             }

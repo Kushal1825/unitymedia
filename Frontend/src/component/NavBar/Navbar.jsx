@@ -295,7 +295,7 @@ function Navbar() {
                       >
                         <i className="fa-solid fa-address-card mview"></i>
                         <div className="image-box">
-                        <img src={`${profile?.avatar?.url}` || "/images/user.png"} alt="" />
+                        <img src={`${profile?.avatar?.url}` || '/images/user.png'} alt="" />
                         </div>
                         <p>Profile</p>
                       </NavLink>

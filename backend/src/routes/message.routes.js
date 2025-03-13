@@ -7,7 +7,7 @@ const messageRouter = express.Router();
 messageRouter.get('/get/conversation',verifyJWT,getConversation);
 messageRouter.post("/send",verifyJWT,sendMessage);
 messageRouter.get("/get/:otherUserId",verifyJWT,getMessages);
-messageRouter.delete("/:messageId",verifyJWT,deleteMessage);
+messageRouter.delete("/:messageId/:recipientId",verifyJWT,deleteMessage);
 messageRouter.post("/share/post",verifyJWT,sharePost);
 
 

@@ -41,6 +41,7 @@ const Chate = () => {
       toast.error("Error", error.message, "error");
     }
   };
+  
 
   const searchHandler = async (e) => {
     e.preventDefault();
@@ -53,7 +54,6 @@ const Chate = () => {
       });
 
       const searchUser = res?.data?.data[0];
-      // console.log(searchUser);
 
       if (res.data.success) {
         const messagingYourSelf = searchUser?._id === profile?._id;

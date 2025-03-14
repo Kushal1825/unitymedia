@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { type } from "os";
 
 const userSchema = new mongoose.Schema(
   {
@@ -51,6 +52,15 @@ const userSchema = new mongoose.Schema(
     isVerified: {
       type: Boolean,
       default: false,
+    },
+    user_type:{
+      type:String,
+      enum:["user","admin"],
+      default:"user"
+    },
+    is_blocked:{
+      type:Boolean,
+      default:false,
     },
     blockList: [
       { 

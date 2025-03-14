@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
 
+
 const ApiContext = createContext();
 
 export const ApiProvider = ({ children }) => {
-  const API_URL ="https://unitymedia-backend.onrender.com"; 
+  const API_URL ="https://unitymedia-backend.onrender.com";
   const [token, setToken] = useState("");
   const [profile, setProfile] = useState(null); 
-
+  
   const getCookie = (name) => {
     const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
     return match ? match[2] : null;
@@ -22,6 +23,7 @@ export const ApiProvider = ({ children }) => {
       setToken(refreshToken);
     }
   }); 
+  
 
 
   useEffect(() => {
@@ -39,16 +41,22 @@ export const ApiProvider = ({ children }) => {
         headers:{
           Authorization:`Bearer ${token}`
         }
-      });
+      })
 
       // console.log("Profile fetched:", response.data.data);
       if(response?.data?.success)
       {
         setProfile(response.data.data);
         fetchUserDetails(response?.data?.data?.username)
+      }else{
+
       }
     } catch (error) {
       console.log("Error fetching profile:", error);
+
+      if(error.response?.status === 403){
+        clearCookiesAndLogout();
+      }
     }
   };
   const fetchUserDetails=async(username)=>{
@@ -70,6 +78,13 @@ export const ApiProvider = ({ children }) => {
       
     }
   }
+
+  const clearCookiesAndLogout = () => {
+    document.cookie = "refreshToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    setToken(""); // Clear state
+    setProfile(null);
+    window.location.href = "/login";
+  };
 
   return (
     <ApiContext.Provider

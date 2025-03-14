@@ -2,6 +2,7 @@ import express from "express";
 import { addCloseFriend, BlockedUser, changeUserPassword, closeFriendList, forgetPassword, getCurrentUser, getUserProfile, loginUser, logoutUser, removeCloseFriend, ResetPassword, searchUser, signupUser, suggestUsers, unblockUser, updateNotificationSetting, updatePrivacySetting, updateUserAvtar,updateUserInfo, userBlockList, verifyResetToken, verifyUser } from "../controller/user.controller.js";
 import { verifyJWT } from "../middleware/auth.middleware.js";
 import { upload } from "../middleware/multer.middleware.js";
+import { blockUser } from "../controller/admin.controller.js";
 
 const router = express.Router();
 
@@ -27,5 +28,6 @@ router.patch('/closeFriend/add/:userId',verifyJWT,addCloseFriend);
 router.patch("/closeFriend/remove/:userId",verifyJWT,removeCloseFriend);
 router.get("/list/closeFriend",verifyJWT,closeFriendList);
 router.put("/notification-settings",verifyJWT,updateNotificationSetting);
+router.put("/admin/toggleblock/:userId",verifyJWT,blockUser);
 
 export default router;

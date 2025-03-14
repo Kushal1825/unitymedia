@@ -204,6 +204,16 @@ const loginUser = asyncHandler(async (req, res) => {
           )
         );
     }
+    if(user.is_blocked){
+      return res.status(200)
+      .json(
+        new ApiResponse(
+          400,
+          null,
+          "Your account is blocked contact admin for further detail."
+        )
+      )
+    }
 
     const isPasswordValid = await user.isPasswordCorrect(password);
 
@@ -267,6 +277,13 @@ const logoutUser = asyncHandler(async (req, res) => {
 });
 
 const getCurrentUser = asyncHandler(async (req, res) => {
+
+  if (req?.user?.is_blocked) {
+    // Clear authentication cookie (assuming the cookie name is 'token')
+    res.clearCookie("refreshToken", cookieClear);
+
+    return res.status(403).json(new ApiResponse(403, null, "User is blocked. Logging out."));
+  }
   return res
     .status(200)
     .json(new ApiResponse(200, req.user, "Current user fetched successfully"));
@@ -685,6 +702,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
           is_private:1,
           notificationSettings:1,
           hasFollowReqest: 1,
+          is_blocked:1,
+          user_type:1,
         },
       },
     ]);

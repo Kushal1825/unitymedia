@@ -207,8 +207,13 @@ const getfollowingStory = asyncHandler(async (req,res)=>{
             {
               $and: [
                 { isCloseFriend: true },
+                {
 
-                { "Author.closeFriends":{$in: [req.user._id] }}
+                  $or:[
+                    { "Author.closeFriends":{$in: [req.user._id] }},
+                    {"Author._id":{$eq: req.user._id}}
+                  ]
+                },
               ]
             }
           ]
@@ -237,7 +242,7 @@ const getfollowingStory = asyncHandler(async (req,res)=>{
       },
       {
         $sort:{
-          "stories.createdAt":1
+          "stories[0].createdAt":1
         }
       },
       {

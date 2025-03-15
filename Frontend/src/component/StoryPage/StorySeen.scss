@@ -223,6 +223,13 @@
             transform: rotate(360deg);
           }
         }
+        .delete-button{
+          position: absolute;
+          bottom: 20px;
+          left:30px;
+          font-size: 30px;
+          color:red;
+        }
         .handler {
           li {
             color:whitesmoke;

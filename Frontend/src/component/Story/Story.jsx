@@ -28,9 +28,8 @@ const StoriesPage = () => {
       });
   
       if(response.data.success){
-        // console.log(response.data.data);
-        
         setStoriesData(response.data.data);
+        
       }
     }catch(error){
       console.log(error);

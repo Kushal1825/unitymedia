@@ -6,6 +6,8 @@ import { format } from "timeago.js";
 import ApiContext from "../../utils/ApiContext";
 import { FaPause, FaPlay } from "react-icons/fa";
 import axios from "axios";
+import { MdDeleteOutline } from "react-icons/md";
+import {toast} from 'react-hot-toast';
 
 const StorySeen = () => {
   const { id } = useParams();
@@ -19,7 +21,7 @@ const StorySeen = () => {
   const navigate = useNavigate();
   const [Storydata, setStoryData] = useState([]);
   const [progress, setProgress] = useState(0);
-  const { API_URL, token } = useContext(ApiContext);
+  const { API_URL, token,profile } = useContext(ApiContext);
 
   useEffect(() => {
     fetchStories();
@@ -27,16 +29,15 @@ const StorySeen = () => {
 
   const currentStories = Storydata[currentUserIndex]?.stories || [];
   const currentStory = currentStories[currentStoryIndex];
-  const [isPause,setIsPause]=useState(false);
-  const [isLoading,setIsLoading]=useState(true);
+  const [isPause, setIsPause] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (Storydata.length > 0) {
       // Only start timer when Storydata is available
-      
+
       const timer = setInterval(() => {
-        
-        if(!isPause && !isLoading){
+        if (!isPause && !isLoading) {
           setProgress((prev) => {
             if (prev >= 100) {
               handleNext();
@@ -45,33 +46,32 @@ const StorySeen = () => {
             return prev + 1;
           });
         }
-        }, 80);
-        return () => clearInterval(timer);
-
+      }, 80);
+      return () => clearInterval(timer);
     }
-  }, [currentStoryIndex, currentUserIndex, Storydata,isPause,isLoading]);
+  }, [currentStoryIndex, currentUserIndex, Storydata, isPause, isLoading]);
 
   const handleNext = () => {
     if (!Storydata.length || !currentStories.length) {
-        console.warn("Storydata or currentStories is empty.");
-        return;
+      console.warn("Storydata or currentStories is empty.");
+      return;
     }
 
     setProgress(0);
     setIsPause(false);
 
     if (currentStoryIndex < currentStories.length - 1) {
-        setCurrentStoryIndex((prev) => prev + 1);
+      setCurrentStoryIndex((prev) => prev + 1);
     } else if (currentUserIndex < Storydata.length - 1) {
-        setCurrentUserIndex((prev) => prev + 1);
-        setLastUserStory((prev) => prev + 1);
-        setNextUserStory((prev) => prev + 1);
-        setCurrentStoryIndex(0);
+      setCurrentUserIndex((prev) => prev + 1);
+      setLastUserStory((prev) => prev + 1);
+      setNextUserStory((prev) => prev + 1);
+      setCurrentStoryIndex(0);
     } else {
-        // console.log("End of stories:", { currentStoryIndex, currentUserIndex });
-        navigate("/");
+      // console.log("End of stories:", { currentStoryIndex, currentUserIndex });
+      navigate("/");
     }
-};
+  };
 
   const fetchStories = async () => {
     try {
@@ -105,6 +105,24 @@ const StorySeen = () => {
       // console.log(error);
     }
   };
+  const deleteHandler = async (id)=>{
+    try {
+      const res = await axios.delete(`${API_URL}/api/story/delete/${id}`,{
+        headers:{
+          Authorization:`Bearer ${token}`,
+        },
+      });
+      if(res?.data?.status){
+        toast.success(res?.data?.message);
+                
+        await fetchStories();
+      }else{
+        toast.error(res?.data?.message);
+      }
+    } catch (error) {
+      toast.error(error.response.message);
+    }
+  }
 
   const handlePrev = () => {
     setProgress(0);
@@ -163,20 +181,45 @@ const StorySeen = () => {
           </div>
           <div className="main-div">
             <div className="progress-container">
-              {
-                Storydata[currentUserIndex]?.stories?.map((val,i)=>{
-                  return(
-                  <div key={i} className={`progress-bar ${currentStoryIndex > i ? "completed":""} ${currentStoryIndex === i ? "active" : "" }`}>
-                    <div className="progress" style={{width: i === currentStoryIndex ? `${progress}%` : i < currentStoryIndex ? '100%' : '0'}}></div>
+              {Storydata[currentUserIndex]?.stories?.map((val, i) => {
+                return (
+                  <div
+                    key={i}
+                    className={`progress-bar ${
+                      currentStoryIndex > i ? "completed" : ""
+                    } ${currentStoryIndex === i ? "active" : ""}`}
+                  >
+                    <div
+                      className="progress"
+                      style={{
+                        width:
+                          i === currentStoryIndex
+                            ? `${progress}%`
+                            : i < currentStoryIndex
+                            ? "100%"
+                            : "0",
+                      }}
+                    ></div>
                   </div>
-                )}
-                )
-              }
+                );
+              })}
             </div>
+            {
+              Storydata[currentUserIndex]?.user === profile?._id &&
+            <div
+              className="delete-button"
+              onClick={() => {
+                window.confirm("are You sure You want to delete the story?")
+                  && deleteHandler(Storydata[currentUserIndex]?.stories[currentStoryIndex]._id);
+              }}
+            >
+              <MdDeleteOutline />
+            </div>
+            }
             <div className="play-pause-handler">
-             <button onClick={()=>setIsPause(prev=>!prev)}>
-              {isPause ? <FaPause/> :<FaPlay/>}
-             </button>
+              <button onClick={() => setIsPause((prev) => !prev)}>
+                {isPause ? <FaPause /> : <FaPlay />}
+              </button>
             </div>
             <div className="user-info">
               <img
@@ -188,31 +231,44 @@ const StorySeen = () => {
               <p>{Storydata[currentUserIndex]?.stories[0]?.Author?.username}</p>
             </div>
             <div className="story-container">
-            {isLoading && <div className="story-skeleton"></div>}
-            {isLoading && <div className="spinner"></div>}
+              {isLoading && <div className="story-skeleton"></div>}
+              {isLoading && <div className="spinner"></div>}
               <img
-              className={` ${isLoading ? "hidden" : "visible"}`}
+                className={` ${isLoading ? "hidden" : "visible"}`}
                 src={
                   Storydata[currentUserIndex]?.stories[currentStoryIndex]
                     ?.media_url
                 }
-                onLoad={()=>setIsLoading(false)}
+                onLoad={() => setIsLoading(false)}
                 alt=""
               />
             </div>
             <div className="handler">
-              
-                {Storydata[currentUserIndex]?.stories[currentStoryIndex]
-                    ?.isLike ? (
-                    <li className="isLiked" onClick={()=>likeHandler(Storydata[currentUserIndex]?.stories[currentStoryIndex]?._id)}>
-                      <i className="fa-solid fa-heart"></i>
-                    </li>
-                  ) : (
-                    <li  onClick={()=>likeHandler(Storydata[currentUserIndex]?.stories[currentStoryIndex]?._id)}>
-                      <i className="fa-regular fa-heart"></i>
-                    </li>
-                  )}
-              
+              {Storydata[currentUserIndex]?.stories[currentStoryIndex]
+                ?.isLike ? (
+                <li
+                  className="isLiked"
+                  onClick={() =>
+                    likeHandler(
+                      Storydata[currentUserIndex]?.stories[currentStoryIndex]
+                        ?._id
+                    )
+                  }
+                >
+                  <i className="fa-solid fa-heart"></i>
+                </li>
+              ) : (
+                <li
+                  onClick={() =>
+                    likeHandler(
+                      Storydata[currentUserIndex]?.stories[currentStoryIndex]
+                        ?._id
+                    )
+                  }
+                >
+                  <i className="fa-regular fa-heart"></i>
+                </li>
+              )}
             </div>
           </div>
           <div className="right-arrow" onClick={handleNext}>

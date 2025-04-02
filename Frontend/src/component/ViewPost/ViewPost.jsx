@@ -164,7 +164,7 @@ const ViewPost = () => {
                         </li>
                       </ul>
                     </div>
-                    <div className={`popup-container ${postdata?.author._id !== profile?._id ? "hide":""}`}>
+                    <div className={`popup-container ${postdata?.author._id !== profile?._id && profile?.user_type==="user" ? "hide":""}`}>
                       <button className="more-button" onClick={togglePopup}>
                         <IoMdMore size={30} />
                       </button>

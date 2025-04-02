@@ -599,23 +599,34 @@ const ResetPassword = asyncHandler(async (req, res) => {
 const getUserProfile = asyncHandler(async (req, res) => {
   try {
     const { username } = req.params;
+    const user_type= req.user?.user_type;
 
     if (!username?.trim()) {
       throw new ApiError(400, "username is missing");
     }
+    const match_condition={
+      $and: [
+        { username: username },
+        {
+          blockList: {
+            $nin: [req.user?._id],
+          },
+        },
+        { isVerified: true },
+        
+      ],
+      
+    }
+    if(user_type === "user"){
+      match_condition.$or=[
+        {
+          is_blocked:false
+        }, 
+      ]
+    }
     const userProfile = await User.aggregate([
       {
-        $match: {
-          $and: [
-            { username: username },
-            {
-              blockList: {
-                $nin: [req.user?._id],
-              },
-            },
-            { isVerified: true },
-          ],
-        },
+        $match: match_condition,
       },
       {
         $lookup: {
@@ -748,6 +759,7 @@ const suggestUsers = asyncHandler(async (req, res) => {
           _id: { $nin: excludeUsers }, 
           blockList: { $ne: req.user._id }, 
           isVerified: true, 
+          is_blocked:false
         },
       },
       {
@@ -777,17 +789,26 @@ const searchUser = asyncHandler(async (req, res) => {
 
     const regex = new RegExp(username);
     const exceptUser = [req.user?.username];
+    const match_condition={
+      $and: [
+        { username: { $regex: regex } },
+        { username: { $nin: exceptUser } },
+        { isVerified: true },
+        { blockList: { $nin: [req.user?._id] } },
+        
+      ],
+    }
+    if(req.user.user_type==="user"){
+      match_condition.$or=[
+        {
+          is_blocked:false
+        }
+      ]
+    }
 
     const user = await User.aggregate([
       {
-        $match: {
-          $and: [
-            { username: { $regex: regex } },
-            { username: { $nin: exceptUser } },
-            { isVerified: true },
-            { blockList: { $nin: [req.user?._id] } },
-          ],
-        },
+        $match: match_condition
       },
       {
         $project: {
@@ -876,6 +897,7 @@ const userBlockList = asyncHandler(async (req, res) => {
           _id: {
             $in: req.user?.blockList,
           },
+            is_blocked:false
         },
       },
       {
@@ -971,6 +993,9 @@ const closeFriendList = asyncHandler(async (req, res) => {
               },
             },
             { blockList: { $nin: [req.user?._id] } },
+            {
+              is_blocked:false
+            }
           ],
         },
       },

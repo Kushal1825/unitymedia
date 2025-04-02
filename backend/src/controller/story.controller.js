@@ -153,8 +153,10 @@ const getfollowingStory = asyncHandler(async (req,res)=>{
       {
         $match: {
           user_id: { $in: [...followingsId,req.user._id] },
-          expires_at: { $gt: new Date() }
+          expires_at: { $gt: new Date() },
+          is_blocked:false
         }
+
       },
       {
         $lookup: {

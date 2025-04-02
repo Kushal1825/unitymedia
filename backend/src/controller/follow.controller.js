@@ -215,6 +215,7 @@ const getFollowerList = asyncHandler(async (req, res) => {
           blockList: {
             $nin: [user?._id],
           },
+            is_blocked:false
         },
       },
       {
@@ -296,6 +297,7 @@ const getFollowingList = asyncHandler(async (req, res) => {
           blockList: {
             $nin: [user?._id],
           },
+          is_blocked:false
         },
       },
       {

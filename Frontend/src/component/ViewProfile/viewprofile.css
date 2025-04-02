@@ -1,3 +1,51 @@
+.profile-error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 85vw;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+.profile-error-container.dark {
+  background-color: black;
+}
+.profile-error-container.dark .profile-error-box {
+  background-color: rgba(133, 133, 133, 0.404);
+}
+.profile-error-container.dark h2 {
+  color: red;
+}
+.profile-error-container.dark p {
+  color: #dfdfdf;
+}
+.profile-error-container.dark .suggestion {
+  color: #c3c3c3;
+}
+.profile-error-container .profile-error-box {
+  background: #fff;
+  color: #d32f2f;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+}
+.profile-error-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.profile-error-container p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+.profile-error-container .suggestion {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
 .loader-container {
   display: flex;
   justify-content: center;

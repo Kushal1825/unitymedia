@@ -192,7 +192,7 @@ const getConversation = asyncHandler(async (req, res) => {
       participants: userId,
     }).populate({
       path: "participants",
-      select: "_id username avatar",
+      select: "_id username avatar is_blocked",
     });
 
     //remove the curren user from the participants array
@@ -202,11 +202,17 @@ const getConversation = asyncHandler(async (req, res) => {
         (participant) => participant._id.toString() !== userId.toString()
       );
     });
+    // console.log(conversation);
+    
+    const filteredConversations = conversation.filter((conv) =>
+      conv.participants.some((participant) => !participant.is_blocked)
+    );
+    // conversation
 
     res
       .status(200)
       .json(
-        new ApiResponse(200, conversation, "Conversation fetch successfully")
+        new ApiResponse(200, filteredConversations, "Conversation fetch successfully")
       );
   } catch (error) {
     console.log(error);

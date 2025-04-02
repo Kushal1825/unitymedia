@@ -144,7 +144,14 @@ const getPostComment = asyncHandler(async (req,res)=>{
           from:"users",
           localField:"author",
           foreignField:"_id",
-          as:"author"
+          as:"author",
+          pipeline:[
+            {
+              $match:{
+                is_blocked:false
+              }
+            }
+          ]
         }
       },
       {
@@ -162,6 +169,11 @@ const getPostComment = asyncHandler(async (req,res)=>{
           author:{
             $first:"$author"
           }
+        }
+      },
+      {
+        $match:{
+          author:{$ne:null}
         }
       },
       {

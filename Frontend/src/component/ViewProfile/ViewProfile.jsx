@@ -48,7 +48,7 @@ const ViewProfile = () => {
 
       if (
         (response.data.data[0].is_private && response.data.data[0].isFollow) ||
-        response.data.data[0].is_private === false
+        response.data.data[0].is_private === false || profile?.user_type ==='admin'
       ) {
         //  console.log("Content deliver");
 
@@ -246,19 +246,18 @@ const ViewProfile = () => {
                   <div className={`intro ${dark ? "setdark" : ""}`}>
                     <div className="content flex">
                       <div className="box">
-                        {
-                          profile?.user_type==="admin" &&
-                        <BlockUnblockButton
-                          userId={profileData?._id}
-                          isBlocked={profileData?.is_blocked}
-                          onStatusChange={(newStatus) =>
-                            setProfileData((prev) => ({
-                              ...prev,
-                              is_blocked: newStatus,
-                            }))
-                          }
-                        />
-                        }
+                        {profile?.user_type === "admin" && (
+                          <BlockUnblockButton
+                            userId={profileData?._id}
+                            isBlocked={profileData?.is_blocked}
+                            onStatusChange={(newStatus) =>
+                              setProfileData((prev) => ({
+                                ...prev,
+                                is_blocked: newStatus,
+                              }))
+                            }
+                          />
+                        )}
                         <div className="content flex">
                           <div className="image-box">
                             <img
@@ -378,7 +377,7 @@ const ViewProfile = () => {
                     </div>
                     <div className={`content ${dark ? "setdark" : ""}`}>
                       {(profileData?.is_private && profileData?.isFollow) ||
-                      profileData?.is_private === false ? (
+                      profileData?.is_private === false || profile?.user_type==="admin" ? (
                         profileData.postCount > 0 ? (
                           <div className="post">
                             <div className={`content ${dark ? "setdark" : ""}`}>
@@ -442,8 +441,18 @@ const ViewProfile = () => {
             </div>
           </section>
         ) : (
-          <div>
-            <h3>Given User Name is Not avilable</h3>
+          <div class={`profile-error-container ${dark?"dark":""}`}>
+            <div class="profile-error-box">
+              <h2>Profile Not Found</h2>
+              <p>
+                The user profile you are trying to visit does not exist or may
+                have been removed.
+              </p>
+
+              <p class="suggestion">
+                Check for typos or try searching for another username.
+              </p>
+            </div>
           </div>
         )
       ) : (

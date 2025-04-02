@@ -21,7 +21,12 @@ const getNotification = asyncHandler(async (req,res)=>{
           from:'users',
           localField:"sender_id",
           foreignField:'_id',
-          as:"sender"
+          as:"sender",
+          pipeline:[{
+            $match:{
+              is_blocked:false
+            }
+          }]
         }
       },
       {
@@ -49,6 +54,13 @@ const getNotification = asyncHandler(async (req,res)=>{
             $first:'$post'
           }
 
+        }
+      },
+      {
+        $match:{
+          $and:[
+            {sender:{$ne:null}}
+          ]
         }
       },
       {

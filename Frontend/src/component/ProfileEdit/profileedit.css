@@ -26,7 +26,9 @@
 .profileedit-section .container .row .option .content ul.setdark li:hover, .profileedit-section .container .row .option .content ul.setdark li.active {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.profileedit-section .container .row .option .content ul.setdark li:hover i, .profileedit-section .container .row .option .content ul.setdark li:hover p, .profileedit-section .container .row .option .content ul.setdark li.active i, .profileedit-section .container .row .option .content ul.setdark li.active p {
+.profileedit-section .container .row .option .content ul.setdark li:hover i,
+.profileedit-section .container .row .option .content ul.setdark li:hover p, .profileedit-section .container .row .option .content ul.setdark li.active i,
+.profileedit-section .container .row .option .content ul.setdark li.active p {
   color: white;
 }
 .profileedit-section .container .row .option .content ul li {
@@ -43,7 +45,9 @@
 .profileedit-section .container .row .option .content ul li:hover, .profileedit-section .container .row .option .content ul li.active {
   background-color: black;
 }
-.profileedit-section .container .row .option .content ul li:hover i, .profileedit-section .container .row .option .content ul li:hover p, .profileedit-section .container .row .option .content ul li.active i, .profileedit-section .container .row .option .content ul li.active p {
+.profileedit-section .container .row .option .content ul li:hover i,
+.profileedit-section .container .row .option .content ul li:hover p, .profileedit-section .container .row .option .content ul li.active i,
+.profileedit-section .container .row .option .content ul li.active p {
   color: white;
 }
 .profileedit-section .container .row .setting {
@@ -52,14 +56,14 @@
 }
 .profileedit-section .container .row .setting .content {
   padding: 15px;
-  height: 100dvh;
+  height: 90dvh;
   scroll-behavior: smooth;
   overflow-y: auto;
   scrollbar-width: none;
   overflow-x: hidden;
 }
 .profileedit-section .container .row .setting .content .edit-profile {
-  height: 100dvh;
+  height: 100%;
   display: none;
   background-color: white;
   border-radius: 10px;
@@ -265,6 +269,8 @@
 }
 .profileedit-section .container .row .setting .content .close-friends.active {
   display: block;
+  padding: 10px;
+  scroll-behavior: smooth;
 }
 .profileedit-section .container .row .setting .content .close-friends.setdark {
   background-color: rgba(0, 0, 0, 0.9);

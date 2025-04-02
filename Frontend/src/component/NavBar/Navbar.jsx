@@ -7,6 +7,7 @@ import axios from "axios";
 import ApiContext from "../../utils/ApiContext.jsx";
 import { MdLogout } from "react-icons/md";
 import toast from "react-hot-toast";
+import { usePost } from "../../context/PostContext.jsx";
 // import { ProfileProvider, useProfile } from "../../utils/ProfileContext.jsx";
 function Navbar() {
   // dark mode code start
@@ -16,11 +17,13 @@ function Navbar() {
   const [slide, setSlide] = useState(false);
   const [settingpanel, setSettingPanel] = useState(false);
   const [notification, setNotification] = useState(false);
+  const [sidePannelOpen,setSidePannelOpen]=useState(true);
 
   const [search, setSearch] = useState(false);
-  const {API_URL,token,profile}= useContext(ApiContext);
+  const {API_URL,token,profile,setToken,setProfile}= useContext(ApiContext);
   const [searchQuery,setSearchQuery]=useState("");
   const [searchUser,setSearchUser]=useState([]);
+  const {setPost}=usePost();
 
   const navigate = useNavigate();
 
@@ -58,17 +61,22 @@ function Navbar() {
 
   const handleLogout = async()=>{
     try {
-      navigate("/login");
       //Finish
+      
       const response = await axios.post(`${API_URL}/api/user/logout`,{},{
         headers:{
           Authorization:`Bearer ${token}`
-        },
-        withCredentials:true,
+        }
       });
-
+      
       if(response.data.success){
+
         toast.success("Logout successfully");
+        document.cookie = "refreshToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    setToken(""); // Clear state
+    setProfile(null);
+        setPost([]);
+        navigate("/login");
       }else{
         toast.error(response.data.message)
       }
@@ -95,11 +103,22 @@ function Navbar() {
     fetchNotification();
   },[])
 
-  const handlesearch = () => {
-    setSlide(true);
-    setSearch(true);
-    setSettingPanel(false);
-    setNotification(false);
+  const handlesearch = (val) => {
+    if(val){
+      setSlide(true);
+      setSearch(true);
+      setSettingPanel(false);
+      setNotification(false);
+      
+    }else{
+      
+      setSlide(false);
+      setSearch(false);
+      setSettingPanel(true);
+      setNotification(true);
+      
+    }
+    setSidePannelOpen(prev=>!prev)
   };
 
 
@@ -220,7 +239,7 @@ function Navbar() {
                     <li>
                       <NavLink
                         to={`/`}
-                        onClick={() => setNavbarActive(false)}
+                        onClick={() => {setNavbarActive(false) ; handleslideclose()}}
                         className={({ isActive }) =>
                           `flex ${isActive ? "active" : ""} ${
                             dark ? "setdark" : ""
@@ -232,7 +251,7 @@ function Navbar() {
                     </li>
                     <li className="">
                       <span
-                        onClick={handlesearch}
+                        onClick={()=>handlesearch(sidePannelOpen)}
                         className={`flex ${dark ? "setdark" : ""} ${
                           navbarActive ? "slide" : ""
                         }`}
@@ -245,7 +264,7 @@ function Navbar() {
                     <li>
                       <NavLink
                         to={`/explore`}
-                        onClick={() => setNavbarActive(false)}
+                        onClick={() => {setNavbarActive(false) ; handleslideclose()}}
                         className={({ isActive }) =>
                           `flex ${isActive ? "active" : ""} ${
                             dark ? "setdark" : ""
@@ -260,19 +279,20 @@ function Navbar() {
                     <li className="mview">
                       <NavLink
                         to={`/chates`}
+                        onClick={() => {setNavbarActive(false) ; handleslideclose()}}
                         className={({ isActive }) =>
                           `flex ${isActive ? "active" : ""} ${
                             dark ? "setdark" : ""
                           } ${navbarActive ? "slide" : ""}`
                         }
                       >
-                        <i className="fa-solid fa-comments"></i> <p>Chate</p>
+                        <i className="fa-solid fa-comments"></i> <p>Chat</p>
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
                         to={`/post`}
-                        onClick={() => setNavbarActive(false)}
+                        onClick={() => {setNavbarActive(false) ; handleslideclose()}}
                         className={({ isActive }) =>
                           `flex ${isActive ? "active" : ""} ${
                             dark ? "setdark" : ""
@@ -286,7 +306,7 @@ function Navbar() {
                     <li>
                       <NavLink
                         to={`/profile`}
-                        onClick={() => setNavbarActive(false)}
+                        onClick={() => {setNavbarActive(false) ; handleslideclose()}}
                         className={({ isActive }) =>
                           `flex mview ${isActive ? "active" : ""} ${
                             navbarActive ? "slide" : ""
@@ -303,7 +323,7 @@ function Navbar() {
                     <li className="mview">
                       <NavLink
                         to={`/profileedit`}
-                        onClick={() => setNavbarActive(false)}
+                        onClick={() => {setNavbarActive(false) ; handleslideclose()}}
                         className={({ isActive }) =>
                           `flex ${isActive ? "active" : ""} ${
                             dark ? "setdark" : ""

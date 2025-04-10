@@ -611,7 +611,7 @@ const updatePost = asyncHandler(async (req, res) => {
     const currentUser = req.user?._id.toString();
     // console.log(postAuthor,currentUser);
 
-    if (postAuthor != currentUser || req?.user?.user_type==="admin") {
+    if (postAuthor != currentUser && req?.user?.user_type!=="admin") {
       return res
         .status(200)
         .json(new ApiResponse(400, null, "Only author of the post can update"));

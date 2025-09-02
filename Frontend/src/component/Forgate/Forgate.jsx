@@ -121,8 +121,8 @@ const Forgate = () => {
               <div className="image-box">
                 <img src="../../../images/logo2.png" alt="" />
               </div>
-              <h1>unity</h1>
-              <p>Welcome to Unity, Forgate your password</p>
+              <h1>Unity Media</h1>
+              <p>Update your password</p>
             </div>
             <div action="#">
               {!activeOtp && !newPasswordactive ? (
@@ -146,7 +146,7 @@ const Forgate = () => {
                     }
                     {
                       !isLoading &&
-                      <button onClick={handleEmailOtp}>get otp</button>
+                      <button onClick={handleEmailOtp}>Get OTP</button>
                     }
                   </div>
                 </div>
@@ -166,7 +166,7 @@ const Forgate = () => {
                   }
                   placeholder="OTP" />
                   <div className="btn flex">
-                    <p>resend otp</p>
+                    {/* <p>resend otp</p> */}
                     {
                       isLoading &&
                       <LoadingButton isDarkMode={dark}/>
@@ -193,6 +193,7 @@ const Forgate = () => {
                     }))
                   }
                   placeholder="new password" />
+                  
                   <input
                     type="password"
                     max={6}

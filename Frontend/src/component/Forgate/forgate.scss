@@ -1,7 +1,9 @@
+$dark: #0d0d0d; // your dark base color
+$neon: #00c8ff;
 .forgate-section {
   width: 100%;
   height: 100dvh;
-  background-color: #0d1117;
+  background: linear-gradient(135deg, #000000, #0a0f1c, #121826);
   color: white;
   padding: 75px 0px;
   display: flex;
@@ -15,27 +17,59 @@
       align-items: center;
 
       .box {
-        width: 40%;
-        background-color: #1f2428;
+        width: 500px;
+        // background-color: #1F2428;
+        background: rgba($dark, 0.6); // dark frosted glass
+        border-radius: 16px;
+        padding: 2rem 2.5rem;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9),
+          inset 0 0 12px rgba(255, 255, 255, 0.02);
+
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          border: 1px solid rgba($neon, 0.25);
+          box-shadow: 0 12px 35px rgba($neon, 0.15),
+            inset 0 0 18px rgba(255, 255, 255, 0.03);
+        }
         border-radius: 5px;
-        padding: 50px 25px;
+        padding: 15px;
 
         .heading {
           text-align: center;
-          padding: 15px;
-          padding-top: 0px;
-          justify-content: center;
+          padding: 20px 15px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.8rem;
+
           .image-box {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 4px double rgba(255, 255, 255, 0.185);
+            // border-style: double;
+
+            img {
+              width: 60%;
+              height: auto;
+              object-fit: contain;
+            }
           }
+
           h1 {
-            padding: 0px 15px;
-            font-size: 60px;
-          }
-          p {
-            width: 100%;
-            padding: 10px 0px;
+            font-size: 36px;
+            font-weight: 600;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
           }
         }
         div {
@@ -46,23 +80,56 @@
             padding-left: 15px;
 
             input {
-              padding: 15px;
-              width: 100%;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
               border-radius: 10px;
-              background-color: #242c38;
-              color: white;
-              border: none;
+              padding: 0.75rem 1rem;
+              color: #fff;
+              font-size: 1rem;
+              outline: none;
+              transition: all 0.3s ease;
+              width: 100%;
+              margin: 10px 0px;
+
+              &::placeholder {
+                color: rgba(255, 255, 255, 0.4);
+              }
+
+              &:focus {
+                border: 1px solid $neon;
+                box-shadow: 0 0 8px rgba($neon, 0.4);
+                background: rgba(255, 255, 255, 0.08);
+              }
             }
             .btn {
-              padding: 15px 0px;
+              padding: 15px 0;
               width: 100%;
-              justify-content: space-between;
+              display: flex;
+              justify-content: center;
+
               button {
-                font-size: 18px;
-                padding: 10px 30px;
-                background-color: rgba(0, 0, 0, 0.8);
-                color: white;
-                border-radius: 5px;
+                font-size: 16px;
+                padding: 12px 28px;
+                background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+                color: #f0f0f0;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.25s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+
+                &:hover {
+                  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+                  transform: translateY(-2px);
+                  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+                }
+
+                &:active {
+                  transform: translateY(0);
+                  background: linear-gradient(145deg, #1c1c1c, #252525);
+                  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+                }
               }
             }
           }
@@ -72,27 +139,56 @@
             padding-left: 15px;
 
             input {
-              padding: 15px;
-              width: 100%;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
               border-radius: 10px;
-              background-color: #242c38;
-              color: white;
-              border: none;
+              padding: 0.75rem 1rem;
+              color: #fff;
+              font-size: 1rem;
+              outline: none;
+              transition: all 0.3s ease;
+              width: 100%;
+              margin: 10px 0px;
+
+              &::placeholder {
+                color: rgba(255, 255, 255, 0.4);
+              }
+
+              &:focus {
+                border: 1px solid $neon;
+                box-shadow: 0 0 8px rgba($neon, 0.4);
+                background: rgba(255, 255, 255, 0.08);
+              }
             }
             .btn {
-              padding: 15px 0px;
+              padding: 15px 0;
               width: 100%;
-              justify-content: space-between;
+              display: flex;
+              justify-content: center;
+
               button {
-                font-size: 18px;
-                padding: 10px 30px;
-                background-color: green;
-                color: white;
-                border-radius: 5px;
-              }
-              p {
+                font-size: 16px;
+                padding: 12px 28px;
+                background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+                color: #f0f0f0;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                font-weight: 500;
                 cursor: pointer;
-                color: #50b5ff;
+                transition: all 0.25s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+
+                &:hover {
+                  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+                  transform: translateY(-2px);
+                  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+                }
+
+                &:active {
+                  transform: translateY(0);
+                  background: linear-gradient(145deg, #1c1c1c, #252525);
+                  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+                }
               }
             }
           }
@@ -102,28 +198,56 @@
             padding-left: 15px;
 
             input {
-              padding: 15px;
-              width: 100%;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
               border-radius: 10px;
-              margin: 5px 0px;
-              background-color: #242c38;
-              color: white;
-              border: none;
+              padding: 0.75rem 1rem;
+              color: #fff;
+              font-size: 1rem;
+              outline: none;
+              transition: all 0.3s ease;
+              width: 100%;
+              margin: 10px 0px;
+
+              &::placeholder {
+                color: rgba(255, 255, 255, 0.4);
+              }
+
+              &:focus {
+                border: 1px solid $neon;
+                box-shadow: 0 0 8px rgba($neon, 0.4);
+                background: rgba(255, 255, 255, 0.08);
+              }
             }
             .btn {
-              padding: 15px 0px;
+              padding: 15px 0;
               width: 100%;
-              justify-content: space-between;
+              display: flex;
+              justify-content: center;
+
               button {
-                font-size: 18px;
-                padding: 10px 30px;
-                background-color: rgba(#50b5ff, 0.8);
-                color: white;
-                border-radius: 5px;
-              }
-              p {
+                font-size: 16px;
+                padding: 12px 28px;
+                background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+                color: #f0f0f0;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                font-weight: 500;
                 cursor: pointer;
-                color: #50b5ff;
+                transition: all 0.25s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+
+                &:hover {
+                  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+                  transform: translateY(-2px);
+                  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+                }
+
+                &:active {
+                  transform: translateY(0);
+                  background: linear-gradient(145deg, #1c1c1c, #252525);
+                  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+                }
               }
             }
           }
@@ -132,38 +256,40 @@
     }
   }
 }
-@media (max-width:475px){
-  .forgate-section {.container {
-   
-    .row {
-   
-    .box{
-    width: 80%;
-    
-    padding:50px 5px;
-    .heading {
-      .image-box{
-      width: 55px;
-      height: 55px;
-  }
-  h1{
-      font-size: 40px;
-  }
-}
-    div{ 
-      .email-box{
-      padding: 5px;
-    }
-  .otp-box{
-    .btn{
-      p{
-        font-size: 18px;
+@media (max-width: 475px) {
+  .forgate-section {
+    .container {
+      .row {
+        .box {
+          width: 80%;
+
+          padding: 50px 5px;
+          .heading {
+            .image-box {
+              width: 55px;
+              height: 55px;
+            }
+            h1 {
+              font-size: 40px;
+            }
+          }
+          div {
+            .email-box {
+              padding: 5px;
+            }
+            .otp-box {
+              .btn {
+                p {
+                  font-size: 18px;
+                }
+                button {
+                  padding: 10px 15px;
+                }
+              }
+            }
+          }
+        }
       }
-      button{
-        padding: 10px 15px;
-      }
     }
   }
-  }
-  }}}}
 }

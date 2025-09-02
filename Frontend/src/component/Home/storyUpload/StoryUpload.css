@@ -8,56 +8,64 @@
 
 .story-upload-container {
   max-width: 500px;
-  width: -moz-max-content;
-  width: max-content;
+  width: 100%;
   margin: 2rem auto;
-  height: -moz-max-content;
-  height: max-content;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
-  background-color: #f5f5f5;
-  border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
 }
 .story-upload-container.dark {
-  background-color: #212121;
+  background: rgba(33, 33, 33, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
 }
 .story-upload-container.dark h2 {
-  color: #999;
+  color: #ccc;
 }
 .story-upload-container h2 {
-  color: #333;
+  color: #222;
   margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .story-type-toggle {
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 .story-type-toggle button {
-  padding: 0.5rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   border: none;
-  border-radius: 20px;
+  border-radius: 50px;
   cursor: pointer;
-  background-color: #e0e0e0;
+  background-color: #e9e9e9;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
   transition: all 0.3s ease;
 }
 .story-type-toggle button.active {
-  background-color: #0095f6;
+  background: linear-gradient(135deg, #0095f6, #0077c2);
   color: white;
+  box-shadow: 0 4px 12px rgba(0, 149, 246, 0.3);
 }
 .story-type-toggle button:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 .drop-zone {
-  width: 300px;
-  height: 300px;
+  max-width: 350px;
+  min-height: 350px;
   margin: 0 auto;
-  border: 2px dashed #ccc;
-  border-radius: 4px;
+  border: 2px dashed #bbb;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,10 +73,23 @@
   transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.drop-zone:hover {
+  border-color: #0095f6;
 }
 .drop-zone.drag-active {
   border-color: #0095f6;
-  background-color: rgba(0, 149, 246, 0.1);
+  background: rgba(0, 149, 246, 0.08);
+  box-shadow: 0 0 12px rgba(0, 149, 246, 0.3);
+}
+.drop-zone img.image-preview {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 12px;
+  display: block;
 }
 
 .upload-instructions {
@@ -76,7 +97,8 @@
   color: #666;
 }
 .upload-instructions p {
-  margin: 0.5rem 0;
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
 }
 
 .image-preview {
@@ -84,22 +106,26 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 4px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .upload-button {
   margin-top: 2rem;
-  padding: 0.8rem 2rem;
-  background-color: #0095f6;
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(135deg, #0095f6, #0077c2);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 500;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 149, 246, 0.3);
 }
 .upload-button:hover {
-  background-color: #0077c2;
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #0077c2, #005fa3);
 }
 
 @media (max-width: 475px) {

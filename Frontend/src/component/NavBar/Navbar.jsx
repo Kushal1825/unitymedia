@@ -75,7 +75,7 @@ function Navbar() {
         document.cookie = "refreshToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     setToken(""); // Clear state
     setProfile(null);
-        setPost([]);
+        setPost(prev=>[]);
         navigate("/login");
       }else{
         toast.error(response.data.message)

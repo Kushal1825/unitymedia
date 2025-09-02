@@ -28,55 +28,64 @@
 .explore-section .container .row .box {
   width: 80%;
   height: 100%;
-  padding: 1px;
+  padding: 5px;
   display: flex;
-  align-items: center;
-  align-content: start;
   flex-wrap: wrap;
-  gap: 0px;
+  gap: 8px;
+  align-items: flex-start;
 }
 .explore-section .container .row .box .image-box {
-  width: calc(33.3333% - 4px);
+  width: calc(33.3333% - 8px);
   height: 315px;
-  margin: 1px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 0;
 }
 .explore-section .container .row .box .image-box .image {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 2px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
 }
-.explore-section .container .row .box .image-box .image:hover .details {
-  display: flex;
+.explore-section .container .row .box .image-box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
 .explore-section .container .row .box .image-box .image:hover img {
-  opacity: 0.8;
-}
-.explore-section .container .row .box .image-box .image img {
-  transition: all 0.3s;
+  transform: scale(1.05);
+  opacity: 0.85;
 }
 .explore-section .container .row .box .image-box .image .details {
-  transition: all 0.3s;
-  display: none;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  color: white;
-  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  gap: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 .explore-section .container .row .box .image-box .image .details span {
-  font-size: 18px;
-  padding: 10px;
+  font-size: 20px;
+}
+.explore-section .container .row .box .image-box .image:hover .details {
+  opacity: 1;
 }
 .explore-section .container .row .box .image-box.setdark {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 @media (max-width: 475px) {

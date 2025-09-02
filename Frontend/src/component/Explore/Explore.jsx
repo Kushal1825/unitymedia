@@ -4,6 +4,8 @@ import { useDarkMode } from "../DarkModeContext/DarkModeContext.jsx";
 import ApiContext from "../../utils/ApiContext.jsx";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FcLike } from 'react-icons/fc';
+import { FaCommentDots } from 'react-icons/fa';
 
 const Explore = () => {
   const { dark, navbarActive } = useDarkMode();
@@ -55,8 +57,8 @@ const Explore = () => {
                 <div className="image">
                   <img src={data?.image} alt={data.name} />
                   <div className="details flex">
-                    <span>Like {data.likes}</span>
-                    <span>comment {data.comments}</span>
+                    <span><FcLike/> {data.likes}</span>
+                    <span><FaCommentDots/> {data.comments}</span>
                   </div>
                 </div>
               </div>

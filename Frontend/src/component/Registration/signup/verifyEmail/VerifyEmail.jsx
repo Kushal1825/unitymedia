@@ -51,7 +51,7 @@ const VerifyEmail = ({username}) => {
                   </div>
                   <h1>unity</h1>
                   <p>
-                    Welcome to Unity ,  VerifyYour Email
+                     Verify Your E-mail ID
                   </p>
                 </div>
             <div className="content">

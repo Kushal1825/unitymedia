@@ -313,7 +313,7 @@ const ViewProfile = () => {
                               if (
                                 (profileData?.is_private &&
                                   profileData?.isFollow) ||
-                                profileData?.is_private === false
+                                profileData?.is_private === false || profile?.user_type ==='admin'
                               ) {
                                 getFollowers();
                               }
@@ -326,7 +326,7 @@ const ViewProfile = () => {
                                 if (
                                   (profileData?.is_private &&
                                     profileData?.isFollow) ||
-                                  profileData?.is_private === false
+                                  profileData?.is_private === false || profile?.user_type ==='admin'
                                 ) {
                                   settitle("Following");
                                   setbtntxt("Following");
@@ -342,7 +342,7 @@ const ViewProfile = () => {
                               if (
                                 (profileData?.is_private &&
                                   profileData?.isFollow) ||
-                                profileData?.is_private === false
+                                profileData?.is_private === false || profile?.user_type ==='admin'
                               ) {
                                 getFollowings();
                               }

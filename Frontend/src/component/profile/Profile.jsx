@@ -144,7 +144,7 @@ const Profile = () => {
             <div className={`data ${dark ? "setdark" : ""}`}>
               <ul>
                 {(title==="Following"?followerList:followingList).map((user) => (
-                  <li key={user._id} className={`${dark ? "setdark" : ""}`}>
+                  <li key={user._id} onClick={()=>navigate(`/${user.username}`)} className={`${dark ? "setdark" : ""}`}>
                     <div className={`person flex`}>
                       <div className="image-box">
                         <img src={user?.avatar?.url || "/images/user.png"} alt={user?.username} />
@@ -226,7 +226,7 @@ const Profile = () => {
                           className={` ${dark ? "setdark" : ""}`}
                           onClick={() => {
                             settitle("Followers");
-                            setbtntxt("remove");
+                            setbtntxt("Followers");
                             setstoryupload(true);
                           }}
                         >

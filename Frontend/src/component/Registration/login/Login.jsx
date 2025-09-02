@@ -67,8 +67,8 @@ const Login = () => {
               <div className="image-box">
                 <img src="../../../images/logo2.png" alt="" />
               </div>
-              <h1>unity</h1>
-              <p>Welcome to Unity, Login Here</p>
+              <h1>Login</h1>
+              {/* <p>Welcome Back.</p> */}
             </div>
             <div className="content">
               <form onSubmit={loginHandler}>
@@ -105,11 +105,12 @@ const Login = () => {
                 </div>
 
                 <div className="checkbox">
-                  <ul className="flex">
-                    <li>
-                      <input className="checkbox" type="checkbox" />
-                      <label htmlFor="remember">Remember Me </label>
-                    </li>
+                  
+                      <label className="remember-me">
+                        <input type="checkbox" />
+                        Remember Me
+                      </label>
+                    <ul className="flex">
                     <li className="forget-password">
                       {" "}
                       <NavLink to="/forgate">Forgot Password?</NavLink>{" "}

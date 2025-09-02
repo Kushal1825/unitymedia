@@ -178,6 +178,8 @@ const verifyUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log(email,password);
+    
     if ([email, password].some((field) => field.trim() === "")) {
       throw new ApiError(400, "All field required");
     }

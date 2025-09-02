@@ -98,7 +98,7 @@ const Post = () => {
       }`}
     >
       <div
-        className={`post-upload-container ${isDragging ? "dragging" : ""}`}
+        className={`post-upload-container ${dark ? "dark" : ""} ${isDragging ? "dragging" : ""}`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}

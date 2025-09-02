@@ -1,8 +1,10 @@
+$dark: #0d0d0d; // your dark base color
+$neon: #00c8ff;
 .login-section{
     // background-color: #242C38;
     // background-color: #1F2428;
     // background-color: #161B22;
-    background-color: #0D1117;
+background: linear-gradient(135deg, #000000, #0a0f1c, #121826);
    color: white;
     width: 100%;
     .container{
@@ -11,51 +13,140 @@
         height: 100dvh;
         .row{
             width:500px;    
-            background-color: #1F2428;
+            // background-color: #1F2428;
+             background: rgba($dark, 0.6); // dark frosted glass
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.9),
+                inset 0 0 12px rgba(255, 255, 255, 0.02);
+
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                border: 1px solid rgba($neon, 0.25);
+                box-shadow: 
+                0 12px 35px rgba($neon, 0.15),
+                inset 0 0 18px rgba(255, 255, 255, 0.03);
+            }
             border-radius: 5px;
             padding: 15px;    
-            .heading{
+            .heading {
                 text-align: center;
-                padding:15px;
-                padding-top: 0px;
-                justify-content: center;
-                .image-box{
-                    width:80px;
-                    height: 80px;                  
+                padding: 20px 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+
+                .image-box {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 4px double rgba(255, 255, 255, 0.185);
+                    // border-style: double;
+
+                    img {
+                    width: 60%;
+                    height: auto;
+                    object-fit: contain;
+                    }
                 }
-                h1{
-                    padding: 0px 15px;
-                    font-size: 60px;
+
+                h1 {
+                    font-size: 36px;
+                    font-weight: 600;
+                    margin: 0;
+                    font-family:Arial, Helvetica, sans-serif;
                 }
-                p{
-                    width: 100%;
-                    padding: 10px 0px;
                 }
-            }
+
             .content{
                 form{
                     .input-box{
                         padding: 15px 0px 5px 5px;
                     
                         input{
-                          display: block;
-                          width: 100%;
-                          padding: 10px 5px;
-                          color: white;
-                          font-size: 17px;
-                        border-radius: 4px;
-                        border: none;
-                    background-color: #242C38;
+                           background: rgba(255, 255, 255, 0.05);
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            border-radius: 10px;
+                            padding: 0.75rem 1rem;
+                            color: #fff;
+                            font-size: 1rem;
+                            outline: none;
+                            transition: all 0.3s ease;
+                            width: 100%;
+
+                            &::placeholder {
+                                color: rgba(255, 255, 255, 0.4);
+                            }
+
+                            &:focus {
+                                border: 1px solid $neon;
+                                box-shadow: 0 0 8px rgba($neon, 0.4);
+                                background: rgba(255, 255, 255, 0.08);
+                            }
                   
                         }
                       }
                     .checkbox{
                      padding: 10px 0px;
+                     display: flex;
+                     justify-content: space-between;
+                     .remember-me {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.6rem;
+                        margin: 0px 0px 0px 10px;
+                        cursor: pointer;
+                        font-size: 0.95rem;
+                        color: rgba(255, 255, 255, 0.8);
+
+                        input[type="checkbox"] {
+                            appearance: none;
+                            width: 18px;
+                            height: 18px;
+                            border: 2px solid rgba(255, 255, 255, 0.4);
+                            border-radius: 4px;
+                            background: transparent;
+                            cursor: pointer;
+                            position: relative;
+                            transition: all 0.3s ease;
+
+                            &:checked {
+                            border-color: $neon;
+                            background: rgba($neon, 0.15);
+                            box-shadow: 0 0 8px rgba($neon, 0.6);
+                            }
+
+                            &:checked::after {
+                            content: "✔";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -55%);
+                            font-size: 14px;
+                            color: $neon;
+                            }
+                        }
+                        }
+
+
                       ul{
                         align-items: center;
                         li{
-                            &:nth-child(2){
+
+                            &:nth-child(1){
                                 text-align: right;
+                                width: max-content;
                                 
                             }
                             &.forget-password{
@@ -66,8 +157,7 @@
                             }
                             width: 50%;
                               label{
-                                  padding: 15px 0px 15px 5px;
-                                  
+                                  padding: 15px 0px 15px 5px;       
                               }
                         }
                       }
@@ -94,6 +184,7 @@
                 p{
                     padding: 10px;
                     padding-left: 5px;
+                    font-size: 14px;
                     a{
                         padding-left: 10px;
                         color: lightblue;

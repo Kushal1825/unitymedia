@@ -1,3 +1,11 @@
+$post-bg-light: #f8f9fa;
+$post-bg-dark: #1e1e1e;
+$post-border-light: #dcdcdc;
+$post-border-dark: #333;
+$post-text-light: #555;
+$post-text-dark: #ddd;
+$post-primary: #2563eb; // modern blue (like Tailwind's blue-600)
+$post-primary-hover: #1e4ed8;
 
 .postupload-section{
     width: 85%;
@@ -8,76 +16,117 @@
     align-items: center;
  
     &.setdark{
-        background-color: rgba(0,0,0,0.8);
+        background: linear-gradient(135deg, #000000, #0a0f1c, #121826);
     }
     &.compromise{
         width: 95%;
         }
 
         .post-upload-container {
-            width: 400px;
-            // height: 150px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px;
-            border: 2px dashed #ccc;
-            border-radius: 10px;
-            text-align: center;
-            
-            background-color: #e6e6e6;
-          
-            .upload-box {
-              cursor: pointer;
-              padding: 20px;
-              // background-color: blue;
-              font-size: 16px;
-              width: 100%;
-              color: #888;
-            }
-          
-            .image-preview {
-              img {
-                height: 400px;
-                border-radius: 10px;
-              }
-            }
-          
-            .caption-input {
-              width: 350px;
-              padding: 10px;
-              margin-top: 10px;
-              // margin-right: 20px;
-              // margin: auto;
-              border: 1px solid #ccc;
-              border-radius: 5px;
-              resize: none;
-            }
-            .upload-button {
-                margin-top: 20px;
-                padding: 10px 25px;
-                background-color: #0095f6;
-                color: white;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                font-weight: 600;
-                transition: background-color 0.2s ease;
-            }
-            
-            .upload-button:hover {
-                background-color: #0077c0;
-            }
-            
-            .dark-button {
-                background-color: #3797f0;
-            }
-            
-            .dark-button:hover {
-                background-color: #0066a1;
-            }
-          }
+  width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid $post-border-light;
+  border-radius: 12px;
+  text-align: center;
+  background-color: $post-bg-light;
+  transition: all 0.3s ease;
+
+  // Dark mode
+  &.dark {
+    background-color: $post-bg-dark;
+    border: 1px solid $post-border-dark;
+
+    .upload-box {
+      color: $post-text-dark;
+    }
+
+    .caption-input {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      color: #eee;
+
+      &::placeholder {
+        color: #888;
+      }
+    }
+
+    .upload-button {
+      background-color: $post-primary;
+      &:hover {
+        background-color: $post-primary-hover;
+      }
+    }
+  }
+
+  .upload-box {
+    cursor: pointer;
+    padding: 30px 20px;
+    font-size: 16px;
+    width: 100%;
+    color: $post-text-light;
+    border: 2px dashed $post-border-light;
+    border-radius: 10px;
+    background: transparent;
+    transition: border-color 0.3s ease, background 0.3s ease;
+
+    &:hover {
+      border-color: $post-primary;
+      background: rgba($post-primary, 0.05);
+    }
+  }
+
+  .image-preview {
+    margin-top: 20px;
+
+    img {
+      max-height: 350px;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+  }
+
+  .caption-input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: 1px solid $post-border-light;
+    border-radius: 8px;
+    resize: none;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $post-primary;
+      outline: none;
+    }
+  }
+
+  .upload-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: $post-primary;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: $post-primary-hover;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
     
 }
 

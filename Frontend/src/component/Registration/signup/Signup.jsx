@@ -64,10 +64,10 @@ const Signup = () => {
                       <img src="../../../images/logo2.png" alt="" />
                       
                     </div>
-                    <h1>unity</h1>
-                    <p>
-                      Welcome to Unity ,  Sign up Here
-                    </p>
+                    
+                    <h1>
+                        Sign up 
+                    </h1>
                   </div>
               <div className="content">
                 <form onSubmit={submitHandler}>
@@ -156,11 +156,11 @@ const Signup = () => {
                     />
                   </div>
                   <div className="checkbox flex">
-                    <input className="checkbox" type="checkbox" />
-                    <label htmlFor="remember">
-                      I Accept Terms and Conditions
-                    </label>
-                    <p>
+                    <label className="remember-me">
+                        <input type="checkbox" />
+                        I accept Term and Condition
+                      </label>
+                    <p className="haveAccount">
                       
                       <NavLink to="/login">Already Have An Account ?</NavLink>
                     </p>

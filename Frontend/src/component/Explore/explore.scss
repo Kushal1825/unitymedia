@@ -25,64 +25,74 @@
         justify-content: center;
         align-items: center;
       .box {
-        width: 80%;
+  width: 80%;
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+
+  .image-box {
+    width: calc(33.3333% - 8px);
+    height: 315px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0;
+
+    .image {
+      height: 100%;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+
+      img {
         height: 100%;
-        padding: 1px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease, opacity 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+        opacity: 0.85;
+      }
+
+      .details {
         display: flex;
-        // justify-content: center;
         align-items: center;
-        align-content: start;
-        // justify-content: center;
-        flex-wrap: wrap;
-        gap: 0px;
-        .image-box {
-          width: calc(33.3333% - 4px);
-          height: 315px;
-
-          margin: 1px;
-          .image {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 2px;
-            overflow: hidden;
-            position: relative;
-            &:hover {
-              .details {
-                display: flex; // Change display to flex for proper alignment
-              }
-
-              img {
-                opacity: 0.8; // Optional: Add a subtle effect to the image when hovered
-              }
-            }
-            img {
-              transition: all 0.3s;
-            }
-
-            .details {
-              transition: all 0.3s;
-              display: none;
-              position: absolute;
-              background-color: rgba(0, 0, 0, 0.5);
-              top: 0px;
-              left: 0px;
-              height: 100%;
-              color: white;
-              width: 100%;
-              align-items: center;
-              justify-content: center;
-              span {
-                font-size: 18px;
-                padding: 10px;
-              }
-            }
-          }
-          &.setdark {
-            background-color: rgba(255, 255, 255, 0.1);
-          }
+        justify-content: center;
+        height: 100%;
+        gap: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        span{
+          font-size: 20px;
         }
       }
+
+      &:hover .details {
+        opacity: 1;
+      }
+    }
+
+    &.setdark {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+}
+
     }
   }
 }

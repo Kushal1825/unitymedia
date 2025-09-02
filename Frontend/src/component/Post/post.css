@@ -6,61 +6,104 @@
   align-items: center;
 }
 .postupload-section.setdark {
-  background-color: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, #000000, #0a0f1c, #121826);
 }
 .postupload-section.compromise {
   width: 95%;
 }
 .postupload-section .post-upload-container {
-  width: 400px;
+  width: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
-  border: 2px dashed #ccc;
-  border-radius: 10px;
+  padding: 24px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
   text-align: center;
-  background-color: #e6e6e6;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+.postupload-section .post-upload-container.dark {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+.postupload-section .post-upload-container.dark .upload-box {
+  color: #ddd;
+}
+.postupload-section .post-upload-container.dark .caption-input {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #eee;
+}
+.postupload-section .post-upload-container.dark .caption-input::-moz-placeholder {
+  color: #888;
+}
+.postupload-section .post-upload-container.dark .caption-input::placeholder {
+  color: #888;
+}
+.postupload-section .post-upload-container.dark .upload-button {
+  background-color: #2563eb;
+}
+.postupload-section .post-upload-container.dark .upload-button:hover {
+  background-color: #1e4ed8;
 }
 .postupload-section .post-upload-container .upload-box {
   cursor: pointer;
-  padding: 20px;
+  padding: 30px 20px;
   font-size: 16px;
   width: 100%;
-  color: #888;
+  color: #555;
+  border: 2px dashed #dcdcdc;
+  border-radius: 10px;
+  background: transparent;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.postupload-section .post-upload-container .upload-box:hover {
+  border-color: #2563eb;
+  background: rgba(37, 99, 235, 0.05);
+}
+.postupload-section .post-upload-container .image-preview {
+  margin-top: 20px;
 }
 .postupload-section .post-upload-container .image-preview img {
-  height: 400px;
+  max-height: 350px;
   border-radius: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .postupload-section .post-upload-container .caption-input {
-  width: 350px;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
   resize: none;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+.postupload-section .post-upload-container .caption-input:focus {
+  border-color: #2563eb;
+  outline: none;
 }
 .postupload-section .post-upload-container .upload-button {
   margin-top: 20px;
-  padding: 10px 25px;
-  background-color: #0095f6;
+  padding: 12px 30px;
+  background-color: #2563eb;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.2s ease;
+  font-size: 15px;
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 .postupload-section .post-upload-container .upload-button:hover {
-  background-color: #0077c0;
+  background-color: #1e4ed8;
+  transform: translateY(-2px);
 }
-.postupload-section .post-upload-container .dark-button {
-  background-color: #3797f0;
-}
-.postupload-section .post-upload-container .dark-button:hover {
-  background-color: #0066a1;
+.postupload-section .post-upload-container .upload-button:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 475px) {

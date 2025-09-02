@@ -65,7 +65,7 @@ const Home = () => {
       setPostLoading(false);
     }
     fetchStories();
-  }, [postIds]);
+  }, [postIds,post]);
 
   
 

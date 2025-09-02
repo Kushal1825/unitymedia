@@ -1,5 +1,6 @@
+@charset "UTF-8";
 .login-section {
-  background-color: #0D1117;
+  background: linear-gradient(135deg, #000000, #0a0f1c, #121826);
   color: white;
   width: 100%;
 }
@@ -10,43 +11,117 @@
 }
 .login-section .container .row {
   width: 500px;
-  background-color: #1F2428;
+  background: rgba(13, 13, 13, 0.6);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9), inset 0 0 12px rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease-in-out;
   border-radius: 5px;
   padding: 15px;
 }
+.login-section .container .row:hover {
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  box-shadow: 0 12px 35px rgba(0, 200, 255, 0.15), inset 0 0 18px rgba(255, 255, 255, 0.03);
+}
 .login-section .container .row .heading {
   text-align: center;
-  padding: 15px;
-  padding-top: 0px;
-  justify-content: center;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
 }
 .login-section .container .row .heading .image-box {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 4px double rgba(255, 255, 255, 0.185);
+}
+.login-section .container .row .heading .image-box img {
+  width: 60%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .login-section .container .row .heading h1 {
-  padding: 0px 15px;
-  font-size: 60px;
-}
-.login-section .container .row .heading p {
-  width: 100%;
-  padding: 10px 0px;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .login-section .container .row .content form .input-box {
   padding: 15px 0px 5px 5px;
 }
 .login-section .container .row .content form .input-box input {
-  display: block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
   width: 100%;
-  padding: 10px 5px;
-  color: white;
-  font-size: 17px;
-  border-radius: 4px;
-  border: none;
-  background-color: #242C38;
+}
+.login-section .container .row .content form .input-box input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.login-section .container .row .content form .input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.login-section .container .row .content form .input-box input:focus {
+  border: 1px solid #00c8ff;
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
 }
 .login-section .container .row .content form .checkbox {
   padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.login-section .container .row .content form .checkbox .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0px 0px 0px 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.login-section .container .row .content form .checkbox .remember-me input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.login-section .container .row .content form .checkbox .remember-me input[type=checkbox]:checked {
+  border-color: #00c8ff;
+  background: rgba(0, 200, 255, 0.15);
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.6);
+}
+.login-section .container .row .content form .checkbox .remember-me input[type=checkbox]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 14px;
+  color: #00c8ff;
 }
 .login-section .container .row .content form .checkbox ul {
   align-items: center;
@@ -54,8 +129,10 @@
 .login-section .container .row .content form .checkbox ul li {
   width: 50%;
 }
-.login-section .container .row .content form .checkbox ul li:nth-child(2) {
+.login-section .container .row .content form .checkbox ul li:nth-child(1) {
   text-align: right;
+  width: -moz-max-content;
+  width: max-content;
 }
 .login-section .container .row .content form .checkbox ul li.forget-password a {
   color: blue;
@@ -82,6 +159,7 @@
 .login-section .container .row .content p {
   padding: 10px;
   padding-left: 5px;
+  font-size: 14px;
 }
 .login-section .container .row .content p a {
   padding-left: 10px;

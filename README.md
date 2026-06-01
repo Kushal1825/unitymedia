@@ -16,7 +16,7 @@
 
 | Feed | Real-Time Chat | Profile |
 |------|----------------|---------|
-| ![Feed](screenshots/feed.png) | ![Chat](screenshots/chat.png) | ![Profile](screenshots/profile.png) |
+| ![Feed]([screenshots/feed.png](https://github.com/Kushal1825/unitymedia/blob/main/Frontend/public/images/feed.png)) | ![Chat]([screenshots/chat.png](https://github.com/Kushal1825/unitymedia/blob/main/Frontend/public/images/chat.png)) | ![Profile]([screenshots/profile.png](https://github.com/Kushal1825/unitymedia/blob/main/Frontend/public/images/profile.png)) |
 
 ---
 
